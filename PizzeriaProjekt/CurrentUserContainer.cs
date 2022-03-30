@@ -9,6 +9,6 @@ namespace PizzeriaProjekt
 {
     internal class CurrentUserContainer
     {
-        public static User currentUser;
+        public static User s_currentUser;
     }
 }

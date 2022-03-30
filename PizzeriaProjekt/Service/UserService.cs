@@ -30,7 +30,7 @@ namespace PizzeriaProjekt.Service
                 user = userDal.GetUserByLogin(username);
                 if (user.Password == password)
                 {
-                    CurrentUserContainer.currentUser = user;
+                    CurrentUserContainer.s_currentUser = user;
                     return true;
                 }
                 else

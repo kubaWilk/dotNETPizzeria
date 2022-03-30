@@ -9,6 +9,7 @@ namespace PizzeriaProjekt.Model
 {
     internal class CreditCard
     {
+        public int Id { get; set; }
         public string Number { get; set; }
         [Column(TypeName = "Date")]
         public DateTime ExpritaionDate{ get; set; }

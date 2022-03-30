@@ -7,10 +7,6 @@ using System.Threading.Tasks;
 
 namespace PizzeriaProjekt.Model
 {
-    /// <summary>
-    /// This is a class containing user's details
-    /// Addresses and creditCards are HashSets because User can use multiple ones, yet we don't want duplicates
-    /// </summary>
     internal class Person
     {
         public int Id { get; set; }
@@ -18,7 +14,9 @@ namespace PizzeriaProjekt.Model
         public string LastName { get; set; }
         [Column(TypeName = "Date")]
         public DateTime Birtday { get; set; }
-        public HashSet<Address> Addresses { get; set; }
-        public HashSet<CreditCard> creditCards { get; set; }
+        public ICollection<Address> Addresses { get; set; }
+        public ICollection<CreditCard> creditCards { get; set; }
+        public int UserId { get; set; }
+        public User User { get; set; }
     }
 }

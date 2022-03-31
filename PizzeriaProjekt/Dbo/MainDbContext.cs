@@ -11,6 +11,10 @@ namespace PizzeriaProjekt.Dbo
     internal class MainDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<CreditCard> CreditCards { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = @"Server=127.0.0.1;Port=3306;Database=pizzaDB;Uid=root;Pwd=root;";

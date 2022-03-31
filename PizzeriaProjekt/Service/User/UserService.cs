@@ -13,6 +13,7 @@ namespace PizzeriaProjekt.Service
     internal class UserService
     {
         private UserDal userDal = new UserDal();
+
         /// <summary>
         /// Returns true when User has been properly logged in, returns false when password is wrong. 
         /// Throws UserNotFoundException when login is wrong
@@ -42,7 +43,16 @@ namespace PizzeriaProjekt.Service
                 throw new UserNotFoundException();
             }
         }
-
+        public void Register(User user)
+        {
+            if (userDal.GetUserByLogin(user.Login) == null) {
+                userDal.Save(user);
+            }
+            else
+            {
+                throw new UserAlreadyExistsException();
+            }
+        }
     }
 
 }

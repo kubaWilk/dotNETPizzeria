@@ -13,8 +13,13 @@ namespace PizzeriaProjekt.DB
         private MainDbContext context = new MainDbContext();
         public User? GetUserByLogin(string login)
         {
-            var user = context.Users.FirstOrDefault(x => x.Login == login);
-            return user;
+            return context.Users.FirstOrDefault(x => x.Login == login);
+        }
+
+        public Object? Save(User user)
+        {
+            context.Users.Add(user);
+            return context.SaveChanges();
         }
     }
 }

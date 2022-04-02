@@ -13,14 +13,13 @@ namespace PizzeriaProjekt.Dbo
         public const string DATABASE_PASSWORD = "DOTNETPIZZERIA_DATABASE_PASSWORD";
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Meal> Meals { get; set; }
+        public DbSet<Topping> Toppings { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Meal>()
-                .ToTable("Meals")
-                .HasDiscriminator<Category>("Category")
-                .HasValue<Pizza>(Category.PIZZA);
+            modelBuilder.Entity<Meal>().ToTable("Meals");
 
             modelBuilder.Entity<Topping>().ToTable("Toppings");
 
@@ -54,21 +53,6 @@ namespace PizzeriaProjekt.Dbo
                 new Topping{Id = 5, Name = "Pineapple", BasePrice = 2.00m},
             };
 
-            //var pizzaToppings = new[]
-            //{
-            //    new PizzaTopping{MealId = pizzas[0].Id, ToppingId = toppings[0].Id, Pizza = pizzas[0], Topping = toppings[0]},
-
-            //    new PizzaTopping{MealId = pizzas[1].Id, ToppingId = toppings[0].Id, Pizza = pizzas[1], Topping = toppings[0]},
-            //    new PizzaTopping{MealId = pizzas[1].Id, ToppingId = toppings[1].Id, Pizza = pizzas[1], Topping = toppings[1]},
-
-            //    new PizzaTopping{MealId = pizzas[2].Id, ToppingId = toppings[0].Id, Pizza = pizzas[2], Topping = toppings[0]},
-            //    new PizzaTopping{MealId = pizzas[2].Id, ToppingId = toppings[3].Id, Pizza = pizzas[2], Topping = toppings[3]},
-            //    new PizzaTopping{MealId = pizzas[2].Id, ToppingId = toppings[4].Id, Pizza = pizzas[2], Topping = toppings[4]},
-
-            //    new PizzaTopping{MealId = pizzas[3].Id, ToppingId = toppings[0].Id, Pizza = pizzas[3], Topping = toppings[0]},
-            //    new PizzaTopping{MealId = pizzas[3].Id, ToppingId = toppings[2].Id, Pizza = pizzas[3], Topping = toppings[2]},
-            //    new PizzaTopping{MealId = pizzas[3].Id, ToppingId = toppings[4].Id, Pizza = pizzas[3], Topping = toppings[4]},
-            //};
             var pizzaToppings = new[]
             {
                 new PizzaTopping{MealId = pizzas[0].Id, ToppingId = toppings[0].Id},

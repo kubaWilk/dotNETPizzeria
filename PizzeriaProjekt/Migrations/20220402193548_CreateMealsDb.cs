@@ -24,6 +24,8 @@ namespace PizzeriaProjekt.Migrations
                     ImageUrl = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     BasePrice = table.Column<decimal>(type: "decimal(15,2)", nullable: false),
+                    Discriminator = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     Size = table.Column<int>(type: "int", nullable: true),
                     DoughThickness = table.Column<int>(type: "int", nullable: true)
                 },
@@ -76,13 +78,13 @@ namespace PizzeriaProjekt.Migrations
 
             migrationBuilder.InsertData(
                 table: "Meals",
-                columns: new[] { "MealId", "BasePrice", "Category", "DoughThickness", "ImageUrl", "Name", "Size" },
+                columns: new[] { "MealId", "BasePrice", "Category", "Discriminator", "DoughThickness", "ImageUrl", "Name", "Size" },
                 values: new object[,]
                 {
-                    { 1L, 20.00m, 3, 0, null, "Margherita", 1 },
-                    { 2L, 23.00m, 3, 0, null, "Capricciosa", 1 },
-                    { 3L, 23.00m, 3, 0, null, "Japanelo", 1 },
-                    { 4L, 24.00m, 3, 0, null, "Hawaii", 1 }
+                    { 1L, 20.00m, 3, "Pizza", 0, null, "Margherita", 1 },
+                    { 2L, 23.00m, 3, "Pizza", 0, null, "Capricciosa", 1 },
+                    { 3L, 23.00m, 3, "Pizza", 0, null, "Japanelo", 1 },
+                    { 4L, 24.00m, 3, "Pizza", 0, null, "Hawaii", 1 }
                 });
 
             migrationBuilder.InsertData(

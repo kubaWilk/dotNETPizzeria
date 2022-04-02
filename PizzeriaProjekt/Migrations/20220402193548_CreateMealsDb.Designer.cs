@@ -10,7 +10,7 @@ using PizzeriaProjekt.Dbo;
 namespace PizzeriaProjekt.Migrations
 {
     [DbContext(typeof(MainDbContext))]
-    [Migration("20220402170337_CreateMealsDb")]
+    [Migration("20220402193548_CreateMealsDb")]
     partial class CreateMealsDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,6 +35,10 @@ namespace PizzeriaProjekt.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Category");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("ImageUrl")
                         .HasColumnType("longtext")
                         .HasColumnName("ImageUrl");
@@ -48,7 +52,7 @@ namespace PizzeriaProjekt.Migrations
 
                     b.ToTable("Meals", (string)null);
 
-                    b.HasDiscriminator<int>("Category");
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Meal");
                 });
 
             modelBuilder.Entity("PizzeriaProjekt.Meals.PizzaTopping", b =>
@@ -199,7 +203,7 @@ namespace PizzeriaProjekt.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Size");
 
-                    b.HasDiscriminator().HasValue(2);
+                    b.HasDiscriminator().HasValue("Pizza");
 
                     b.HasData(
                         new

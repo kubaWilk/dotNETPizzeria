@@ -12,7 +12,7 @@ namespace PizzeriaProjekt.Meals
         public string Name { get; set; }
 
         [Column("Category")]
-        public Category Category { get; protected set; }
+        public Category Category { get; set; }
 
         [Column("ImageUrl")]
         public string? ImageUrl { get; set; }

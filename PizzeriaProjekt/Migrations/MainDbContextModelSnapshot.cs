@@ -33,6 +33,10 @@ namespace PizzeriaProjekt.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Category");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("ImageUrl")
                         .HasColumnType("longtext")
                         .HasColumnName("ImageUrl");
@@ -46,7 +50,7 @@ namespace PizzeriaProjekt.Migrations
 
                     b.ToTable("Meals", (string)null);
 
-                    b.HasDiscriminator<int>("Category");
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Meal");
                 });
 
             modelBuilder.Entity("PizzeriaProjekt.Meals.PizzaTopping", b =>
@@ -197,7 +201,7 @@ namespace PizzeriaProjekt.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Size");
 
-                    b.HasDiscriminator().HasValue(2);
+                    b.HasDiscriminator().HasValue("Pizza");
 
                     b.HasData(
                         new

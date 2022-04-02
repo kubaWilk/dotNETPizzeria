@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.loginBox = new System.Windows.Forms.TextBox();
+            this.passwordBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,21 +46,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // loginBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 23);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            this.loginBox.Location = new System.Drawing.Point(108, 168);
+            this.loginBox.Name = "loginBox";
+            this.loginBox.PlaceholderText = "Login";
+            this.loginBox.Size = new System.Drawing.Size(125, 23);
+            this.loginBox.TabIndex = 3;
             // 
-            // textBox2
+            // passwordBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(108, 221);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 23);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
+            this.passwordBox.Location = new System.Drawing.Point(108, 221);
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.PasswordChar = '*';
+            this.passwordBox.PlaceholderText = "Hasło";
+            this.passwordBox.Size = new System.Drawing.Size(125, 23);
+            this.passwordBox.TabIndex = 4;
             // 
             // pictureBox1
             // 
@@ -78,9 +79,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 338);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.passwordBox);
+            this.Controls.Add(this.loginBox);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "MylittlePizzeria";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -93,8 +96,8 @@
         #endregion
 
         private Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox loginBox;
+        private TextBox passwordBox;
         private PictureBox pictureBox1;
     }
 }

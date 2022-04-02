@@ -12,37 +12,11 @@ namespace PizzeriaProjekt
         public Form1()
             {
                 InitializeComponent();
-            textBox2.PasswordChar = '*';
-            textBox1.MaxLength = 32;
-
             }
             private void Form1_Load(object sender, EventArgs e)
             {
-                textBox1.Text = "Login";
-                textBox2.Text = "Has這";
+               
             }
-
-            private void textBox1_Click(object sender, EventArgs e)
-            {
-                if (textBox1.Text == "Login")
-                {
-                    textBox1.Clear();
-                }
-                else
-                    return;
-            }
-
-            private void textBox2_Click(object sender, EventArgs e)
-            {
-
-                if (textBox2.Text == "Has這") 
-                {
-                    textBox2.Clear();
-                }
-                else
-                    return;
-            }
-
             private void button1_Click(object sender, EventArgs e)
             {
              try
@@ -53,7 +27,7 @@ namespace PizzeriaProjekt
                 else
                 {
                     MessageBox.Show("Nieprawid這we has這");
-                    textBox2.Clear();
+                    passwordBox.Clear();
                 }
                 
             }
@@ -61,7 +35,12 @@ namespace PizzeriaProjekt
             {
                 MessageBox.Show("Niepoprawny login");
             }
+            catch (MySqlConnector.MySqlException)
+            {
+                MessageBox.Show("B章d po章czenia, spr鏏uj ponownie p��niej");
             }
+
+        }
         }
 
     

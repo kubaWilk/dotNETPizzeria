@@ -1,22 +1,16 @@
-﻿namespace PizzeriaProjekt.Meals
+﻿namespace PizzeriaProjekt.Meals.Dal
 {
     /// <summary>
-    /// Defines a contract for querying the meals.
+    /// Defines a contract for querying pizzas.
     /// </summary>
-    internal interface IMealQueryService
+    internal interface IPizzaQueryDao
     {
-        /// <summary>
-        /// Get all objects of type <see cref="Meal"/>.
-        /// </summary>
-        /// <returns>List of <see cref="Meal"/> or empty if no meal is present.</returns>
-        public List<Meal> GetMeals();
-        
         /// <summary>
         /// Get all objects of type <see cref="Pizza"/>.
         /// </summary>
         /// <returns>List of <see cref="Pizza"/> or empty if no pizza is present.</returns>
         public List<Pizza> GetPizzas();
-        
+
         /// <summary>
         /// Get <see cref="Topping"/> by id.
         /// </summary>

@@ -3,21 +3,27 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PizzeriaProjekt.Meals.Model
 {
-    internal class PizzaCrust
+    internal class PizzaSize
     {
-        [Column("CrustId")]
+        [Key]
+        [Column("PizzaSizeId")]
         public long Id { get; set; }
 
         [Column("Name")]
-        public CrustType Name { get; set; }
+        public SizeType Name { get; set; }
+
+        [Column("Diameter")]
+        public int DiameterCentimeters { get; set; }
 
         [Column("BasePrice", TypeName = "decimal(15,2)")]
         [DataType(DataType.Currency)]
         public decimal BasePrice { get; set; }
 
-        internal enum CrustType
+        internal enum SizeType
         {
-            THIN, THICK
+            SMALL = 20,
+            MEDIUM = 30,
+            LARGE = 50
         }
     }
 }

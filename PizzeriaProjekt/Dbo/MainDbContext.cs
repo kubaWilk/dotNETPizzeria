@@ -18,7 +18,6 @@ namespace PizzeriaProjekt.Dbo
         public DbSet<Meal> Meals { get; set; }
         public DbSet<Topping> Toppings { get; set; }
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Meal>().ToTable("Meals");

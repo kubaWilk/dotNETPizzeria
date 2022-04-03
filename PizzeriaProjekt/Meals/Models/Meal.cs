@@ -5,6 +5,7 @@ namespace PizzeriaProjekt.Meals
 {
     internal abstract class Meal
     {
+        [Key]
         [Column("MealId")]
         public long Id { get; set; }
 

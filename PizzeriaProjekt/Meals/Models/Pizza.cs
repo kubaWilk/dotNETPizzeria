@@ -5,7 +5,7 @@ namespace PizzeriaProjekt.Meals
 {
     internal class Pizza : Meal
     {
-        public ICollection<PizzaTopping> PizzaToppings { get; set; }
+        public virtual ICollection<PizzaTopping> PizzaToppings { get; set; }
 
         [NotMapped]
         public PizzaSize Size { get; set; }

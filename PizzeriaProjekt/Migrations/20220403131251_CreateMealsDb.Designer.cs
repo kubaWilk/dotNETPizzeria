@@ -10,7 +10,7 @@ using PizzeriaProjekt.Dbo;
 namespace PizzeriaProjekt.Migrations
 {
     [DbContext(typeof(MainDbContext))]
-    [Migration("20220403091432_CreateMealsDb")]
+    [Migration("20220403131251_CreateMealsDb")]
     partial class CreateMealsDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

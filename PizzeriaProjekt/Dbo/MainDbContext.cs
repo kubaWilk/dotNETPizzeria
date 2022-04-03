@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PizzeriaProjekt.Model;
 using PizzeriaProjekt.Meals;
+using PizzeriaProjekt.Meals.Model;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace PizzeriaProjekt.Dbo
 {
@@ -35,7 +37,23 @@ namespace PizzeriaProjekt.Dbo
                 .WithMany(t => t.PizzaToppings)
                 .HasForeignKey(pt => pt.ToppingId);
 
-            // seeding
+            modelBuilder.Entity<PizzaCrust>()
+                .ToTable("PizzaCrusts")
+                .Property(pc => pc.Name)
+                .HasConversion(new EnumToStringConverter<PizzaCrust.CrustType>());
+
+            modelBuilder.Entity<PizzaSize>()
+                .ToTable("PizzaSizes")
+                .Property(ps => ps.Name)
+                .HasConversion(new EnumToStringConverter<PizzaSize.SizeType>());
+
+            SeedPizza(modelBuilder);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+        private static void SeedPizza(ModelBuilder modelBuilder)
+        {
             var pizzas = new[]
             {
                 new Pizza{Id = 1, Name = "Margherita", BasePrice = 20.00m},
@@ -56,10 +74,10 @@ namespace PizzeriaProjekt.Dbo
             var pizzaToppings = new[]
             {
                 new PizzaTopping{MealId = pizzas[0].Id, ToppingId = toppings[0].Id},
-                
+
                 new PizzaTopping{MealId = pizzas[1].Id, ToppingId = toppings[0].Id},
                 new PizzaTopping{MealId = pizzas[1].Id, ToppingId = toppings[1].Id},
-                
+
                 new PizzaTopping{MealId = pizzas[2].Id, ToppingId = toppings[0].Id},
                 new PizzaTopping{MealId = pizzas[2].Id, ToppingId = toppings[3].Id},
                 new PizzaTopping{MealId = pizzas[2].Id, ToppingId = toppings[4].Id},
@@ -69,11 +87,24 @@ namespace PizzeriaProjekt.Dbo
                 new PizzaTopping{MealId = pizzas[3].Id, ToppingId = toppings[4].Id}
             };
 
+            var pizzaCrusts = new[]
+            {
+                new PizzaCrust{Id = 1, Name = PizzaCrust.CrustType.THIN, BasePrice = 0.0m},
+                new PizzaCrust{Id = 2, Name = PizzaCrust.CrustType.THICK, BasePrice = 2.0m}
+            };
+
+            var pizzaSizes = new[]
+            {
+                new PizzaSize{Id = 1, Name = PizzaSize.SizeType.SMALL, DiameterCentimeters = (int)PizzaSize.SizeType.SMALL, BasePrice = 0.0m },
+                new PizzaSize{Id = 2, Name = PizzaSize.SizeType.MEDIUM, DiameterCentimeters = (int)PizzaSize.SizeType.MEDIUM, BasePrice = 8.0m },
+                new PizzaSize{Id = 3, Name = PizzaSize.SizeType.LARGE, DiameterCentimeters = (int)PizzaSize.SizeType.LARGE, BasePrice = 18.0m }
+            };
+
             modelBuilder.Entity<Pizza>().HasData(pizzas);
             modelBuilder.Entity<Topping>().HasData(toppings);
             modelBuilder.Entity<PizzaTopping>().HasData(pizzaToppings);
-
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<PizzaCrust>().HasData(pizzaCrusts);
+            modelBuilder.Entity<PizzaSize>().HasData(pizzaSizes);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

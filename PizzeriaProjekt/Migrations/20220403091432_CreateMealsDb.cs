@@ -25,13 +25,44 @@ namespace PizzeriaProjekt.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     BasePrice = table.Column<decimal>(type: "decimal(15,2)", nullable: false),
                     Discriminator = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Size = table.Column<int>(type: "int", nullable: true),
-                    DoughThickness = table.Column<int>(type: "int", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Meals", x => x.MealId);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "PizzaCrusts",
+                columns: table => new
+                {
+                    CrustId = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    BasePrice = table.Column<decimal>(type: "decimal(15,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PizzaCrusts", x => x.CrustId);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "PizzaSizes",
+                columns: table => new
+                {
+                    PizzaSizeId = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Diameter = table.Column<int>(type: "int", nullable: false),
+                    BasePrice = table.Column<decimal>(type: "decimal(15,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PizzaSizes", x => x.PizzaSizeId);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -78,13 +109,32 @@ namespace PizzeriaProjekt.Migrations
 
             migrationBuilder.InsertData(
                 table: "Meals",
-                columns: new[] { "MealId", "BasePrice", "Category", "Discriminator", "DoughThickness", "ImageUrl", "Name", "Size" },
+                columns: new[] { "MealId", "BasePrice", "Category", "Discriminator", "ImageUrl", "Name" },
                 values: new object[,]
                 {
-                    { 1L, 20.00m, 3, "Pizza", 0, null, "Margherita", 1 },
-                    { 2L, 23.00m, 3, "Pizza", 0, null, "Capricciosa", 1 },
-                    { 3L, 23.00m, 3, "Pizza", 0, null, "Japanelo", 1 },
-                    { 4L, 24.00m, 3, "Pizza", 0, null, "Hawaii", 1 }
+                    { 1L, 20.00m, 3, "Pizza", null, "Margherita" },
+                    { 2L, 23.00m, 3, "Pizza", null, "Capricciosa" },
+                    { 3L, 23.00m, 3, "Pizza", null, "Japanelo" },
+                    { 4L, 24.00m, 3, "Pizza", null, "Hawaii" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "PizzaCrusts",
+                columns: new[] { "CrustId", "BasePrice", "Name" },
+                values: new object[,]
+                {
+                    { 1L, 0.0m, "THIN" },
+                    { 2L, 2.0m, "THICK" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "PizzaSizes",
+                columns: new[] { "PizzaSizeId", "BasePrice", "Diameter", "Name" },
+                values: new object[,]
+                {
+                    { 1L, 0.0m, 20, "SMALL" },
+                    { 2L, 8.0m, 30, "MEDIUM" },
+                    { 3L, 18.0m, 50, "LARGE" }
                 });
 
             migrationBuilder.InsertData(
@@ -123,6 +173,12 @@ namespace PizzeriaProjekt.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "PizzaCrusts");
+
+            migrationBuilder.DropTable(
+                name: "PizzaSizes");
+
             migrationBuilder.DropTable(
                 name: "PizzaToppings");
 

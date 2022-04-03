@@ -53,6 +53,89 @@ namespace PizzeriaProjekt.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Meal");
                 });
 
+            modelBuilder.Entity("PizzeriaProjekt.Meals.Model.PizzaCrust", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnName("CrustId");
+
+                    b.Property<decimal>("BasePrice")
+                        .HasColumnType("decimal(15,2)")
+                        .HasColumnName("BasePrice");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PizzaCrusts", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            BasePrice = 0.0m,
+                            Name = "THIN"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            BasePrice = 2.0m,
+                            Name = "THICK"
+                        });
+                });
+
+            modelBuilder.Entity("PizzeriaProjekt.Meals.Model.PizzaSize", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnName("PizzaSizeId");
+
+                    b.Property<decimal>("BasePrice")
+                        .HasColumnType("decimal(15,2)")
+                        .HasColumnName("BasePrice");
+
+                    b.Property<int>("DiameterCentimeters")
+                        .HasColumnType("int")
+                        .HasColumnName("Diameter");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PizzaSizes", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            BasePrice = 0.0m,
+                            DiameterCentimeters = 20,
+                            Name = "SMALL"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            BasePrice = 8.0m,
+                            DiameterCentimeters = 30,
+                            Name = "MEDIUM"
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            BasePrice = 18.0m,
+                            DiameterCentimeters = 50,
+                            Name = "LARGE"
+                        });
+                });
+
             modelBuilder.Entity("PizzeriaProjekt.Meals.PizzaTopping", b =>
                 {
                     b.Property<long>("MealId")
@@ -193,14 +276,6 @@ namespace PizzeriaProjekt.Migrations
                 {
                     b.HasBaseType("PizzeriaProjekt.Meals.Meal");
 
-                    b.Property<int>("DoughThickness")
-                        .HasColumnType("int")
-                        .HasColumnName("DoughThickness");
-
-                    b.Property<int>("Size")
-                        .HasColumnType("int")
-                        .HasColumnName("Size");
-
                     b.HasDiscriminator().HasValue("Pizza");
 
                     b.HasData(
@@ -209,36 +284,28 @@ namespace PizzeriaProjekt.Migrations
                             Id = 1L,
                             BasePrice = 20.00m,
                             Category = 3,
-                            Name = "Margherita",
-                            DoughThickness = 0,
-                            Size = 1
+                            Name = "Margherita"
                         },
                         new
                         {
                             Id = 2L,
                             BasePrice = 23.00m,
                             Category = 3,
-                            Name = "Capricciosa",
-                            DoughThickness = 0,
-                            Size = 1
+                            Name = "Capricciosa"
                         },
                         new
                         {
                             Id = 3L,
                             BasePrice = 23.00m,
                             Category = 3,
-                            Name = "Japanelo",
-                            DoughThickness = 0,
-                            Size = 1
+                            Name = "Japanelo"
                         },
                         new
                         {
                             Id = 4L,
                             BasePrice = 24.00m,
                             Category = 3,
-                            Name = "Hawaii",
-                            DoughThickness = 0,
-                            Size = 1
+                            Name = "Hawaii"
                         });
                 });
 

@@ -38,7 +38,7 @@ namespace PizzeriaProjekt
         
             if (rulesBox.AutoCheck== true)
             {
-                rulesPanel.Hide();
+
             }
             else
             {
@@ -67,10 +67,12 @@ namespace PizzeriaProjekt
             else if (rulesBox.AutoCheck == true)
             {
                 rulesBox.AutoCheck = true;
-            
+             rulesPanel.Hide();
             }
         
         }
+
+       
     }
 }
   

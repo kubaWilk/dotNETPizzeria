@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PizzeriaProjekt.Meals
 {
-    internal class MealService : IMealService
+    internal class MealService : IMealQueryService
     {
         public List<Meal> GetMeals()
         {

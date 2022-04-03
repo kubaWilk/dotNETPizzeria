@@ -1,17 +1,20 @@
 ﻿namespace PizzeriaProjekt.Meals
 {
-    internal interface IMealService
+    /// <summary>
+    /// Defines a contract for querying the meals.
+    /// </summary>
+    internal interface IMealQueryService
     {
         /// <summary>
         /// Get all objects of type <see cref="Meal"/>.
         /// </summary>
-        /// <returns>List of <see cref="Meal"/> or empty if no meal is present</returns>
+        /// <returns>List of <see cref="Meal"/> or empty if no meal is present.</returns>
         public List<Meal> GetMeals();
         
         /// <summary>
         /// Get all objects of type <see cref="Pizza"/>.
         /// </summary>
-        /// <returns>List of <see cref="Pizza"/> or empty if no pizza is present</returns>
+        /// <returns>List of <see cref="Pizza"/> or empty if no pizza is present.</returns>
         public List<Pizza> GetPizzas();
         
         /// <summary>

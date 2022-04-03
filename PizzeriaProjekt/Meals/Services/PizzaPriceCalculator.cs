@@ -6,7 +6,6 @@ namespace PizzeriaProjekt.Meals
     {
         public decimal calculate(Meal meal)
         {
-            //if (meal.GetType().IsAssignableFrom(typeof(Pizza)))
             if (meal is Pizza)
             {
                 Pizza pizza = (Pizza)meal;

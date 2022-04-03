@@ -10,7 +10,7 @@ namespace PizzeriaProjekt.Meals.Model
         public long Id { get; set; }
 
         [Column("Name")]
-        public SizeType Name { get; set; }
+        public string Name { get; set; }
 
         [Column("Diameter")]
         public int DiameterCentimeters { get; set; }
@@ -19,11 +19,37 @@ namespace PizzeriaProjekt.Meals.Model
         [DataType(DataType.Currency)]
         public decimal BasePrice { get; set; }
 
-        internal enum SizeType
+        public static PizzaSize Small()
         {
-            SMALL = 20,
-            MEDIUM = 30,
-            LARGE = 50
+            return new PizzaSize
+            {
+                Id = 1,
+                Name = "Small",
+                DiameterCentimeters = 20,
+                BasePrice = 0.0m
+            };
+        }
+
+        public static PizzaSize Medium()
+        {
+            return new PizzaSize
+            {
+                Id = 2,
+                Name = "Medium",
+                DiameterCentimeters = 30,
+                BasePrice = 8.0m
+            };
+        }
+
+        public static PizzaSize Large()
+        {
+            return new PizzaSize
+            {
+                Id = 3,
+                Name = "Large",
+                DiameterCentimeters = 45,
+                BasePrice = 18.0m
+            };
         }
     }
 }

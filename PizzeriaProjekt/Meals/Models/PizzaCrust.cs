@@ -10,15 +10,30 @@ namespace PizzeriaProjekt.Meals.Model
         public long Id { get; set; }
 
         [Column("Name")]
-        public CrustType Name { get; set; }
+        public string Name { get; set; }
 
         [Column("BasePrice", TypeName = "decimal(15,2)")]
         [DataType(DataType.Currency)]
         public decimal BasePrice { get; set; }
 
-        internal enum CrustType
+        public static PizzaCrust Thin()
         {
-            THIN, THICK
+            return new PizzaCrust
+            {
+                Id = 1,
+                Name = "Thin",
+                BasePrice = 0.0m
+            };
+        }
+
+        public static PizzaCrust Thick()
+        {
+            return new PizzaCrust 
+            { 
+                Id = 2, 
+                Name = "Thick", 
+                BasePrice = 2.0m 
+            };
         }
     }
 }

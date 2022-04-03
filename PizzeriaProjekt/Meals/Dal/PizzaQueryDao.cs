@@ -15,10 +15,11 @@ namespace PizzeriaProjekt.Meals.Dal
 
         public List<Pizza> GetPizzas()
         {
-            List<Pizza> pizzas = _dbContext.Meals.OfType<Pizza>()
+            List <Pizza> pizzas = _dbContext.Meals.OfType<Pizza>()
                 .Include(pizza => pizza.PizzaToppings)
                 .ThenInclude(pizzaTopping => pizzaTopping.Topping)
                 .ToList();
+            
             return pizzas;
         }
 

@@ -2,7 +2,6 @@
 using PizzeriaProjekt.Model;
 using PizzeriaProjekt.Meals;
 using PizzeriaProjekt.Meals.Model;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace PizzeriaProjekt.Dbo
 {
@@ -35,16 +34,6 @@ namespace PizzeriaProjekt.Dbo
                 .HasOne(pt => pt.Topping)
                 .WithMany(t => t.PizzaToppings)
                 .HasForeignKey(pt => pt.ToppingId);
-
-            modelBuilder.Entity<PizzaCrust>()
-                .ToTable("PizzaCrusts")
-                .Property(pc => pc.Name)
-                .HasConversion(new EnumToStringConverter<PizzaCrust.CrustType>());
-
-            modelBuilder.Entity<PizzaSize>()
-                .ToTable("PizzaSizes")
-                .Property(ps => ps.Name)
-                .HasConversion(new EnumToStringConverter<PizzaSize.SizeType>());
 
             SeedPizza(modelBuilder);
 
@@ -88,15 +77,12 @@ namespace PizzeriaProjekt.Dbo
 
             var pizzaCrusts = new[]
             {
-                new PizzaCrust{Id = 1, Name = PizzaCrust.CrustType.THIN, BasePrice = 0.0m},
-                new PizzaCrust{Id = 2, Name = PizzaCrust.CrustType.THICK, BasePrice = 2.0m}
+                PizzaCrust.Thin(), PizzaCrust.Thick()
             };
 
             var pizzaSizes = new[]
             {
-                new PizzaSize{Id = 1, Name = PizzaSize.SizeType.SMALL, DiameterCentimeters = (int)PizzaSize.SizeType.SMALL, BasePrice = 0.0m },
-                new PizzaSize{Id = 2, Name = PizzaSize.SizeType.MEDIUM, DiameterCentimeters = (int)PizzaSize.SizeType.MEDIUM, BasePrice = 8.0m },
-                new PizzaSize{Id = 3, Name = PizzaSize.SizeType.LARGE, DiameterCentimeters = (int)PizzaSize.SizeType.LARGE, BasePrice = 18.0m }
+                PizzaSize.Small(), PizzaSize.Medium(), PizzaSize.Large()
             };
 
             modelBuilder.Entity<Pizza>().HasData(pizzas);

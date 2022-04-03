@@ -10,7 +10,7 @@ using PizzeriaProjekt.Dbo;
 namespace PizzeriaProjekt.Migrations
 {
     [DbContext(typeof(MainDbContext))]
-    [Migration("20220403131251_CreateMealsDb")]
+    [Migration("20220403144518_CreateMealsDb")]
     partial class CreateMealsDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,20 +73,20 @@ namespace PizzeriaProjekt.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PizzaCrusts", (string)null);
+                    b.ToTable("PizzaCrust");
 
                     b.HasData(
                         new
                         {
                             Id = 1L,
                             BasePrice = 0.0m,
-                            Name = "THIN"
+                            Name = "Thin"
                         },
                         new
                         {
                             Id = 2L,
                             BasePrice = 2.0m,
-                            Name = "THICK"
+                            Name = "Thick"
                         });
                 });
 
@@ -112,7 +112,7 @@ namespace PizzeriaProjekt.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PizzaSizes", (string)null);
+                    b.ToTable("PizzaSize");
 
                     b.HasData(
                         new
@@ -120,21 +120,21 @@ namespace PizzeriaProjekt.Migrations
                             Id = 1L,
                             BasePrice = 0.0m,
                             DiameterCentimeters = 20,
-                            Name = "SMALL"
+                            Name = "Small"
                         },
                         new
                         {
                             Id = 2L,
                             BasePrice = 8.0m,
                             DiameterCentimeters = 30,
-                            Name = "MEDIUM"
+                            Name = "Medium"
                         },
                         new
                         {
                             Id = 3L,
                             BasePrice = 18.0m,
-                            DiameterCentimeters = 50,
-                            Name = "LARGE"
+                            DiameterCentimeters = 45,
+                            Name = "Large"
                         });
                 });
 

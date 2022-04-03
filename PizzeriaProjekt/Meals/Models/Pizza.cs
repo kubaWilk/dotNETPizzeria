@@ -16,6 +16,8 @@ namespace PizzeriaProjekt.Meals
         public Pizza()
         {
             Category = Category.ITALIAN | Category.PIZZA;
+            Size = PizzaSize.Small();
+            Crust = PizzaCrust.Thin();
         }
     }
 }

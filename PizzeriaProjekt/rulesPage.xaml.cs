@@ -17,11 +17,6 @@ using Point = System.Windows.Point;
 
 namespace PizzeriaProjekt
 {
-
-
-   
-
-
     public partial class rulesPage : Page
     {
         

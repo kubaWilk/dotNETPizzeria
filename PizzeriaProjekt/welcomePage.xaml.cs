@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace PizzeriaProjekt
 {
-    /// <summary>
-    /// Interaction logic for welcomePage.xaml
-    /// </summary>
     public partial class welcomePage : Page
     {
         public welcomePage()

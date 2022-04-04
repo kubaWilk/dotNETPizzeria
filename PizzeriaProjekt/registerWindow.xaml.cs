@@ -15,9 +15,7 @@ using System.Windows.Navigation;
 
 namespace PizzeriaProjekt
 {
-    /// <summary>
-    /// Interaction logic for registerWindow.xaml
-    /// </summary>
+
     public partial class registerWindow : Window
     {
       

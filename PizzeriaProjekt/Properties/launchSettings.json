@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "PizzeriaProjekt": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNETPIZZERIA_DATABASE_PASSWORD": "mysql",
+        "DOTNETPIZZERIA_DATABASE_USER": "mysql",
+        "DOTNETPIZZERIA_DATABASE_NAME": "dotnet_pizzeria",
+        "DOTNETPIZZERIA_DATABASE_HOST": "127.0.0.1",
+        "DOTNETPIZZERIA_DATABASE_PORT": "3306"
+      }
+    }
+  }
+}

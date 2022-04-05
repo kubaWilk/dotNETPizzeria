@@ -1,4 +1,5 @@
 ﻿using PizzeriaProjekt.Dbo;
+using PizzeriaProjekt.Exceptions;
 using PizzeriaProjekt.Model;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,52 @@ namespace PizzeriaProjekt.DB
         private MainDbContext context = new MainDbContext();
         public User? GetUserByLogin(string login)
         {
-            return context.Users.FirstOrDefault(x => x.Login == login);
+            using (context)
+            {
+                try
+                {
+                    return context.Users.FirstOrDefault(x => x.Login == login);
+                }catch (NullReferenceException e)
+                {
+                    throw new UserNotFoundException();
+                }
+            }
         }
 
-        public Object? Save(User user)
+        public void Save(User user)
         {
-            context.Users.Add(user);
-            return context.SaveChanges();
+            using (context)
+            {
+                context.Users.Add(user);
+                context.SaveChanges();
+            }
+        }
+
+        public void Update(User user)
+        {
+            using (context)
+            {
+                try
+                {
+                    var DbUser = context.Users
+                        .First(x => x.Id == user.Id);
+
+                    DbUser.Password = user.Password;
+                    DbUser.FirstName = user.FirstName;
+                    DbUser.LastName = user.LastName;
+                    DbUser.Birtday = user.Birtday;
+                    DbUser.PhoneNumber = user.PhoneNumber;
+                    DbUser.Street = user.Street;
+                    DbUser.City = user.City;
+                    DbUser.PostCode = user.PostCode;
+
+                    context.SaveChanges();
+                }
+                catch (NullReferenceException e)
+                {
+                    throw new UserNotFoundException();
+                }
+            }   
         }
     }
 }

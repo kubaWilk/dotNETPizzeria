@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzeriaProjekt.Meals;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,20 @@ namespace PizzeriaProjekt
     /// </summary>
     public partial class dataPage : Page
     {
+
+        MealFacade meals = new MealFacade();
         public dataPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+      
+              
+
+            
+            
         }
     }
 }

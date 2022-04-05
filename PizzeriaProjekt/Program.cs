@@ -34,7 +34,7 @@ namespace PizzeriaProjekt
         {
 
 #line 5 "..\..\..\App.xaml"
-            this.StartupUri = new System.Uri("loginWindow.xaml", System.UriKind.Relative);
+            this.StartupUri = new System.Uri("./LoginWindow/loginWindow.xaml", System.UriKind.Relative);
 
 
         }

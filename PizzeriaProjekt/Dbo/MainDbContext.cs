@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PizzeriaProjekt.Model;
+using PizzeriaProjekt.Users.Dal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,14 @@ namespace PizzeriaProjekt.Dbo
         {
             var connectionString = @"Server=127.0.0.1;Port=3306;Database=pizzaDB;Uid=root;Pwd=root;";
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new UserDbConfiguration());
+
+            UserDbInitializer.SeedUser(modelBuilder);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -11,10 +11,9 @@ namespace PizzeriaProjekt.DB
 {
     internal class UserDal
     {
-        private MainDbContext context = new MainDbContext();
         public User? GetUserByLogin(string login)
         {
-            using (context)
+            using (var context = new MainDbContext())
             {
                 try
                 {
@@ -28,7 +27,7 @@ namespace PizzeriaProjekt.DB
 
         public void Save(User user)
         {
-            using (context)
+            using (var context = new MainDbContext())
             {
                 context.Users.Add(user);
                 context.SaveChanges();
@@ -37,7 +36,7 @@ namespace PizzeriaProjekt.DB
 
         public void Update(User user)
         {
-            using (context)
+            using (var context = new MainDbContext())
             {
                 try
                 {

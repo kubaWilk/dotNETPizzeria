@@ -5,22 +5,23 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PizzeriaProjekt.Migrations
 {
-    public partial class User : Migration
+    public partial class UsersAndMealsMerge : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "Name",
-                table: "Users",
-                newName: "Street");
-
             migrationBuilder.AddColumn<DateTime>(
-                name: "Birtday",
+                name: "Birthday",
                 table: "Users",
                 type: "datetime(6)",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
+            migrationBuilder.RenameColumn(
+                name: "Name",
+                newName: "Login",
+                table: "Users"
+                );
+
             migrationBuilder.AddColumn<string>(
                 name: "City",
                 table: "Users",
@@ -43,13 +44,6 @@ namespace PizzeriaProjekt.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.AddColumn<string>(
-                name: "Login",
-                table: "Users",
-                type: "longtext",
-                nullable: false)
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.AddColumn<string>(
                 name: "PhoneNumber",
                 table: "Users",
                 type: "longtext",
@@ -62,12 +56,29 @@ namespace PizzeriaProjekt.Migrations
                 type: "longtext",
                 nullable: false)
                 .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.AddColumn<string>(
+                name: "Street",
+                table: "Users",
+                type: "longtext",
+                nullable: false)
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Birthday", "City", "FirstName", "LastName", "Login", "Password", "PhoneNumber", "PostCode", "Street" },
+                values: new object[] { 1, new DateTime(1990, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Default", "Jan", "Nowak", "test", "test", "732121245", "Default", "Default" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DeleteData(
+                table: "Users",
+                keyColumn: "Id",
+                keyValue: 1);
+
             migrationBuilder.DropColumn(
-                name: "Birtday",
+                name: "Birthday",
                 table: "Users");
 
             migrationBuilder.DropColumn(
@@ -83,10 +94,6 @@ namespace PizzeriaProjekt.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "Login",
-                table: "Users");
-
-            migrationBuilder.DropColumn(
                 name: "PhoneNumber",
                 table: "Users");
 
@@ -94,10 +101,15 @@ namespace PizzeriaProjekt.Migrations
                 name: "PostCode",
                 table: "Users");
 
-            migrationBuilder.RenameColumn(
+            migrationBuilder.DropColumn(
                 name: "Street",
-                table: "Users",
-                newName: "Name");
+                table: "Users");
+
+            migrationBuilder.RenameColumn(
+                name: "Login",
+                newName: "Name",
+                table: "Users"
+                );
         }
     }
 }

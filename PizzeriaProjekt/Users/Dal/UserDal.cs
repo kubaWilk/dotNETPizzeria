@@ -18,7 +18,8 @@ namespace PizzeriaProjekt.DB
                 try
                 {
                     return context.Users.FirstOrDefault(x => x.Login == login);
-                }catch (NullReferenceException e)
+                }
+                catch (NullReferenceException e)
                 {
                     throw new UserNotFoundException();
                 }
@@ -46,7 +47,7 @@ namespace PizzeriaProjekt.DB
                     DbUser.Password = user.Password;
                     DbUser.FirstName = user.FirstName;
                     DbUser.LastName = user.LastName;
-                    DbUser.Birtday = user.Birtday;
+                    DbUser.Birthday = user.Birthday;
                     DbUser.PhoneNumber = user.PhoneNumber;
                     DbUser.Street = user.Street;
                     DbUser.City = user.City;
@@ -58,7 +59,7 @@ namespace PizzeriaProjekt.DB
                 {
                     throw new UserNotFoundException();
                 }
-            }   
+            }
         }
     }
 }

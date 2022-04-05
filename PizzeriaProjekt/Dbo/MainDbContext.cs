@@ -28,7 +28,9 @@ namespace PizzeriaProjekt.Dbo
             modelBuilder.ApplyConfiguration(new MealDbConfiguration());
             modelBuilder.ApplyConfiguration(new ToppingDbConfiguration());
             modelBuilder.ApplyConfiguration(new PizzaToppingDbConfiguration());
+            modelBuilder.ApplyConfiguration(new UserDbConfiguration());
 
+            UserDbInitializer.SeedUser(modelBuilder);
             MealDbInitializer.SeedPizza(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
@@ -70,14 +72,6 @@ namespace PizzeriaProjekt.Dbo
                 $"Pwd={databasePassword};";
 
             return connectionString;
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfiguration(new UserDbConfiguration());
-
-            UserDbInitializer.SeedUser(modelBuilder);
-            base.OnModelCreating(modelBuilder);
         }
     }
 }

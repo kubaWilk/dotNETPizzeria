@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PizzeriaProjekt.Dbo;
 
@@ -10,9 +11,10 @@ using PizzeriaProjekt.Dbo;
 namespace PizzeriaProjekt.Migrations
 {
     [DbContext(typeof(MainDbContext))]
-    partial class MainDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220405200957_UsersAndMealsMerge")]
+    partial class UsersAndMealsMerge
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -261,7 +263,7 @@ namespace PizzeriaProjekt.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Birthday")
-                        .HasColumnType("Date");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -308,9 +310,9 @@ namespace PizzeriaProjekt.Migrations
                             FirstName = "Jan",
                             LastName = "Nowak",
                             Login = "test",
-                            Password = "TurboHard!23",
+                            Password = "test",
                             PhoneNumber = "732121245",
-                            PostCode = "65-001",
+                            PostCode = "Default",
                             Street = "Default"
                         });
                 });

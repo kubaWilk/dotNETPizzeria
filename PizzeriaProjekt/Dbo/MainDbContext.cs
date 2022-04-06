@@ -2,6 +2,12 @@
 using PizzeriaProjekt.Model;
 using PizzeriaProjekt.Meals;
 using PizzeriaProjekt.Meals.Dal;
+using PizzeriaProjekt.Users.Dal;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PizzeriaProjekt.Dbo
 {
@@ -22,11 +28,14 @@ namespace PizzeriaProjekt.Dbo
             modelBuilder.ApplyConfiguration(new MealDbConfiguration());
             modelBuilder.ApplyConfiguration(new ToppingDbConfiguration());
             modelBuilder.ApplyConfiguration(new PizzaToppingDbConfiguration());
+            modelBuilder.ApplyConfiguration(new UserDbConfiguration());
 
+            UserDbInitializer.SeedUser(modelBuilder);
             MealDbInitializer.SeedPizza(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
         }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

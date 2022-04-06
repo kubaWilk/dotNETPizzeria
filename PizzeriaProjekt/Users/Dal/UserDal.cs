@@ -57,7 +57,7 @@ namespace PizzeriaProjekt.DB
                 }
                 catch (NullReferenceException e)
                 {
-                    throw new UserNotFoundException();
+                    throw new UserNotLoggedIn();
                 }
             }
         }

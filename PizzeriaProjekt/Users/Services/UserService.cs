@@ -1,6 +1,7 @@
 ﻿using PizzeriaProjekt.DB;
 using PizzeriaProjekt.Exceptions;
 using PizzeriaProjekt.Model;
+using PizzeriaProjekt.Users.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace PizzeriaProjekt.Service
     internal class UserService
     {
         private UserDal userDal = new UserDal();
+        private object currentUserContainer;
 
         /// <summary>
         /// Returns true when User has been properly logged in, returns false when password is wrong. 
@@ -51,6 +53,24 @@ namespace PizzeriaProjekt.Service
             else
             {
                 throw new UserAlreadyExistsException();
+            }
+        }
+        
+        /// <summary>
+        /// A method for updating logged in user. It should be used to save changes made to currentLoggedInUser during the session to the DB.
+        /// </summary>
+        /// <exception cref="UserNotLoggedInException">Thrown when currentLoggedInUser is null</exception>
+        public void UpdateCurrentUser()
+        {
+            var currentUser = CurrentUserContainer.s_currentUser;
+
+            if (userDal.GetUserByLogin(currentUser.Login) != null)
+            {
+                userDal.Update(currentUser);
+            }
+            else
+            {
+                throw new UserNotLoggedInException();
             }
         }
     }

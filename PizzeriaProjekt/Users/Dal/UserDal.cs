@@ -1,6 +1,7 @@
 ﻿using PizzeriaProjekt.Dbo;
 using PizzeriaProjekt.Exceptions;
 using PizzeriaProjekt.Model;
+using PizzeriaProjekt.Users.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace PizzeriaProjekt.DB
                 {
                     return context.Users.FirstOrDefault(x => x.Login == login);
                 }
-                catch (NullReferenceException e)
+                catch (NullReferenceException)
                 {
                     throw new UserNotFoundException();
                 }
@@ -39,26 +40,33 @@ namespace PizzeriaProjekt.DB
         {
             using (var context = new MainDbContext())
             {
-                try
-                {
-                    var DbUser = context.Users
-                        .First(x => x.Id == user.Id);
+                var DbUser = context.Users
+                    .First(x => x.Id == user.Id);
 
-                    DbUser.Password = user.Password;
-                    DbUser.FirstName = user.FirstName;
-                    DbUser.LastName = user.LastName;
-                    DbUser.Birthday = user.Birthday;
-                    DbUser.PhoneNumber = user.PhoneNumber;
-                    DbUser.Street = user.Street;
-                    DbUser.City = user.City;
-                    DbUser.PostCode = user.PostCode;
+                if (DbUser == null) throw new UserNotFoundException();
 
-                    context.SaveChanges();
-                }
-                catch (NullReferenceException e)
-                {
-                    throw new UserNotLoggedIn();
-                }
+                DbUser.Password = user.Password;
+                DbUser.FirstName = user.FirstName;
+                DbUser.LastName = user.LastName;
+                DbUser.Birthday = user.Birthday;
+                DbUser.PhoneNumber = user.PhoneNumber;
+                DbUser.Street = user.Street;
+                DbUser.City = user.City;
+                DbUser.PostCode = user.PostCode;
+
+                context.SaveChanges();
+            }
+        }
+
+        public void Delete(User user)
+        {
+            using (var context = new MainDbContext())
+            {
+                var DbUser = context.Users.First(x => x.Login == user.Login);
+
+                if (DbUser == null) throw new UserNotFoundException();
+
+                context.Users.Remove(DbUser);
             }
         }
     }

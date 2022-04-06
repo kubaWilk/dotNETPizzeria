@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 
@@ -48,12 +49,35 @@ namespace PizzeriaProjekt.Service
         public void Register(User user)
         {
             if (userDal.GetUserByLogin(user.Login) == null) {
+                checkUserData(user);
                 userDal.Save(user);
             }
             else
             {
                 throw new UserAlreadyExistsException();
             }
+        }
+
+        private void checkUserData(User user)
+        {
+            Regex LoginRegex = new Regex(@"(\w{1,}\d*)");
+            Regex PasswordRegex = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$");
+            Regex FirstNameRegex = new Regex(@"((\w+)(\s*))*");
+            Regex LastNameRegex = new Regex(@"((\w+)(\s*))*");
+            Regex PhoneNumberRegex = new Regex(@"([+(\d]{1})(([\d+() -.]){5,16})([+(\d]{1})");
+            Regex StreetRegex = new Regex(@"([^!@#$%^&*()_+-=]+)([a-ż ]+\s?)(\d{0,3})(\s?\S{2,})");
+            Regex CityRegex = new Regex(@"([^!@#$%^&*()_+-=]+)([a-ż ]+\s?)");
+            Regex PostCodeRegex = new Regex(@"[0-9]{2}[-][0-9]{3}");
+
+
+            if (!LoginRegex.IsMatch(user.Login)) throw new InvalidDataException("Wrong login format");
+            if (!PasswordRegex.IsMatch(user.Password)) throw new InvalidDataException("Wrong password format");
+            if (!FirstNameRegex.IsMatch(user.FirstName)) throw new InvalidDataException("rong first name format");
+            if (!LastNameRegex.IsMatch(user.LastName)) throw new InvalidDataException("Wrong last name format");
+            if (!PhoneNumberRegex.IsMatch(user.PhoneNumber)) throw new InvalidDataException("Wrong phone number format");
+            if (!StreetRegex.IsMatch(user.Street)) throw new InvalidDataException("Wrong street format");
+            if (!CityRegex.IsMatch(user.City)) throw new InvalidDataException("Wrong city format");
+            if (!PostCodeRegex.IsMatch(user.PostCode)) throw new InvalidDataException("Wrong post code format");
         }
         
         /// <summary>

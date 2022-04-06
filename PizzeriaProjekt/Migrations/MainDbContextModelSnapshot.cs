@@ -261,7 +261,7 @@ namespace PizzeriaProjekt.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Birthday")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("Date");
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -308,9 +308,9 @@ namespace PizzeriaProjekt.Migrations
                             FirstName = "Jan",
                             LastName = "Nowak",
                             Login = "test",
-                            Password = "test",
+                            Password = "TurboHard!23",
                             PhoneNumber = "732121245",
-                            PostCode = "Default",
+                            PostCode = "65-001",
                             Street = "Default"
                         });
                 });

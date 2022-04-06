@@ -11,8 +11,8 @@ using PizzeriaProjekt.Dbo;
 namespace PizzeriaProjekt.Migrations
 {
     [DbContext(typeof(MainDbContext))]
-    [Migration("20220406181055_UserRefactor")]
-    partial class UserRefactor
+    [Migration("20220406205245_UserRefactored")]
+    partial class UserRefactored
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -263,7 +263,7 @@ namespace PizzeriaProjekt.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Birthday")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("Date");
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -310,9 +310,9 @@ namespace PizzeriaProjekt.Migrations
                             FirstName = "Jan",
                             LastName = "Nowak",
                             Login = "test",
-                            Password = "test",
+                            Password = "TurboHard!23",
                             PhoneNumber = "732121245",
-                            PostCode = "Default",
+                            PostCode = "65-001",
                             Street = "Default"
                         });
                 });

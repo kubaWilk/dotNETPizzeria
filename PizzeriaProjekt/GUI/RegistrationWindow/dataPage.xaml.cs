@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzeriaProjekt.Meals;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,23 +16,32 @@ using System.Windows.Shapes;
 
 namespace PizzeriaProjekt
 {
-    public partial class welcomePage : Page
+    /// <summary>
+    /// Interaction logic for dataPage.xaml
+    /// </summary>
+    public partial class dataPage : Page
     {
-        public welcomePage()
+
+
+        MealFacade meals = new MealFacade();
+        public dataPage()
         {
             InitializeComponent();
         }
 
         private void goBack_Click(object sender, RoutedEventArgs e)
         {
-            var myWindow = Window.GetWindow(this);
-            myWindow.Close();
+            NavigationService.GoBack();
         }
 
-        private void ProceedButton__Click(object sender, RoutedEventArgs e)
+        private void Finish_Click(object sender, RoutedEventArgs e)
         {
-            rulesPage rulesPage = new rulesPage();
-            NavigationService.Navigate(rulesPage);
+
+            var myWindow = Window.GetWindow(this);
+            myWindow.Close();
+            System.Windows.MessageBox.Show( "Rejestracja przebiegła pomyślnie, możesz przejść do logowania", "Dziękujemy");
+
+
         }
     }
 }

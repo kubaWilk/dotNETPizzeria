@@ -1,0 +1,39 @@
+﻿<Page x:Class="PizzeriaProjekt.dataPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PizzeriaProjekt"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="dataPage">
+
+    <Grid Background="#FFEDE5E5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="153*"/>
+            <ColumnDefinition Width="494*"/>
+            <ColumnDefinition Width="153*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="111*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="82*"/>
+            <RowDefinition Height="24*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Finish" Content="Zarejestruj się " Margin="363,0,1,2" Grid.Column="1" Grid.Row="7" Height="36" VerticalAlignment="Bottom" Click="Finish_Click" />
+        <Button x:Name="goBack" Content="Powrót" Margin="0,0,364,2" Grid.Column="1" Grid.Row="7" Height="36" VerticalAlignment="Bottom" Click="goBack_Click" />
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="35" Width="130"  Grid.Column="1" Grid.Row="2" Margin="1,1,0,0" />
+        <TextBox Margin="363,1,1,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="35"  Grid.Column="1" Grid.Row="2" />
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="35" Width="130"  Grid.Column="1" Grid.Row="4" Margin="1,1,0,0" />
+        <TextBox TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="35"  Grid.Column="1" Grid.Row="4" Margin="363,1,1,0" />
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="35" Width="130"  Grid.Column="1" Grid.Row="6" Margin="0,1,0,0" />
+        <TextBox TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="35"  Grid.Column="1" Grid.Row="6" Margin="363,1,1,0" />
+        <TextBox Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Już tylko 1 krok dzieli Cię od dołączenia do klubu smakoszy pysznej pizzy" VerticalAlignment="Top" Width="492" IsReadOnly="True" Height="52" FontSize="18" Background="{x:Null}" TextAlignment="Center" Margin="0,17,0,0" BorderBrush="{x:Null}"/>
+        <Label Grid.Column="1" Content="Wypełnij poniższy formularz aby przejść zakońćzyć proces rejestracji" Margin="32,78,32,0" VerticalAlignment="Top" FontSize="14"/>
+    </Grid>
+</Page>

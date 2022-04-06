@@ -24,10 +24,12 @@
             <RowDefinition Height="57*"/>
             <RowDefinition Height="124*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="loginBox" Margin="81,164,80,24" TextWrapping="Wrap" Grid.ColumnSpan="3"/>
-        <TextBox x:Name="passwordBox" TextWrapping="Wrap" Grid.Row="1" Margin="80,6,3,14" Grid.ColumnSpan="2"/>
-        <Button x:Name="passwordButton" Content=" Nie pamiętam hasla" Grid.Row="3" VerticalAlignment="Top" Height="37" HorizontalAlignment="Center" Width="159" Margin="0,53,0,0" FontSize="10" Grid.Column="1"/>
-        <Button x:Name="loginButton" Content="Zaloguj się!" Grid.Row="2" VerticalAlignment="Center" Height="40" Grid.Column="1" HorizontalAlignment="Center" Width="162" Click="loginButton_Click" />
-        <Button x:Name="registerButton" Grid.Column="1" Content="Zarejestruj się!" HorizontalAlignment="Center" Margin="0,6,0,0" Grid.Row="3" VerticalAlignment="Top" Width="159" Height="38" Click="registerButton_Click"/>
+        <TextBox x:Name="loginBox" Margin="80,164,81,24" TextWrapping="Wrap" Grid.ColumnSpan="3" mah:TextBoxHelper.Watermark="Login"/>
+        <TextBox x:Name="passwordBox" TextWrapping="Wrap" Grid.Row="1" Margin="81,6,2,14" Grid.ColumnSpan="2"/>
+        <Button x:Name="passwordButton" Content=" Nie pamiętam hasla" Grid.Row="3" VerticalAlignment="Top" Height="37" HorizontalAlignment="Center" Width="159" Margin="0,53,0,0" Grid.Column="1"/>
+        <Button x:Name="loginButton" Content="Zaloguj się!" Grid.Row="2" VerticalAlignment="Center" Height="40" Grid.Column="1" HorizontalAlignment="Center" Width="162" Click="loginButton_Click" FontSize="14" />
+        <Button x:Name="registerButton" Grid.Column="1" Content="Zarejestruj się!" HorizontalAlignment="Center" Margin="0,6,0,0" Grid.Row="3" VerticalAlignment="Top" Width="159" Height="38" Click="registerButton_Click" FontSize="14"/>
+        <Label Grid.Column="1" Content="Login" HorizontalAlignment="Left" Margin="0,132,0,0" VerticalAlignment="Top" Width="87" FontSize="18"/>
+        <Label Grid.Column="1" Content="Hasło" HorizontalAlignment="Left" Margin="0,200,0,0" VerticalAlignment="Top" Width="87" FontSize="18" Grid.RowSpan="2"/>
     </Grid>
 </mah:MetroWindow>

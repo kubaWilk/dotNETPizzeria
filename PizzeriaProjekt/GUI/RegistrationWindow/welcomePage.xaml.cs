@@ -1,5 +1,4 @@
-﻿using PizzeriaProjekt.Meals;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,28 +12,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Brushes = System.Windows.Media.Brushes;
 
 namespace PizzeriaProjekt
 {
-    /// <summary>
-    /// Interaction logic for dataPage.xaml
-    /// </summary>
-    public partial class dataPage : Page
+    public partial class welcomePage : Page
     {
-
-        MealFacade meals = new MealFacade();
-        public dataPage()
+        public welcomePage()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void goBack_Click(object sender, RoutedEventArgs e)
         {
-      
-              
-
-            
-            
+            var myWindow = Window.GetWindow(this);
+            myWindow.Close();
         }
+
+        private void ProceedButton__Click(object sender, RoutedEventArgs e)
+        {
+            rulesPage rulesPage = new rulesPage();
+            NavigationService.Navigate(rulesPage);
+        }
+
+  
     }
 }

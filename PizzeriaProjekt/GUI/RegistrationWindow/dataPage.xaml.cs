@@ -1,4 +1,4 @@
-﻿using PizzeriaProjekt.Meals;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace PizzeriaProjekt
 {
@@ -20,10 +20,7 @@ namespace PizzeriaProjekt
     /// Interaction logic for dataPage.xaml
     /// </summary>
     public partial class dataPage : Page
-    {
-
-
-        MealFacade meals = new MealFacade();
+    { 
         public dataPage()
         {
             InitializeComponent();

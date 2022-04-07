@@ -12,11 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
-
+using MahApps.Metro.Controls;
 namespace PizzeriaProjekt
 {
 
-    public partial class registerWindow : Window
+    public partial class registerWindow : MetroWindow
     {
       
         public registerWindow()

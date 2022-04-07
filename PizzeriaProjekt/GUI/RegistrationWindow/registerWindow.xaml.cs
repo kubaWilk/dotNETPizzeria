@@ -28,6 +28,9 @@ namespace PizzeriaProjekt
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             RulesFrame.Content = new welcomePage();
+
+            TitleBarHeight = 20;
+            WindowTitleBrush = new SolidColorBrush(Colors.White);
         }
 
         private void finishRegister_Click(object sender, RoutedEventArgs e)

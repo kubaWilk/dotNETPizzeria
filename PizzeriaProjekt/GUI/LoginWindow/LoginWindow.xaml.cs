@@ -23,6 +23,7 @@ namespace PizzeriaProjekt
         public loginWindow()
         {
             InitializeComponent();
+            TitleBarHeight = 20;
         }
      
         private void loginButton_Click(object sender, RoutedEventArgs e)

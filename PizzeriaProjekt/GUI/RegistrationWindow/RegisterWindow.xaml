@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="registerWindow" Height="514" Width="850" Loaded="Window_Loaded" Closing="Window_Closing" >
     <Grid>
-        <Frame x:Name="RulesFrame" Content="" Margin="0,30,0,-1" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="RulesFrame" Content="" Margin="0,0,0,0" NavigationUIVisibility="Hidden"/>
 
 
 

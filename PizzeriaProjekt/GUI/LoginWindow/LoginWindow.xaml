@@ -24,6 +24,7 @@
             <RowDefinition Height="57*"/>
             <RowDefinition Height="124*"/>
         </Grid.RowDefinitions>
+
      
         <TextBox x:Name="loginBox" Margin="80,164,81,24" TextWrapping="Wrap" Grid.ColumnSpan="3" mah:TextBoxHelper.Watermark="Login"/>
         <TextBox x:Name="passwordBox" TextWrapping="Wrap" Grid.Row="1" Margin="81,6,2,14" Grid.ColumnSpan="2" mah:TextBoxHelper.Watermark="login" mah:TextBoxHelper.UseFloatingWatermark="True"/>

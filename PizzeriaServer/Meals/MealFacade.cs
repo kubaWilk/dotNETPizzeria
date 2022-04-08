@@ -3,6 +3,10 @@ using PizzeriaServer.Meals.Services;
 
 namespace PizzeriaServer.Meals
 {
+    /// <summary>
+    /// Facade service that aggregates and exposes all methods for querying
+    /// or mutating <see cref="Meal"/>s state.
+    /// </summary>
     public class MealFacade
     {
         private readonly IMealService _mealService;
@@ -17,12 +21,20 @@ namespace PizzeriaServer.Meals
             _mealPriceService.RegisterPriceCalculator(new PizzaPriceCalculator(), typeof(Pizza));
         }
 
+        /// <summary>
+        /// Get all <see cref="Meal"/>s.
+        /// </summary>
+        /// <returns>List of <see cref="Meal"/> or empty if no meal is present.</returns>
         public List<Meal> GetMeals()
         {
             List<Meal> meals = _mealService.GetMeals();
             return meals;
         }
 
+        /// <summary>
+        /// Get all <see cref="Pizza"/>s.
+        /// </summary>
+        /// <returns>List of <see cref="Pizza"/> or empty if no pizza is present.</returns>
         public List<Pizza> GetPizzas()
         {
             List<Pizza> pizzas = _pizzaService.GetPizzas();
@@ -32,12 +44,23 @@ namespace PizzeriaServer.Meals
             return pizzas;
         }
 
+        /// <summary>
+        /// Get all associated toppings with pizza.
+        /// </summary>
+        /// <param name="pizzaId">Pizza's Id</param>
+        /// <returns>List of <see cref="Topping"></see> or empty list of there's 
+        /// no associated toppings with given pizza.</returns>
         public List<Topping> GetToppingsForPizza(long pizzaId)
         {
             List<Topping> toppings = _pizzaService.GetToppingsForPizza(pizzaId);
             return toppings;
         }
 
+        /// <summary>
+        /// Get <see cref="Topping"/> by id.
+        /// </summary>
+        /// <param name="toppingId">Topping's Id</param>
+        /// <returns></returns>
         public Topping GetToppingById(long toppingId)
         {
             Topping topping = _pizzaService.GetToppingById(toppingId);

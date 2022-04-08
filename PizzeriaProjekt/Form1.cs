@@ -39,9 +39,6 @@ namespace PizzeriaProjekt
         MealFacade mealsFacade = new MealFacade();
         private void button1_Click(object sender, EventArgs e)
         {
-            string pic = "../../../margarita.jpg";
-            ShowMyImage(pic, 20, 20);
-            
             List<Pizza> pizzas = mealsFacade.GetPizzas();
             pizzas.ForEach(pizza =>
             {
@@ -49,14 +46,5 @@ namespace PizzeriaProjekt
                 this.pizzaBox.Items.Add(entry);
             });
         }
-
-        private void ShowMyImage(string fileToDisplay, int xSize, int ySize)
-        {
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.Image = Image.FromFile(fileToDisplay);
-            //pictureBox2.ClientSize = new Size(xSize, ySize);
-            //pictureBox2.Image = new Bitmap(fileToDisplay); ;
-        }
     }
-    
 }

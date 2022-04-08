@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PizzeriaServer.Meals;
 using PizzeriaServer.Meals.Dal;
+using PizzeriaServer.Model;
+using PizzeriaServer.Users.Dal;
 
 namespace PizzeriaServer.Dbo
 {
@@ -12,6 +14,7 @@ namespace PizzeriaServer.Dbo
         public const string DATABASE_USER = "DOTNETPIZZERIA_DATABASE_USER";
         public const string DATABASE_PASSWORD = "DOTNETPIZZERIA_DATABASE_PASSWORD";
 
+        public DbSet<User> Users { get; set; }
         public DbSet<Meal> Meals { get; set; }
         public DbSet<Topping> Toppings { get; set; }
 
@@ -20,11 +23,14 @@ namespace PizzeriaServer.Dbo
             modelBuilder.ApplyConfiguration(new MealDbConfiguration());
             modelBuilder.ApplyConfiguration(new ToppingDbConfiguration());
             modelBuilder.ApplyConfiguration(new PizzaToppingDbConfiguration());
+            modelBuilder.ApplyConfiguration(new UserDbConfiguration());
 
+            UserDbInitializer.SeedUser(modelBuilder);
             MealDbInitializer.SeedPizza(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
         }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -1,15 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>True</UseWPF>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\PizzeriaServer\PizzeriaServer.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Remove="Rules.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="Rules.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PizzeriaServer\PizzeriaServer.csproj" />
+    </ItemGroup>
 
 </Project>

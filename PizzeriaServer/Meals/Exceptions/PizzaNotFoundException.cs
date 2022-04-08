@@ -1,7 +1,7 @@
 ﻿namespace PizzeriaServer.Meals
 {
     [Serializable]
-    internal class PizzaNotFoundException : Exception
+    public class PizzaNotFoundException : Exception
     {
         public PizzaNotFoundException(string? message) : base(message)
         {

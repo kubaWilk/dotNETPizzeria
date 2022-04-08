@@ -1,7 +1,7 @@
 ﻿namespace PizzeriaServer.Meals
 {
     [Serializable]
-    internal class ToppingNotFoundException : Exception
+    public class ToppingNotFoundException : Exception
     {
         public ToppingNotFoundException(string? message) : base(message)
         {

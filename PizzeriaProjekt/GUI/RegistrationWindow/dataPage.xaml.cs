@@ -1,6 +1,5 @@
 ﻿
-using PizzeriaProjekt.Model;
-using PizzeriaProjekt.Service;
+using PizzeriaServer.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;

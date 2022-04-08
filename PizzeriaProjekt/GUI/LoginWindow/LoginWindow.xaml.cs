@@ -33,7 +33,7 @@ namespace PizzeriaProjekt
                 {
                     if (userService.LogIn(loginBox.Text, passwordBox.Text))
                     {
-                        System.Windows.MessageBox.Show($"Zapraszamy! {CurrentUserContainer.currentUser.Id} {CurrentUserContainer.currentUser.Login} {CurrentUserContainer.currentUser.Password} ");
+                        System.Windows.MessageBox.Show($"Zapraszamy! ");
                         Form MainMenu = new Form();
                         MainMenu.ShowDialog();
                     }

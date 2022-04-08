@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
-using PizzeriaProjekt.Service;
-using PizzeriaProjekt.Exceptions;
-using PizzeriaProjekt;
+using PizzeriaServer.Exceptions;
+using PizzeriaServer.Service;
+
 namespace PizzeriaProjekt
 {
     public partial class loginWindow :MetroWindow
@@ -69,13 +69,4 @@ namespace PizzeriaProjekt
        
         }
     }
-
-
 }
-    
-    
-    
-    
-    
-    
-    

@@ -42,6 +42,7 @@ namespace PizzeriaProjekt
         {
             loginWindow loginWindow = new loginWindow();
             loginWindow.Show();
+            App.Current.MainWindow.Close();
         }
     }
 }

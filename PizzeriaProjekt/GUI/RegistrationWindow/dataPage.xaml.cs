@@ -1,4 +1,6 @@
 ﻿
+using PizzeriaProjekt.Model;
+using PizzeriaProjekt.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +23,7 @@ namespace PizzeriaProjekt
     /// </summary>
     public partial class dataPage : Page
     { 
+        UserService Userservice= new UserService();
         public dataPage()
         {
             InitializeComponent();
@@ -34,9 +37,23 @@ namespace PizzeriaProjekt
         private void Finish_Click(object sender, RoutedEventArgs e)
         {
 
+            /*  User user = new User()
+            {
+                 Login = "",
+                 Password = "",
+                 FirstName = "test",
+                 LastName = "test",
+                 Birthday = new DateTime(),   need to finish this
+                 PhoneNumber = "",
+                 Street = "",
+                 City = "",
+                 PostCode = ""
+             };
+           
+            Userservice.Register(user);*/
             var myWindow = Window.GetWindow(this);
             myWindow.Close();
-            System.Windows.MessageBox.Show( "Rejestracja przebiegła pomyślnie, możesz przejść do logowania", "Dziękujemy");
+            System.Windows.MessageBox.Show( "Rejestracja przebiegła pomyślnie, możesz przejść do logowania Dziękujemy");
 
 
         }

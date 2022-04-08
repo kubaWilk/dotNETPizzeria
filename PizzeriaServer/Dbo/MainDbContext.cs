@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PizzeriaServer.Model;
 using PizzeriaServer.Meals;
 using PizzeriaServer.Meals.Dal;
 
@@ -13,7 +12,6 @@ namespace PizzeriaServer.Dbo
         public const string DATABASE_USER = "DOTNETPIZZERIA_DATABASE_USER";
         public const string DATABASE_PASSWORD = "DOTNETPIZZERIA_DATABASE_PASSWORD";
 
-        public DbSet<User> Users { get; set; }
         public DbSet<Meal> Meals { get; set; }
         public DbSet<Topping> Toppings { get; set; }
 

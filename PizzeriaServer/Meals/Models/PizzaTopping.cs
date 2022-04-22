@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PizzeriaServer.Meals
+namespace PizzeriaServer.Meals.Models
 {
     public class PizzaTopping
     {

@@ -1,4 +1,4 @@
-﻿namespace PizzeriaServer.Meals
+﻿namespace PizzeriaServer.Meals.Exceptions
 {
     [Serializable]
     public class PizzaNotFoundException : Exception

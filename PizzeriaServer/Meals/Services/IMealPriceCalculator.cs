@@ -1,4 +1,6 @@
-﻿namespace PizzeriaServer.Meals
+﻿using PizzeriaServer.Meals.Models;
+
+namespace PizzeriaServer.Meals.Services
 {
     /// <summary>
     /// Strategy for the calculation of an actual price of the meal.

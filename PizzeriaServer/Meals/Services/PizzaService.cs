@@ -1,4 +1,5 @@
 ﻿using PizzeriaServer.Meals.Dal;
+using PizzeriaServer.Meals.Models;
 
 namespace PizzeriaServer.Meals.Services
 {

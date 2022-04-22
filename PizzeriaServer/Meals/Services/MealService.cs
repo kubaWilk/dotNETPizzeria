@@ -1,6 +1,7 @@
-﻿using PizzeriaServer.Meals.Services;
+﻿using PizzeriaServer.Meals.Dal;
+using PizzeriaServer.Meals.Models;
 
-namespace PizzeriaServer.Meals
+namespace PizzeriaServer.Meals.Services
 {
     internal class MealService : IMealService
     {

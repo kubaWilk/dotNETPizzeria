@@ -1,7 +1,6 @@
-﻿using PizzeriaServer.Meals.Model;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PizzeriaServer.Meals
+namespace PizzeriaServer.Meals.Models
 {
     public class Pizza : Meal
     {

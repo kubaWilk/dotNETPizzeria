@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PizzeriaServer.Meals;
 using PizzeriaServer.Meals.Dal;
+using PizzeriaServer.Meals.Models;
 using PizzeriaServer.Model;
 using PizzeriaServer.Users.Dal;
 

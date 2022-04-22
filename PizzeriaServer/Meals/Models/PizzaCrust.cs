@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PizzeriaServer.Meals.Model
+namespace PizzeriaServer.Meals.Models
 {
     public class PizzaCrust
     {

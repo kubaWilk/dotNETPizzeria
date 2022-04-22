@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PizzeriaServer.Meals.Model;
+using PizzeriaServer.Meals.Models;
 
 namespace PizzeriaServer.Meals.Dal
 {

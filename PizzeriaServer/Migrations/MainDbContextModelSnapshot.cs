@@ -19,7 +19,7 @@ namespace PizzeriaServer.Migrations
                 .HasAnnotation("ProductVersion", "6.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("PizzeriaServer.Meals.Meal", b =>
+            modelBuilder.Entity("PizzeriaServer.Meals.Models.Meal", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace PizzeriaServer.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Meal");
                 });
 
-            modelBuilder.Entity("PizzeriaServer.Meals.Model.PizzaCrust", b =>
+            modelBuilder.Entity("PizzeriaServer.Meals.Models.PizzaCrust", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -89,7 +89,7 @@ namespace PizzeriaServer.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PizzeriaServer.Meals.Model.PizzaSize", b =>
+            modelBuilder.Entity("PizzeriaServer.Meals.Models.PizzaSize", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -137,7 +137,7 @@ namespace PizzeriaServer.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PizzeriaServer.Meals.PizzaTopping", b =>
+            modelBuilder.Entity("PizzeriaServer.Meals.Models.PizzaTopping", b =>
                 {
                     b.Property<long>("MealId")
                         .HasColumnType("bigint")
@@ -201,7 +201,7 @@ namespace PizzeriaServer.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PizzeriaServer.Meals.Topping", b =>
+            modelBuilder.Entity("PizzeriaServer.Meals.Models.Topping", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -315,9 +315,9 @@ namespace PizzeriaServer.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PizzeriaServer.Meals.Pizza", b =>
+            modelBuilder.Entity("PizzeriaServer.Meals.Models.Pizza", b =>
                 {
-                    b.HasBaseType("PizzeriaServer.Meals.Meal");
+                    b.HasBaseType("PizzeriaServer.Meals.Models.Meal");
 
                     b.HasDiscriminator().HasValue("Pizza");
 
@@ -352,15 +352,15 @@ namespace PizzeriaServer.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PizzeriaServer.Meals.PizzaTopping", b =>
+            modelBuilder.Entity("PizzeriaServer.Meals.Models.PizzaTopping", b =>
                 {
-                    b.HasOne("PizzeriaServer.Meals.Pizza", "Pizza")
+                    b.HasOne("PizzeriaServer.Meals.Models.Pizza", "Pizza")
                         .WithMany("PizzaToppings")
                         .HasForeignKey("MealId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PizzeriaServer.Meals.Topping", "Topping")
+                    b.HasOne("PizzeriaServer.Meals.Models.Topping", "Topping")
                         .WithMany("PizzaToppings")
                         .HasForeignKey("ToppingId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -371,12 +371,12 @@ namespace PizzeriaServer.Migrations
                     b.Navigation("Topping");
                 });
 
-            modelBuilder.Entity("PizzeriaServer.Meals.Topping", b =>
+            modelBuilder.Entity("PizzeriaServer.Meals.Models.Topping", b =>
                 {
                     b.Navigation("PizzaToppings");
                 });
 
-            modelBuilder.Entity("PizzeriaServer.Meals.Pizza", b =>
+            modelBuilder.Entity("PizzeriaServer.Meals.Models.Pizza", b =>
                 {
                     b.Navigation("PizzaToppings");
                 });

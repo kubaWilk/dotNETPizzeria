@@ -1,4 +1,6 @@
-﻿namespace PizzeriaServer.Meals
+﻿using PizzeriaServer.Meals.Models;
+
+namespace PizzeriaServer.Meals.Dal
 {
     /// <summary>
     /// Defines a contract for querying the meals.

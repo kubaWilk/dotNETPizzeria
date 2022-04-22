@@ -1,6 +1,6 @@
-﻿using PizzeriaServer.Meals.Model;
+﻿using PizzeriaServer.Meals.Models;
 
-namespace PizzeriaServer.Meals
+namespace PizzeriaServer.Meals.Services
 {
     internal class PizzaPriceCalculator : IMealPriceCalculator
     {

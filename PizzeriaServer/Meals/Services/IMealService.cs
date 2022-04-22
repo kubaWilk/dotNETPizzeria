@@ -1,4 +1,6 @@
-﻿namespace PizzeriaServer.Meals.Services
+﻿using PizzeriaServer.Meals.Models;
+
+namespace PizzeriaServer.Meals.Services
 {
     /// <summary>
     /// Represents business logic layer and establishes a set of available operations 

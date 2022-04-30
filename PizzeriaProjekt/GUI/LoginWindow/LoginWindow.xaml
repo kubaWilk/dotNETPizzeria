@@ -3,9 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"                 xmlns:local="clr-namespace:PizzeriaProjekt"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"           
         mc:Ignorable="d"
-        Title="Zapraszamy!" Height="491" Width="352" ResizeMode="CanMinimize" WindowTitleBrush="#FF151515" SizeToContent="Manual">
+        Title="Zapraszamy!" Height="500" Width="350" ResizeMode="CanMinimize" WindowTitleBrush="Gray" SizeToContent="Manual">
+    <Window.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <mah:MetroWindow.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FF747CBD" Offset="0.003"/>
@@ -14,24 +23,22 @@
     </mah:MetroWindow.Background>
     <Grid HorizontalAlignment="Center" Width="350" Margin="0,3,0,1">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="52*"/>
-            <ColumnDefinition Width="119*"/>
-            <ColumnDefinition Width="52*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="82*"/>
+            <ColumnDefinition Width="187*"/>
+            <ColumnDefinition Width="82*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="228*"/>
-            <RowDefinition Height="62*"/>
-            <RowDefinition Height="57*"/>
-            <RowDefinition Height="124*"/>
+            <RowDefinition Height="148*"/>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="63*"/>
         </Grid.RowDefinitions>
+        <TextBox  x:Name="loginBox" Margin="80,122,1,136" BorderThickness="0 0 0 1" TextWrapping="Wrap" Grid.ColumnSpan="3" mah:TextBoxHelper.Watermark="Login" Background="{x:Null}" BorderBrush="Black" FontSize="20"/>
+        <PasswordBox  x:Name="passwordBox"  Grid.Column="2"  BorderThickness="0 0 0 1" HorizontalAlignment="Center" Margin="0,186,0,0" VerticalAlignment="Top" Width="184" Height="38" mah:TextBoxHelper.Watermark="Hasło" Background="{x:Null}" BorderBrush="Black" FontSize="20" RenderTransformOrigin="0.492,0.452"/>
+        <Button x:Name="passwordButton" Content=" Nie pamiętam hasla" Grid.Row="2" VerticalAlignment="Top" Height="37" HorizontalAlignment="Center" Width="158" Margin="0,53,0,0" Grid.Column="2" Background="White"/>
+        <Button x:Name="loginButton" Content="Zaloguj się!" Grid.Row="1" VerticalAlignment="Center" Height="40" Grid.Column="2" HorizontalAlignment="Center" Width="162" Click="loginButton_Click" FontSize="14" Background="White" />
+        <Button x:Name="registerButton" Grid.Column="2" Content="Zarejestruj się!" HorizontalAlignment="Center" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="158" Height="38" Click="registerButton_Click" FontSize="14" Background="White"/>
 
-     
-        <TextBox x:Name="loginBox" Margin="80,164,81,24" TextWrapping="Wrap" Grid.ColumnSpan="3" mah:TextBoxHelper.Watermark="Login"/>
-        <TextBox x:Name="passwordBox" TextWrapping="Wrap" Grid.Row="1" Margin="81,6,2,14" Grid.ColumnSpan="2" mah:TextBoxHelper.Watermark="login" mah:TextBoxHelper.UseFloatingWatermark="True"/>
-        <Button x:Name="passwordButton" Content=" Nie pamiętam hasla" Grid.Row="3" VerticalAlignment="Top" Height="37" HorizontalAlignment="Center" Width="159" Margin="0,53,0,0" Grid.Column="1"/>
-        <Button x:Name="loginButton" Content="Zaloguj się!" Grid.Row="2" VerticalAlignment="Center" Height="40" Grid.Column="1" HorizontalAlignment="Center" Width="162" Click="loginButton_Click" FontSize="14" />
-        <Button x:Name="registerButton" Grid.Column="1" Content="Zarejestruj się!" HorizontalAlignment="Center" Margin="0,6,0,0" Grid.Row="3" VerticalAlignment="Top" Width="159" Height="38" Click="registerButton_Click" FontSize="14"/>
-        <Label Grid.Column="1" Content="Login" HorizontalAlignment="Left" Margin="0,132,0,0" VerticalAlignment="Top" Width="87" FontSize="18"/>
-        <Label Grid.Column="1" Content="Hasło" HorizontalAlignment="Left" Margin="0,200,0,0" VerticalAlignment="Top" Width="87" FontSize="18" Grid.RowSpan="2"/>
+
     </Grid>
 </mah:MetroWindow>

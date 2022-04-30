@@ -56,5 +56,11 @@ namespace PizzeriaProjekt
 
 
         }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            loginWindow loginWindow = new loginWindow();
+            loginWindow.Show();
+            App.Current.MainWindow.Close();
+        }
     }
 }

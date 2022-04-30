@@ -19,28 +19,47 @@ namespace PizzeriaProjekt
 {
     public partial class rulesPage : Page
     {
-        
-      
+
         public rulesPage()
         {
             InitializeComponent();
+            System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 250);
+            dispatcherTimer.Start();
+        }
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            if (testbox.GetLastVisibleLineIndex() == 86)
+            {
+                Accepted.IsEnabled = true;
+            }
+            else
+                Accepted.IsEnabled = false;
         }
         private void Accepted_Click(object sender, RoutedEventArgs e)
         {
-         dataPage data = new dataPage();
-         this.NavigationService.Navigate(data);
-           
+            dataPage data = new dataPage();
+            this.NavigationService.Navigate(data);
+
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             testbox.Text = File.ReadAllText(@"Rules.txt");
+            Accepted.IsEnabled = false;
+           
+
+
         }
 
         private void noAccepted_Click(object sender, RoutedEventArgs e)
         {
-          NavigationService.GoBack();
+
+            NavigationService.GoBack();
         }
+
 
     }
 }
+

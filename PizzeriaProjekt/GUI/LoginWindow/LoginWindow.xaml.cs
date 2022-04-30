@@ -23,7 +23,8 @@ namespace PizzeriaProjekt
         public loginWindow()
         {
             InitializeComponent();
-            TitleBarHeight = 20;
+            TitleBarHeight = 23;
+ 
         }
      
         private void loginButton_Click(object sender, RoutedEventArgs e)
@@ -31,11 +32,12 @@ namespace PizzeriaProjekt
             {
                 try
                 {
-                    if (userService.LogIn(loginBox.Text, passwordBox.Text))
+                    if (userService.LogIn(loginBox.Text, passwordBox.ToString()))
                     {
                         System.Windows.MessageBox.Show($"Zapraszamy! ");
                         Form MainMenu = new Form();
                         MainMenu.ShowDialog();
+                    
                     }
                     else
                     {

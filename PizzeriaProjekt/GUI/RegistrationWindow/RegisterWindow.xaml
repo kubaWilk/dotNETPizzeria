@@ -6,13 +6,18 @@
         xmlns:local="clr-namespace:PizzeriaProjekt"
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="PizzeriaProjekt.registerWindow"
         mc:Ignorable="d"
-        Title="registerWindow" Height="514" Width="850" Loaded="Window_Loaded" Closing="Window_Closing" >
+        Title="Formularz rejestracyjny" Height="514" Width="850" Loaded="Window_Loaded" Closing="Window_Closing" ResizeMode="CanMinimize" >
+    <Window.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Frame x:Name="RulesFrame" Content="" Margin="0,0,0,0" NavigationUIVisibility="Hidden"/>
-
-
-
-
-
+        
     </Grid>
 </mah:MetroWindow>

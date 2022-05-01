@@ -11,11 +11,13 @@ namespace PizzeriaServer.Orders
     public class OrderFacade
     {
 
-        private readonly OrderService _orderService;
+        private readonly IOrderService _orderService;
+        private readonly OrderPriceCalculator _orderPriceCalculator;
 
         public OrderFacade()
         {
             _orderService = new OrderService(new OrderQueryDao(), new OrderMutationDao());
+            _orderPriceCalculator = new OrderPriceCalculator();
         }
 
         /// <summary>
@@ -27,6 +29,9 @@ namespace PizzeriaServer.Orders
         public SavedPizzaOrder CreateOrder(CreatePizzaOrder newOrderRequest)
         {
             SavedPizzaOrder order = _orderService.CreateOrder(newOrderRequest);
+
+            _orderPriceCalculator.UpdateActualPrice(ref order);
+
             return order;
         }
 
@@ -37,6 +42,9 @@ namespace PizzeriaServer.Orders
         public List<SavedPizzaOrder> GetOrders()
         {
             List<SavedPizzaOrder> orders = _orderService.GetOrders();
+
+            orders.ForEach(order => _orderPriceCalculator.UpdateActualPrice(ref order));
+
             return orders;
         }
 
@@ -50,6 +58,9 @@ namespace PizzeriaServer.Orders
         public SavedPizzaOrder GetOrderById(long orderId)
         {
             SavedPizzaOrder order = _orderService.GetOrderById(orderId);
+
+            _orderPriceCalculator.UpdateActualPrice(ref order);
+
             return order;
         }
     }

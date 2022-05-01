@@ -16,6 +16,8 @@ namespace PizzeriaServer.Orders
         public string? UserNotes { get; set; }
         public List<Item> Items { get; set; }
 
+        public decimal? ActualPrice { get; set; }
+
         public class Item
         {
             public long OrderLineId { get; set; }
@@ -24,6 +26,8 @@ namespace PizzeriaServer.Orders
             public PizzaCrust Crust { get; set; }
             public PizzaSize Size { get; set; }
             public List<Topping> ExtraToppings { get; set; }
+
+            public decimal? ActualPrice { get; set; }
         }
     }
 }

@@ -48,7 +48,7 @@ namespace PizzeriaProjekt
         {
             testbox.Text = File.ReadAllText(@"Rules.txt");
             Accepted.IsEnabled = false;
-           
+
 
 
         }
@@ -61,5 +61,12 @@ namespace PizzeriaProjekt
 
 
     }
-}
 
+
+    private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+    {
+        loginWindow loginWindow = new loginWindow();
+        loginWindow.Show();
+        App.Current.MainWindow.Close();
+    }
+}

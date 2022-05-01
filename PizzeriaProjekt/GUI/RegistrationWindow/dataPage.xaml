@@ -9,18 +9,36 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="dataPage">
 
+    
+    
     <Page.Resources>
 
         <ResourceDictionary>
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key = "popups" TargetType = "Popup">
+                <Setter Property = "IsOpen" Value = "False" />
+                <Setter Property="PopupAnimation" Value="Fade"/>
+            </Style>
+
+            <Style x:Key = "textblocks" TargetType = "TextBox">
+                <Setter Property = "Background" Value = "IndianRed" />
+                <Setter Property = "TextWrapping" Value = "Wrap" />
+                <Setter Property = "FontSize" Value = "20" />
+            </Style>
+          
+          
+
         </ResourceDictionary>
+
     </Page.Resources>
 
 
-    <Grid x:Name="grid1" Margin="0,-1,0,1">
+    <Grid x:Name="grid1" Margin="0,0,0,0">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF747CBD" Offset="0.003"/>
@@ -43,11 +61,11 @@
             <RowDefinition Height="50*"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
+        
         <Label Content="Wypełnij poniższy formularz aby zakońćzyć proces rejestracji" Margin="126,26,126,30" FontSize="20" Grid.ColumnSpan="4"/>
 
 
         <TextBox x:Name="LoginBox" 
-                 mah:TextBoxHelper.Watermark="Login"
                  BorderThickness="0,0,0,2.5"
                  BorderBrush="Black" 
                  Foreground="Black"
@@ -55,23 +73,65 @@
                  Grid.Row="1"
                  Margin="15,12,15,12" 
                  FontSize="15" 
-                 TextAlignment="Left"
                  Background="{x:Null}"
+                 ToolTip="Login powinien składać się z conajmniej 4 znaków" 
+                 TextChanged="LoginBox_TextChanged"
+                 mah:TextBoxHelper.Watermark="Login"
                  
         />
 
+        <Popup Name="loginOccupied" 
+               PlacementTarget="{Binding ElementName=LoginBox}" 
+               Style="{StaticResource popups}"
+               Placement="Right"
+               >
+
+            <TextBox x:Name="loginOccupiedBox" 
+            Style="{StaticResource textblocks}" >
+                Login jest już zajęty
+            </TextBox>
+        </Popup>
+
+
+        <Popup Name="loginPopUp1"
+               PlacementTarget="{Binding ElementName=LoginBox}"  
+               Style="{StaticResource popups}"
+               Placement="Top"
+               >
+            
+            <TextBox x:Name="wrongLogin"
+               Style="{StaticResource textblocks}" >
+                Nieprawidłowy login
+            </TextBox>
+        </Popup>
+        
+
         <PasswordBox  x:Name="passwordBox" 
-                  mah:TextBoxHelper.Watermark="Hasło" 
-                 BorderThickness="0,0,0,2.5"
-                 BorderBrush="Black" 
-                 Foreground="Black"
+                 mah:TextBoxHelper.Watermark="Hasło" 
                  Grid.Column="2"
                  Grid.Row="1"
+                  BorderThickness="0,0,0,2.5"
+                 BorderBrush="Black" 
+                 Foreground="Black"
                  Margin="15,12,15,12" 
                  FontSize="15" 
                  Background="{x:Null}"
+                 ToolTip="Hasło powinno składać się z conajmniej 8 znaków, w tym jedna duża litera, jedna cyfra i jeden znak specjalny"
+                 PasswordChanged="passwordBox_PasswordChanged"
+                  
                  />
 
+        <Popup Name="wrongPassword"
+               Style="{StaticResource popups}"
+               PlacementTarget="{Binding ElementName=passwordBox}" 
+               Placement="Left"
+               >
+            
+            <TextBox x:Name="wrongPasswordbox" 
+            Style="{StaticResource textblocks}"  >
+                Nieprawidłowy fomat hasła
+            </TextBox>
+        </Popup>
 
         <PasswordBox x:Name="checkPasswordBox" 
                  mah:TextBoxHelper.Watermark="Powtórz hasło" 
@@ -82,8 +142,20 @@
                  Grid.Row="2"
                  Margin="15,12,15,12" 
                  FontSize="15" 
-                 Background="{x:Null}" 
+                 Background="{x:Null}" PasswordChanged="checkPasswordBox_PasswordChanged" 
+                 
                      />
+        <Popup Name="passwordNoMatch" 
+               Style="{StaticResource popups}"
+               Placement="Right"
+               PlacementTarget="{Binding ElementName=checkPasswordBox}" 
+               >
+            
+            <TextBox x:Name="passwordNoMatchBox" 
+               Style="{StaticResource textblocks}"  >
+                Hasła się różnią
+            </TextBox>
+        </Popup>
 
         <DatePicker x:Name="birthDateBox" 
                     BorderBrush="Black" 
@@ -94,8 +166,37 @@
                     FirstDayOfWeek="Monday" 
                     Text=" Data Urodzenia" 
                     Grid.Column="2" 
-                    Grid.Row="2"   
-                    />
+                    Grid.Row="2" Background="{x:Null}" CalendarOpened="birthDateBox_CalendarOpened" 
+           >
+            <DatePicker.CalendarStyle>
+                <Style TargetType="{x:Type Calendar}">
+                    <Setter Property="Background" >
+                        <Setter.Value>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF747CBD" Offset="0.003"/>
+                                <GradientStop Color="#FF9CCEA4" Offset="0.994"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DatePicker.CalendarStyle>
+        </DatePicker>
+
+
+
+        <Popup  Name="wrongBirthDate" 
+             PlacementTarget="{Binding ElementName=birthDateBox}" 
+               Style="{StaticResource popups}"
+               Placement="left"
+               >
+            
+            <TextBox x:Name="wrongBirthDateBox" 
+               Style="{StaticResource textblocks}"  >
+                Nieprawidłowa data urodzenia
+            </TextBox>
+        </Popup>
+
+
 
         <TextBox x:Name="nameBox" 
                  mah:TextBoxHelper.Watermark="Imię" 
@@ -106,8 +207,20 @@
                  Grid.Row="3"
                  Margin="15,12,15,12" 
                  FontSize="15" 
-                 Background="{x:Null}"
+                 Background="{x:Null}" TextChanged="nameBox_TextChanged"
                  />
+
+        <Popup Margin="10,10,0,13" Name="wrongName"  
+               Style="{StaticResource popups}"
+               Placement="Right"
+               PlacementTarget="{Binding ElementName=nameBox}" 
+               >
+            
+            <TextBox x:Name="wrongNameBox" 
+               Style="{StaticResource textblocks}"  >
+                Nieprawidłowe imię
+            </TextBox>
+        </Popup>
 
         <TextBox x:Name="surnameBox"  
                  mah:TextBoxHelper.Watermark="Nazwisko"
@@ -118,8 +231,20 @@
                  Grid.Row="4"
                  Margin="15,12,15,12" 
                  FontSize="15" 
-                 Background="{x:Null}"
+                 Background="{x:Null}" TextChanged="surnameBox_TextChanged"
                  />
+
+        <Popup Name="wrongSurname"  
+                Style="{StaticResource popups}"
+                Placement="right"
+                PlacementTarget="{Binding ElementName=surnameBox}" 
+               
+               >
+            <TextBox x:Name="wrongSurnameBox" 
+               Style="{StaticResource textblocks}"  >
+                Nieprawidłowe nazwisko
+            </TextBox>
+        </Popup>
 
         <TextBox x:Name="phoneNumberBox" 
                  mah:TextBoxHelper.Watermark="Numer Telefonu"
@@ -131,7 +256,21 @@
                  Margin="15,12,15,12" 
                  FontSize="15" 
                  Background="{x:Null}"
+                  ToolTip="Numer telefonu musi składać się z 9 cyfr" TextChanged="phoneNumberBox_TextChanged"
                  />
+
+        <Popup Name="wrongPhone" 
+                PlacementTarget="{Binding ElementName=phoneNumberBox}"     
+                Style="{StaticResource popups}"
+               Placement="Left"
+               >
+            <TextBox x:Name="wrongPhoneBox" 
+               Style="{StaticResource textblocks}"  
+             >
+                Nieprawidłowy numer telefonu
+            </TextBox>
+        </Popup>
+
         <TextBox x:Name="streetBox" 
                  mah:TextBoxHelper.Watermark="Ulica"
                  BorderThickness="0,0,0,2.5"
@@ -141,8 +280,23 @@
                  Grid.Row="3"
                  Margin="15,12,15,12" 
                  FontSize="15" 
-                 Background="{x:Null}"
+                 Background="{x:Null}" TextChanged="streetBox_TextChanged"
                  />
+
+        <Popup Name="wrongStreet"
+               Style="{StaticResource popups}"
+               Placement="left"
+               PlacementTarget="{Binding ElementName=streetBox}" 
+               >
+        
+
+            <TextBox x:Name="wrongStreetBox" 
+               Style="{StaticResource textblocks}"  >
+                Nieprawidłowa nazwa ulicy
+            </TextBox>
+        </Popup>
+
+
         <TextBox x:Name="postCodeBox"
                   mah:TextBoxHelper.Watermark="Kod Pocztowy"
                 BorderThickness="0,0,0,2.5"
@@ -153,7 +307,22 @@
                  Margin="15,12,15,12" 
                  FontSize="15" 
                  Background="{x:Null}"
+                 ToolTip="Kod pocztowy musi być zapisany w formacie XX-XXX" TextChanged="postCodeBox_TextChanged"
                  />
+
+        <Popup 
+               Name="wrongPostCode"
+               Style="{StaticResource popups}"
+               Placement="Right"
+               PlacementTarget="{Binding ElementName=postCodeBox}" 
+               >
+
+            <TextBox x:Name="wrongPostCodeBox" 
+               Style="{StaticResource textblocks}"  >
+                Nieprawidłowy kod pocztowy
+            </TextBox>
+        </Popup>
+
 
         <TextBox x:Name="cityBox"  
                  mah:TextBoxHelper.Watermark="Miasto"
@@ -164,9 +333,21 @@
                  Grid.Row="5"
                  Margin="15,12,15,12" 
                  FontSize="15" 
-                 Background="{x:Null}"
+                 Background="{x:Null}" TextChanged="cityBox_TextChanged"
                  />
 
+        <Popup 
+               Name="wrongCity"
+               PlacementTarget="{Binding ElementName=cityBox}" 
+               Style="{StaticResource popups}"
+               Placement="left"
+            >
+
+            <TextBox x:Name="wrongCityBox" 
+               Style="{StaticResource textblocks}"  >
+                Nieprawidłowa nazwa miasta
+            </TextBox>
+        </Popup>
 
         <Button x:Name="Finish"
                 Content="Zarejestruj się"

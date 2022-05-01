@@ -72,7 +72,7 @@ namespace PizzeriaServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PizzaCrust");
+                    b.ToTable("PizzaCrust", (string)null);
 
                     b.HasData(
                         new
@@ -111,7 +111,7 @@ namespace PizzeriaServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PizzaSize");
+                    b.ToTable("PizzaSize", (string)null);
 
                     b.HasData(
                         new

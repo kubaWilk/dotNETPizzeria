@@ -17,7 +17,7 @@ namespace PizzeriaServer.Meals.Dal
         /// Get <see cref="Topping"/> by id.
         /// </summary>
         /// <param name="toppingId">Topping's Id</param>
-        /// <returns></returns>
+        /// <returns><see cref="Topping"/></returns>
         /// <exception cref="ToppingNotFoundException">Thrown when topping 
         /// with given id is not found.</exception>
         public Topping GetToppingById(long toppingId);

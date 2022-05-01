@@ -24,6 +24,21 @@ namespace PizzeriaServer.Orders.Dal
             builder.ToTable("OrderLines");
             builder.Property("CrustId").HasDefaultValue(1);
             builder.Property("SizeId").HasDefaultValue(1);
+            //builder.HasOne(orderline => orderline.Pizza)
+            //    .WithMany()
+            //    .OnDelete(DeleteBehavior.Restrict);
+            //builder.HasOne(orderline => orderline.Order)
+            //    .WithMany()
+            //    .OnDelete(DeleteBehavior.Restrict);
+            //builder.HasOne(orderline => orderline.Size)
+            //    .WithMany()
+            //    .OnDelete(DeleteBehavior.Restrict);
+            //builder.HasOne(orderline => orderline.Crust)
+            //    .WithMany()
+            //    .OnDelete(DeleteBehavior.Restrict);
+            //builder.HasMany(orderLine => orderLine.ExtraToppings)
+            //    .WithOne()
+            //    .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

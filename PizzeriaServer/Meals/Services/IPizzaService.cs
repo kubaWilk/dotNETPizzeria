@@ -5,7 +5,7 @@ namespace PizzeriaServer.Meals.Services
     /// <summary>
     /// Represents business logic layer and establishes a set of available operations 
     /// for <see cref="Pizza"/> domain object and associated classes such as <see cref="Topping"/>, 
-    /// and other class which Pizza cannot exists without.
+    /// and other classes which Pizza cannot exists without.
     /// </summary>
     internal interface IPizzaService
     {

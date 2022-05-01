@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PizzeriaServer.Orders.Models
 {
-    public class PizzaOrderLine
+    internal class PizzaOrderLine
     {
 
         [Key]

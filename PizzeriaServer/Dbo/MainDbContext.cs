@@ -41,6 +41,8 @@ namespace PizzeriaServer.Dbo
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.EnableSensitiveDataLogging(true);
+
             string connectionString = prepareConnectionString();
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }

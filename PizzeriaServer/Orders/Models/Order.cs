@@ -18,6 +18,6 @@ namespace PizzeriaServer.Orders.Models
         [Column("UserNotes")]
         public string? UserNotes { get; set; }
 
-        public virtual ICollection<PizzaOrderLine> OrderLines { get; set; }
+        public virtual ICollection<PizzaOrderLine> OrderLines { get; } = new HashSet<PizzaOrderLine>();
     }
 }

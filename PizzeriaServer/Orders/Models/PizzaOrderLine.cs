@@ -30,7 +30,7 @@ namespace PizzeriaServer.Orders.Models
         
         [ForeignKey("Size")]
         public long SizeId { get; set; }
-        
-        public virtual ICollection<Topping> ExtraToppings { get; set; }
+
+        public virtual ICollection<Topping> ExtraToppings { get; } = new HashSet<Topping>();
     }
 }

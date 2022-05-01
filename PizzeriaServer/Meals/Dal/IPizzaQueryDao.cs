@@ -23,6 +23,13 @@ namespace PizzeriaServer.Meals.Dal
         public Topping GetToppingById(long toppingId);
 
         /// <summary>
+        /// Get pizza by id.
+        /// </summary>
+        /// <param name="pizzaId">Pizza's Id</param>
+        /// <returns><see cref="Pizza"></see></returns>
+        public Pizza GetPizzaById(long pizzaId);
+
+        /// <summary>
         /// Get all associated toppings with pizza.
         /// </summary>
         /// <param name="pizzaId">Pizza's Id</param>

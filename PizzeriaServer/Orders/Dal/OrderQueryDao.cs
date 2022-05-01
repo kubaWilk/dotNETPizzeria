@@ -38,6 +38,16 @@ namespace PizzeriaServer.Orders.Dal
             {
                 Order? order = _dbContext.Orders
                     .Where(order => order.Id == orderId)
+                    .Include(order => order.User)
+                    .Include(order => order.OrderLines)
+                    .ThenInclude(orderLine => orderLine.Pizza)
+                    .ThenInclude(pizza => pizza.PizzaToppings)
+                    .Include(order => order.OrderLines)
+                    .ThenInclude(orderLine => orderLine.Crust)
+                    .Include(order => order.OrderLines)
+                    .ThenInclude(orderLine => orderLine.Size)
+                    .Include(order => order.OrderLines)
+                    .ThenInclude(orderLine => orderLine.ExtraToppings)
                     .FirstOrDefault();
 
                 if (order == null)

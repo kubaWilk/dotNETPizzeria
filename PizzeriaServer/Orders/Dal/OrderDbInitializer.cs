@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PizzeriaServer.Meals.Models;
 using PizzeriaServer.Orders.Models;
 
 namespace PizzeriaServer.Orders.Dal
@@ -10,16 +9,8 @@ namespace PizzeriaServer.Orders.Dal
         {
             var orders = new[]
             {
-                new Order{ Id = 1 },
-                new Order{ Id = 2 }
-            };
-
-            var pizzaData = new[]
-            {
-                new Pizza{Id = 1, Name = "Margherita", BasePrice = 20.00m},
-                new Pizza{Id = 2, Name = "Capricciosa", BasePrice = 23.00m},
-                new Pizza{Id = 3, Name = "Japanelo", BasePrice = 23.00m},
-                new Pizza{Id = 4, Name = "Hawaii", BasePrice = 24.00m}
+                new Order{ Id = 1, UserId = 1 },
+                new Order{ Id = 2, UserId = 1 }
             };
 
             var orderLines = new PizzaOrderLine[4];
@@ -32,18 +23,6 @@ namespace PizzeriaServer.Orders.Dal
                     PizzaId = i + 1
                 };
             }
-
-            //modelBuilder.Entity<Order>(order =>
-            //{
-            //    order.HasData(orders);
-            //    order.OwnsMany(o => o.OrderLines).HasData(new PizzaOrderLine[]
-            //    {
-            //        { Id = 1, OrderId = 1, PizzaId = 1, Pizza },
-            //        { Id = 2, OrderId = 1, PizzaId = 2 },
-            //        { Id = 3, OrderId = 2, PizzaId = 3 },
-            //        { Id = 4, OrderId = 3, PizzaId = 4 },
-            //    });
-            //});
 
             modelBuilder.Entity<Order>().HasData(orders);
             modelBuilder.Entity<PizzaOrderLine>().HasData(orderLines);

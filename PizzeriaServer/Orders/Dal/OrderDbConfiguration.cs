@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PizzeriaServer.Meals.Models;
 using PizzeriaServer.Orders.Models;
 
 namespace PizzeriaServer.Orders.Dal
@@ -12,7 +11,9 @@ namespace PizzeriaServer.Orders.Dal
             builder.ToTable("Orders");
             builder.Property("CreatedAt").HasDefaultValueSql("current_timestamp()");
             builder.Property("IsDone").HasDefaultValue(false);
-            //builder.OwnsMany(o => o.OrderLines);
+            builder.HasOne(order => order.User)
+                .WithMany()
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 

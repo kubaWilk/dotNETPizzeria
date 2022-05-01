@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using PizzeriaServer.Model;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PizzeriaServer.Orders.Models
@@ -17,6 +18,11 @@ namespace PizzeriaServer.Orders.Models
 
         [Column("UserNotes")]
         public string? UserNotes { get; set; }
+
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+        
+        public User User { get; set; }
 
         public virtual ICollection<PizzaOrderLine> OrderLines { get; } = new HashSet<PizzaOrderLine>();
     }

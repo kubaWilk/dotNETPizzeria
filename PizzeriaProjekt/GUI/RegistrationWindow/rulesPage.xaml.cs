@@ -48,9 +48,6 @@ namespace PizzeriaProjekt
         {
             testbox.Text = File.ReadAllText(@"Rules.txt");
             Accepted.IsEnabled = false;
-
-
-
         }
 
         private void noAccepted_Click(object sender, RoutedEventArgs e)
@@ -59,14 +56,11 @@ namespace PizzeriaProjekt
             NavigationService.GoBack();
         }
 
-
-    }
-
-
-    private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-    {
-        loginWindow loginWindow = new loginWindow();
-        loginWindow.Show();
-        App.Current.MainWindow.Close();
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            loginWindow loginWindow = new loginWindow();
+            loginWindow.Show();
+            App.Current.MainWindow.Close();
+        }
     }
 }

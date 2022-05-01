@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using MahApps.Metro.Controls;
 using PizzeriaServer.Exceptions;
 using PizzeriaServer.Service;
@@ -46,6 +34,11 @@ namespace PizzeriaProjekt
                     }
 
                 }
+                catch (System.NullReferenceException)
+                {
+                    System.Windows.MessageBox.Show("Niewprowadzono danych, wprowadź dane logowania");
+                }
+
                 catch (UserNotFoundException)
                 {
                     System.Windows.MessageBox.Show("Niepoprawny login");
@@ -54,21 +47,36 @@ namespace PizzeriaProjekt
                 {
                     System.Windows.MessageBox.Show("Błąd połączenia, spróbuj ponownie później");
                 }
-                catch (System.NullReferenceException)
-                {
-                    System.Windows.MessageBox.Show("Niewprowadzono danych, wprowadź dane logowania");
-                }
+
+
 
             }
         }
-
+        private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch toggleSwitch = sender as ToggleSwitch;
+            if (toggleSwitch != null)
+            {
+                if (toggleSwitch.IsOn == true)
+                {
+                    passwordshowedBox.Text = passwordBox.Password;
+                    passwordBox.Visibility = Visibility.Collapsed;
+                    passwordshowedBox.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    passwordBox.Password = passwordshowedBox.Text;
+                    passwordshowedBox.Visibility = Visibility.Collapsed;
+                    passwordBox.Visibility = Visibility.Visible;
+                }
+            }
+        }
         private void registerButton_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
             registerWindow register = new registerWindow();
             register.ShowDialog();
-            
-       
+          
         }
     }
 }

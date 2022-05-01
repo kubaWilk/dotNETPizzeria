@@ -11,8 +11,8 @@ using PizzeriaServer.Dbo;
 namespace PizzeriaServer.Migrations
 {
     [DbContext(typeof(MainDbContext))]
-    [Migration("20220422160139_CreateOrderLineDb")]
-    partial class CreateOrderLineDb
+    [Migration("20220426165009_CreateOrdersDb")]
+    partial class CreateOrdersDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -219,7 +219,12 @@ namespace PizzeriaServer.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("Name");
 
+                    b.Property<long?>("PizzaOrderLineId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("PizzaOrderLineId");
 
                     b.ToTable("Toppings", (string)null);
 
@@ -317,12 +322,12 @@ namespace PizzeriaServer.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PizzeriaServer.Orders.Models.OrderLine", b =>
+            modelBuilder.Entity("PizzeriaServer.Orders.Models.Order", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("OrderLineId");
+                        .HasColumnType("bigint")
+                        .HasColumnName("OrderId");
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
@@ -336,9 +341,49 @@ namespace PizzeriaServer.Migrations
                         .HasDefaultValue(0ul)
                         .HasColumnName("IsDone");
 
+                    b.Property<string>("UserNotes")
+                        .HasColumnType("longtext")
+                        .HasColumnName("UserNotes");
+
                     b.HasKey("Id");
 
-                    b.ToTable("OrderLine", (string)null);
+                    b.ToTable("Orders", (string)null);
+                });
+
+            modelBuilder.Entity("PizzeriaServer.Orders.Models.PizzaOrderLine", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnName("OrderLineId");
+
+                    b.Property<long>("CrustId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasDefaultValue(1L);
+
+                    b.Property<long>("OrderId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("PizzaId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("SizeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasDefaultValue(1L);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CrustId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("PizzaId");
+
+                    b.HasIndex("SizeId");
+
+                    b.ToTable("OrderLines", (string)null);
                 });
 
             modelBuilder.Entity("PizzeriaServer.Meals.Models.Pizza", b =>
@@ -399,7 +444,59 @@ namespace PizzeriaServer.Migrations
 
             modelBuilder.Entity("PizzeriaServer.Meals.Models.Topping", b =>
                 {
+                    b.HasOne("PizzeriaServer.Orders.Models.PizzaOrderLine", null)
+                        .WithMany("ExtraToppings")
+                        .HasForeignKey("PizzaOrderLineId");
+                });
+
+            modelBuilder.Entity("PizzeriaServer.Orders.Models.PizzaOrderLine", b =>
+                {
+                    b.HasOne("PizzeriaServer.Meals.Models.PizzaCrust", "Crust")
+                        .WithMany()
+                        .HasForeignKey("CrustId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PizzeriaServer.Orders.Models.Order", "Order")
+                        .WithMany("OrderLines")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PizzeriaServer.Meals.Models.Pizza", "Pizza")
+                        .WithMany()
+                        .HasForeignKey("PizzaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PizzeriaServer.Meals.Models.PizzaSize", "Size")
+                        .WithMany()
+                        .HasForeignKey("SizeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Crust");
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Pizza");
+
+                    b.Navigation("Size");
+                });
+
+            modelBuilder.Entity("PizzeriaServer.Meals.Models.Topping", b =>
+                {
                     b.Navigation("PizzaToppings");
+                });
+
+            modelBuilder.Entity("PizzeriaServer.Orders.Models.Order", b =>
+                {
+                    b.Navigation("OrderLines");
+                });
+
+            modelBuilder.Entity("PizzeriaServer.Orders.Models.PizzaOrderLine", b =>
+                {
+                    b.Navigation("ExtraToppings");
                 });
 
             modelBuilder.Entity("PizzeriaServer.Meals.Models.Pizza", b =>

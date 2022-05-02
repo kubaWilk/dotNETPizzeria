@@ -59,7 +59,7 @@
                       FontSize="20"
                       PasswordChar="*"/>
 
-        <TextBox  x:Name="passwordshowedBox"  
+        <TextBox  x:Name="passwordVisibleBox"  
                       Grid.Column="3" 
                       BorderThickness="0 0 0 1" 
                       HorizontalAlignment="Center"

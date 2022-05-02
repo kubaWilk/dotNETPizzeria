@@ -11,7 +11,7 @@ namespace PizzeriaProjekt
         public loginWindow()
         {
             InitializeComponent();
-            TitleBarHeight = 23;
+            TitleBarHeight = 20;
  
         }
      
@@ -25,6 +25,7 @@ namespace PizzeriaProjekt
                         System.Windows.MessageBox.Show($"Zapraszamy! ");
                         Form MainMenu = new Form();
                         MainMenu.ShowDialog();
+                        this.Hide();
                     
                     }
                     else
@@ -47,7 +48,10 @@ namespace PizzeriaProjekt
                 {
                     System.Windows.MessageBox.Show("Błąd połączenia, spróbuj ponownie później");
                 }
-
+                catch (Exception ex)
+                {
+                    System.Windows.MessageBox.Show("Wystąpił nieoczekiwany błąd");
+                }
 
 
             }
@@ -55,21 +59,20 @@ namespace PizzeriaProjekt
         private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
         {
             ToggleSwitch toggleSwitch = sender as ToggleSwitch;
-            if (toggleSwitch != null)
-            {
+
                 if (toggleSwitch.IsOn == true)
                 {
-                    passwordshowedBox.Text = passwordBox.Password;
+                    passwordVisibleBox.Text = passwordBox.Password;
                     passwordBox.Visibility = Visibility.Collapsed;
-                    passwordshowedBox.Visibility = Visibility.Visible;
+                    passwordVisibleBox.Visibility = Visibility.Visible;
                 }
                 else
                 {
-                    passwordBox.Password = passwordshowedBox.Text;
-                    passwordshowedBox.Visibility = Visibility.Collapsed;
+                    passwordBox.Password = passwordVisibleBox.Text;
+                    passwordVisibleBox.Visibility = Visibility.Collapsed;
                     passwordBox.Visibility = Visibility.Visible;
                 }
-            }
+            
         }
         private void registerButton_Click(object sender, RoutedEventArgs e)
         {

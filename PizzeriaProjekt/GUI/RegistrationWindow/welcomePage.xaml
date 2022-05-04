@@ -34,7 +34,7 @@
             <ColumnDefinition Width="11*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Dołącz do grona smakoszy w kilku prostych krokach" HorizontalAlignment="Left" Margin="48,65,0,0" VerticalAlignment="Top" Height="84" Width="576" FontSize="20" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button x:Name="ProceedButton_" Content="Zaczynamy" HorizontalAlignment="Left" Margin="323,325,0,0" VerticalAlignment="Top" Height="55" Width="255" Click="ProceedButton__Click" FontSize="18" Grid.Column="1" />
+        <Button x:Name="ProceedButton" Content="Zaczynamy" HorizontalAlignment="Left" Margin="323,325,0,0" VerticalAlignment="Top" Height="55" Width="255" Click="ProceedButton_Click" FontSize="18" Grid.Column="1" />
         <Button x:Name="goBack" Content="Powrót" HorizontalAlignment="Left" Margin="1,326,0,0" VerticalAlignment="Top" Height="55" Width="255" Click="goBack_Click" FontSize="18" Grid.Column="1" />
 
     </Grid>

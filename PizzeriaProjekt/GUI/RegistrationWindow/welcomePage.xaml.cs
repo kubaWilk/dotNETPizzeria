@@ -18,7 +18,7 @@ namespace PizzeriaProjekt
             myWindow.Close();
         }
 
-        private void ProceedButton__Click(object sender, RoutedEventArgs e)
+        private void ProceedButton_Click(object sender, RoutedEventArgs e)
         {
             rulesPage rulesPage = new rulesPage();
             NavigationService.Navigate(rulesPage);

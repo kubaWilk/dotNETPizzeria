@@ -10,14 +10,13 @@ namespace PizzeriaProjekt
       
         public registerWindow()
         {
+            TitleBarHeight = 20;
             InitializeComponent();
         }
       
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             RulesFrame.Content = new welcomePage();
-            TitleBarHeight = 20;
-            WindowTitleBrush = new SolidColorBrush(Colors.White);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

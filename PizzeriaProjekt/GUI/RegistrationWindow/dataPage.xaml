@@ -21,7 +21,7 @@
             </ResourceDictionary.MergedDictionaries>
 
             <Style x:Key = "popups" TargetType = "Popup">
-                <Setter Property = "IsOpen" Value = "True" />
+                <Setter Property = "IsOpen" Value = "False" />
                 <Setter Property="PopupAnimation" Value="Fade"/>
             </Style>
 

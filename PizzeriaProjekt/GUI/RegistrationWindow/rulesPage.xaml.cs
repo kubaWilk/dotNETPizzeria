@@ -41,8 +41,9 @@ namespace PizzeriaProjekt
             }
             catch (System.IO.DirectoryNotFoundException)
             {
-                testbox.Text = "błąd odczytu pliku";
                 Accepted.IsEnabled = true;
+                testbox.Text = "błąd odczytu pliku";
+               
             }
 
             Accepted.IsEnabled = false;

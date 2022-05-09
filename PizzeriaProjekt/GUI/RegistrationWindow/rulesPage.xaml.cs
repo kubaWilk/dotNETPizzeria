@@ -35,7 +35,15 @@ namespace PizzeriaProjekt
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            testbox.Text = File.ReadAllText(@"Rules.txt");
+            try
+            {
+                testbox.Text = File.ReadAllText(@"GUI\RegistrationWindow\Rules.txt");
+            }
+            catch (System.IO.DirectoryNotFoundException)
+            {
+                testbox.Text = "błąd odczytu pliku";
+            }
+
             Accepted.IsEnabled = false;
         }
 

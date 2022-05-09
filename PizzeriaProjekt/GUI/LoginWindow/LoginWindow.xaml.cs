@@ -20,7 +20,7 @@ namespace PizzeriaProjekt
             {
                 try
                 {
-                    if (userService.LogIn(loginBox.Text, passwordBox.ToString()))
+                    if (userService.LogIn(loginBox.Text, passwordBox.Password))
                     {
                         System.Windows.MessageBox.Show($"Zapraszamy! ");
                         Form MainMenu = new Form();

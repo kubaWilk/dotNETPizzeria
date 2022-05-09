@@ -10,11 +10,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Remove="Rules.txt" />
+        <None Remove="123Rules.txt" />
+        <None Remove="GUI\RegistrationWindow\Rules.txt" />
     </ItemGroup>
 
     <ItemGroup>
-        <Content Include="Rules.txt">
+        <Content Include="GUI\RegistrationWindow\Rules.txt">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="123Rules.txt">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>

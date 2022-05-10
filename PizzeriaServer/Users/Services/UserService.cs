@@ -10,7 +10,6 @@ namespace PizzeriaServer.Service
     public class UserService
     {
         private UserDal userDal = new UserDal();
-        private object currentUserContainer;
 
         /// <summary>
         /// Returns true when User has been properly logged in, returns false when password is wrong. 
@@ -24,21 +23,17 @@ namespace PizzeriaServer.Service
         {
             User user;
 
-            try
+            user = userDal.GetUserByLogin(username);
+            if (user == null) throw new UserNotFoundException();
+
+            if (user.Password == password)
             {
-                user = userDal.GetUserByLogin(username);
-                if (user.Password == password)
-                {
-                    CurrentUserContainer.s_currentUser = user;
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }catch(NullReferenceException e)
+                CurrentUserContainer.s_currentUser = user;
+                return true;
+            }
+            else
             {
-                throw new UserNotFoundException();
+                return false;
             }
         }
         public void Register(User user)
@@ -55,6 +50,8 @@ namespace PizzeriaServer.Service
 
         private void checkUserData(User user)
         {
+            if (user == null) throw new InvalidDataException("User can't be null!");
+
             Regex LoginRegex = new Regex(@"(\w{1,}\d*)");
             Regex PasswordRegex = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$");
             Regex FirstNameRegex = new Regex(@"((\w+)(\s*))*");
@@ -63,7 +60,6 @@ namespace PizzeriaServer.Service
             Regex StreetRegex = new Regex(@"([^!@#$%^&*()_+-=]+)([a-ż ]+\s?)(\d{0,3})(\s?\S{2,})");
             Regex CityRegex = new Regex(@"([^!@#$%^&*()_+-=]+)([a-ż ]+\s?)");
             Regex PostCodeRegex = new Regex(@"[0-9]{2}[-][0-9]{3}");
-
 
             if (!LoginRegex.IsMatch(user.Login)) throw new InvalidDataException("Wrong login format");
             if (!PasswordRegex.IsMatch(user.Password)) throw new InvalidDataException("Wrong password format");
@@ -85,6 +81,7 @@ namespace PizzeriaServer.Service
 
             if (userDal.GetUserByLogin(currentUser.Login) != null)
             {
+                checkUserData(CurrentUserContainer.s_currentUser);
                 userDal.Update(currentUser);
             }
             else

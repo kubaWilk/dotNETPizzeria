@@ -19,11 +19,6 @@
         <Content Include="GUI\RegistrationWindow\Rules.txt">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
-
-        <Content Include="Rules.txt">
-
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
     </ItemGroup>
 
     <ItemGroup>

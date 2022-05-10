@@ -10,21 +10,25 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Remove="123Rules.txt" />
+
         <None Remove="GUI\RegistrationWindow\Rules.txt" />
+        <None Remove="Rules.txt" />
     </ItemGroup>
 
     <ItemGroup>
         <Content Include="GUI\RegistrationWindow\Rules.txt">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
-        <Content Include="123Rules.txt">
+
+        <Content Include="Rules.txt">
+
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+        <PackageReference Include="MahApps.Metro.IconPacks.Modern" Version="4.11.0" />
     </ItemGroup>
 
     <ItemGroup>

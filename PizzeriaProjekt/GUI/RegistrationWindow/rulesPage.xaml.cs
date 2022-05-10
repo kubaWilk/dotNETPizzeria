@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Point = System.Windows.Point;
+
 
 namespace PizzeriaProjekt
 {
@@ -46,7 +35,18 @@ namespace PizzeriaProjekt
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            testbox.Text = File.ReadAllText(@"GUI\RegistrationWindow\Rules.txt");
+
+            try
+            {
+                testbox.Text = File.ReadAllText(@"GUI\RegistrationWindow\Rules.txt");
+            }
+            catch (System.IO.DirectoryNotFoundException)
+            {
+                Accepted.IsEnabled = true;
+                testbox.Text = "błąd odczytu pliku";
+               
+            }
+
             Accepted.IsEnabled = false;
         }
 
@@ -54,6 +54,7 @@ namespace PizzeriaProjekt
         {
             NavigationService.GoBack();
         }
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             loginWindow loginWindow = new loginWindow();

@@ -53,7 +53,7 @@ namespace PizzeriaProjekt
                 myWindow.Close();
                 System.Windows.MessageBox.Show("Rejestracja przebiegła pomyślnie, możesz przejść do logowania Dziękujemy");
             }
-            catch (InvalidOperationException)
+            catch (InvalidOperationException ex)
             {
 
                 wrongBirthDate.IsOpen = true;
@@ -130,7 +130,7 @@ namespace PizzeriaProjekt
         {
             loginWindow loginWindow = new loginWindow();
             loginWindow.Show();
-            App.Current.MainWindow.Close();
+           
         }
 
         private void LoginBox_TextChanged(object sender, TextChangedEventArgs e)

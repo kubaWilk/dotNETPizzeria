@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using MahApps.Metro.Controls;
 using PizzeriaServer.Exceptions;
 using PizzeriaServer.Service;
@@ -13,7 +13,7 @@ namespace PizzeriaProjekt
             InitializeComponent();
             TitleBarHeight = 20;
 
- 
+
         }
      
         private void loginButton_Click(object sender, RoutedEventArgs e)
@@ -22,7 +22,9 @@ namespace PizzeriaProjekt
             {
                 try
                 {
+
                     passwordBox.Password = passwordVisibleBox.Text;
+
 
                     if (userService.LogIn(loginBox.Text, passwordBox.Password))
                     {
@@ -57,7 +59,6 @@ namespace PizzeriaProjekt
                     System.Windows.MessageBox.Show("Wystąpił nieoczekiwany błąd");
                 }
 
-
             }
         }
         private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
@@ -84,7 +85,6 @@ namespace PizzeriaProjekt
             this.Hide();
             registerWindow register = new registerWindow();
             register.ShowDialog();
-          
         }
 
   

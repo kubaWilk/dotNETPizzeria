@@ -12,14 +12,18 @@ namespace PizzeriaProjekt
         {
             InitializeComponent();
             TitleBarHeight = 20;
+
  
         }
      
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
+
             {
                 try
                 {
+                    passwordBox.Password = passwordVisibleBox.Text;
+
                     if (userService.LogIn(loginBox.Text, passwordBox.Password))
                     {
                         System.Windows.MessageBox.Show($"Zapraszamy! ");
@@ -65,6 +69,7 @@ namespace PizzeriaProjekt
                     passwordVisibleBox.Text = passwordBox.Password;
                     passwordBox.Visibility = Visibility.Collapsed;
                     passwordVisibleBox.Visibility = Visibility.Visible;
+            
                 }
                 else
                 {
@@ -81,5 +86,10 @@ namespace PizzeriaProjekt
             register.ShowDialog();
           
         }
+
+  
+       
+
+     
     }
 }

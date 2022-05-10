@@ -70,7 +70,7 @@
                       Background="{x:Null}"
                       BorderBrush="Black"
                       FontSize="20" 
-                      Visibility="Hidden"
+                      Visibility="Hidden" 
                       />
 
         <Button x:Name="loginButton"

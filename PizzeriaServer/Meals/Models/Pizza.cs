@@ -1,22 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace PizzeriaServer.Meals.Models
+﻿namespace PizzeriaServer.Meals.Models
 {
     public class Pizza : Meal
     {
-        public virtual ICollection<PizzaTopping> PizzaToppings { get; set; }
-
-        [NotMapped]
-        public PizzaSize Size { get; set; }
-
-        [NotMapped]
-        public PizzaCrust Crust { get; set; }
+        public virtual ICollection<PizzaTopping> PizzaToppings { get; } = new HashSet<PizzaTopping>();
 
         public Pizza()
         {
             Category = Category.ITALIAN | Category.PIZZA;
-            Size = PizzaSize.Small();
-            Crust = PizzaCrust.Thin();
         }
     }
 }

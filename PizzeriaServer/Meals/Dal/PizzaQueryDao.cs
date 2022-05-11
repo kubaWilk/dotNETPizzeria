@@ -57,5 +57,21 @@ namespace PizzeriaServer.Meals.Dal
 
             return topping;
         }
+
+        public Pizza GetPizzaById(long pizzaId)
+        {
+            Pizza? pizza = _dbContext.Meals.OfType<Pizza>()
+                .Where(pizza => pizza.Id == pizzaId)
+                .Include(pizza => pizza.PizzaToppings)
+                .ThenInclude(pizzaToppings => pizzaToppings.Topping)
+                .FirstOrDefault();
+
+            if (pizza == null)
+            {
+                throw new PizzaNotFoundException($"Pizza with Id: {pizzaId} not found");
+            }
+
+            return pizza;
+        }
     }
 }

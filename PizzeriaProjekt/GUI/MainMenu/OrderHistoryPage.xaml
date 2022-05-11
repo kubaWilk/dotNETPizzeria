@@ -1,0 +1,24 @@
+﻿<Page x:Class="PizzeriaProjekt.GUI.MainMenu.OrderHistoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PizzeriaProjekt.GUI.MainMenu"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrderHistoryPage">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF747CBD" Offset="0.003"/>
+                <GradientStop Color="#FF9CCEA4" Offset="0.994"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="chooseButton" Content="Wybierz" HorizontalAlignment="Left" Margin="698,405,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.243,0.658" Height="35" Width="92"/>
+        <Button x:Name="backButton" Content="Powrót" HorizontalAlignment="Left" Margin="10,405,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.243,0.658" Height="35" Width="92" Click="backButton_Click"/>
+        <ListBox x:Name="ordersListBox" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="10,57,10,50"/>
+        <Label x:Name="windowNamelabel" Content="HISTORIA ZAMÓWIEŃ" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+
+    </Grid>
+</Page>

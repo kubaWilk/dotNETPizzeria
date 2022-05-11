@@ -45,7 +45,8 @@ namespace PizzeriaProjekt.GUI.MainMenu
 
         private void OrderArchive_Click(object sender, RoutedEventArgs e)
         {
-
+            OrderHistoryPage orderHistoryPage = new OrderHistoryPage();
+            NavigationService.Navigate(orderHistoryPage);
         }
     }
 }

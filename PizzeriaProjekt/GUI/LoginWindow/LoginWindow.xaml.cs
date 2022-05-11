@@ -2,12 +2,13 @@ using System.Windows;
 using MahApps.Metro.Controls;
 using PizzeriaServer.Exceptions;
 using PizzeriaServer.Service;
+using PizzeriaServer.Users;
 
 namespace PizzeriaProjekt
 {
     public partial class loginWindow :MetroWindow
     {
-        UserService userService = new UserService();
+        UserFacade userFacade = new UserFacade();
         public loginWindow()
         {
             InitializeComponent();
@@ -22,17 +23,16 @@ namespace PizzeriaProjekt
             {
                 try
                 {
+                    if (passwordVisibleBox.IsVisible) {
+                        passwordBox.Password = passwordVisibleBox.Text;
+                    }
 
-                    passwordBox.Password = passwordVisibleBox.Text;
-
-
-                    if (userService.LogIn(loginBox.Text, passwordBox.Password))
+                    if (userFacade.LogIn(loginBox.Text, passwordBox.Password))
                     {
                         System.Windows.MessageBox.Show($"Zapraszamy! ");
                         Form MainMenu = new Form();
                         MainMenu.ShowDialog();
                         this.Hide();
-                    
                     }
                     else
                     {

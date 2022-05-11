@@ -15,8 +15,6 @@ namespace PizzeriaProjekt
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 250);
             dispatcherTimer.Start();
-
-            System.Windows.Forms.MessageBox.Show(AppDomain.CurrentDomain.BaseDirectory);
         }
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {

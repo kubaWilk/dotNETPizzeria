@@ -46,6 +46,18 @@ namespace PizzeriaServer.Meals
         }
 
         /// <summary>
+        /// Get pizza by id.
+        /// </summary>
+        /// <param name="pizzaId">Pizza's Id</param>
+        /// <returns><see cref="Pizza"></see></returns>
+        public Pizza GetPizzaById(long pizzaId)
+        {
+            Pizza pizza = _pizzaService.GetPizzaById(pizzaId);
+            _mealPriceService.UpdateActualPrice(ref pizza);
+            return pizza;
+        }
+
+        /// <summary>
         /// Get all associated toppings with pizza.
         /// </summary>
         /// <param name="pizzaId">Pizza's Id</param>

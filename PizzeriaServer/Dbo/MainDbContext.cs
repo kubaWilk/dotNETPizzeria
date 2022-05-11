@@ -2,6 +2,8 @@
 using PizzeriaServer.Meals.Dal;
 using PizzeriaServer.Meals.Models;
 using PizzeriaServer.Model;
+using PizzeriaServer.Orders.Dal;
+using PizzeriaServer.Orders.Models;
 using PizzeriaServer.Users.Dal;
 
 namespace PizzeriaServer.Dbo
@@ -17,6 +19,8 @@ namespace PizzeriaServer.Dbo
         public DbSet<User> Users { get; set; }
         public DbSet<Meal> Meals { get; set; }
         public DbSet<Topping> Toppings { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<PizzaOrderLine> PizzaOrderLines { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,9 +28,12 @@ namespace PizzeriaServer.Dbo
             modelBuilder.ApplyConfiguration(new ToppingDbConfiguration());
             modelBuilder.ApplyConfiguration(new PizzaToppingDbConfiguration());
             modelBuilder.ApplyConfiguration(new UserDbConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderDbConfiguration());
+            modelBuilder.ApplyConfiguration(new PizzaOrderLineDbConfiguration());
 
             UserDbInitializer.SeedUser(modelBuilder);
             MealDbInitializer.SeedPizza(modelBuilder);
+            OrderDbInitializer.SeedOrder(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
         }
@@ -34,6 +41,8 @@ namespace PizzeriaServer.Dbo
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.EnableSensitiveDataLogging(true);
+
             string connectionString = prepareConnectionString();
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }

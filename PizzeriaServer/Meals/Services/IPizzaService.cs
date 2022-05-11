@@ -5,7 +5,7 @@ namespace PizzeriaServer.Meals.Services
     /// <summary>
     /// Represents business logic layer and establishes a set of available operations 
     /// for <see cref="Pizza"/> domain object and associated classes such as <see cref="Topping"/>, 
-    /// and other class which Pizza cannot exists without.
+    /// and other classes which Pizza cannot exists without.
     /// </summary>
     internal interface IPizzaService
     {
@@ -29,5 +29,12 @@ namespace PizzeriaServer.Meals.Services
         /// <returns>List of <see cref="Topping"></see> or empty list of there's 
         /// no associated toppings with given pizza.</returns>
         public List<Topping> GetToppingsForPizza(long pizzaId);
+
+        /// <summary>
+        /// Get pizza by id.
+        /// </summary>
+        /// <param name="pizzaId">Pizza's Id</param>
+        /// <returns><see cref="Pizza"></see></returns>
+        public Pizza GetPizzaById(long pizzaId);
     }
 }

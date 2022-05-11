@@ -29,5 +29,11 @@ namespace PizzeriaServer.Meals.Services
             Topping topping = _pizzaQueryDao.GetToppingById(toppingId);
             return topping;
         }
+
+        public Pizza GetPizzaById(long pizzaId)
+        {
+            Pizza pizza = _pizzaQueryDao.GetPizzaById(pizzaId);
+            return pizza;
+        }
     }
 }

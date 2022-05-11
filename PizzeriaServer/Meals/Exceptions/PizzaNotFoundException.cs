@@ -1,13 +1,13 @@
-﻿namespace PizzeriaServer.Meals.Exceptions
+﻿namespace PizzeriaServer.Orders.Exceptions
 {
     [Serializable]
-    public class PizzaNotFoundException : Exception
+    public class OrderNotFoundException : Exception
     {
-        public PizzaNotFoundException(string? message) : base(message)
+        public OrderNotFoundException(string? message) : base(message)
         {
         }
 
-        public PizzaNotFoundException(string? message, Exception? innerException) : base(message, innerException)
+        public OrderNotFoundException(string? message, Exception? innerException) : base(message, innerException)
         {
         }
     }

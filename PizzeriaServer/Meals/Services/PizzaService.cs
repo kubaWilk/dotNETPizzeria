@@ -3,7 +3,7 @@ using PizzeriaServer.Meals.Models;
 
 namespace PizzeriaServer.Meals.Services
 {
-    public  class PizzaService : IPizzaService
+    internal  class PizzaService : IPizzaService
     {
         private readonly IPizzaQueryDao _pizzaQueryDao;
 

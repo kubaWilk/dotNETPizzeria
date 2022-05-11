@@ -7,9 +7,14 @@ using System.Text.RegularExpressions;
 
 namespace PizzeriaServer.Service
 {
-    public class UserService
+    internal class UserService : IUserService
     {
-        private UserDal userDal = new UserDal();
+        private readonly IUserDal userDal;
+
+        public UserService(IUserDal userDal)
+        {
+            this.userDal = userDal;
+        }
 
         /// <summary>
         /// Returns true when User has been properly logged in, returns false when password is wrong. 
@@ -38,7 +43,8 @@ namespace PizzeriaServer.Service
         }
         public void Register(User user)
         {
-            if (userDal.GetUserByLogin(user.Login) == null) {
+            if (userDal.GetUserByLogin(user.Login) == null)
+            {
                 checkUserData(user);
                 userDal.Save(user);
             }
@@ -70,7 +76,7 @@ namespace PizzeriaServer.Service
             if (!CityRegex.IsMatch(user.City)) throw new InvalidDataException("Wrong city format");
             if (!PostCodeRegex.IsMatch(user.PostCode)) throw new InvalidDataException("Wrong post code format");
         }
-        
+
         /// <summary>
         /// A method for updating logged in user. It should be used to save changes made to currentLoggedInUser during the session to the DB.
         /// </summary>

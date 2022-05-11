@@ -38,6 +38,11 @@ namespace PizzeriaProjekt.GUI.MainMenu.OrderHistory
         {
             List<PizzaOrder> pizzaOrders = orderFacade.GetUserOrderHistory(currentUser.Id);
 
+            if(pizzaOrders.Count <= 0)
+            {
+                return;
+            }
+
             foreach(PizzaOrder pizzaOrder in pizzaOrders)
             {
                 ordersListBox.Items.Add($"Zamówienie nr {pizzaOrder.OrderId} z {pizzaOrder.CreatedAt}");
@@ -69,6 +74,15 @@ namespace PizzeriaProjekt.GUI.MainMenu.OrderHistory
                 return;
             }
 
+        }
+
+        private void ordersListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (ordersListBox.SelectedItem == null) return;
+            else
+            {
+                chooseButton_Click(sender, e);
+            }
         }
     }
 }

@@ -15,19 +15,19 @@
                 <GradientStop Color="#FF9CCEA4" Offset="0.994"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button x:Name="backButton" Content="Powrót" HorizontalAlignment="Left" Margin="682,411,0,0" VerticalAlignment="Top" Height="35" Width="92" Click="backButton_Click"/>
+        <Button x:Name="backButton" Content="Powrót" HorizontalAlignment="Left" Margin="41,402,0,0" VerticalAlignment="Top" Height="35" Width="92" Click="backButton_Click"/>
         <Label x:Name="titleLabel" Content="ZAMÓWIENIE NR " HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
         <Label x:Name="whoLabel" Content="Zamawiający: " HorizontalAlignment="Left" Margin="40,77,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="dateLabel" Content="Data zamówienia" HorizontalAlignment="Left" Margin="40,190,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="statusLabel" Content="Status realizacji" HorizontalAlignment="Left" Margin="40,216,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="summaryLabel" Content="ŁĄCZNIE: 420zł" HorizontalAlignment="Left" Margin="40,397,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="dateLabel" Content="Data zamówienia:" HorizontalAlignment="Left" Margin="40,190,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="statusLabel" Content="Status realizacji:" HorizontalAlignment="Left" Margin="40,216,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="summaryLabel" Content="ŁĄCZNIE:" HorizontalAlignment="Left" Margin="354,397,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <Label x:Name="phoneLabel" Content="Nr telefonu:" HorizontalAlignment="Left" Margin="40,100,0,0" VerticalAlignment="Top"/>
         <Label x:Name="addressLabel" Content="Adres: " HorizontalAlignment="Left" Margin="40,122,0,0" VerticalAlignment="Top"/>
         <Label x:Name="streetLabel" Content="ul.BardzoDługa 42/2137" HorizontalAlignment="Left" Margin="50,138,0,0" VerticalAlignment="Top"/>
         <Label x:Name="postCodeLabel" Content="00-000" HorizontalAlignment="Left" Margin="50,164,0,0" VerticalAlignment="Top"/>
         <Label x:Name="cityLabel" Content="Bardzo Długa Nazwa Maista" HorizontalAlignment="Left" Margin="95,164,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="notesTextBox" HorizontalAlignment="Left" Margin="40,348,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="299" Height="49"/>
-        <Label x:Name="notesLabel" Content="Uwagi do zamówienia" HorizontalAlignment="Left" Margin="40,322,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="notesTextBox" HorizontalAlignment="Left" Margin="40,347,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="299" Height="49" IsEnabled="False"/>
+        <Label x:Name="notesLabel" Content="Uwagi do zamówienia" HorizontalAlignment="Left" Margin="40,321,0,0" VerticalAlignment="Top"/>
         <TreeView x:Name="orderItemsTreeView" Margin="354,73,26,53"/>
         <Label x:Name="orderItemsLabel" Content="Elementy zamówienia" HorizontalAlignment="Left" Margin="400,47,0,0" VerticalAlignment="Top"/>
     </Grid>

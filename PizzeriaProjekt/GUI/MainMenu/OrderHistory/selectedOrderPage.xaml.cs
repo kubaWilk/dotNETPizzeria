@@ -33,6 +33,17 @@ namespace PizzeriaProjekt.GUI.MainMenu.OrderHistory
             postCodeLabel.Content = $"{pizzaOrder.User.PostCode}";
             cityLabel.Content = $"{pizzaOrder.User.City}";
             dateLabel.Content += $" {pizzaOrder.CreatedAt}";
+            notesTextBox.Text = $" {pizzaOrder.UserNotes}";
+            if (pizzaOrder.IsDone)
+            {
+                statusLabel.Content += " zrealizowane";
+            }
+            else
+            {
+                statusLabel.Content += " w realizacji";
+            }
+            summaryLabel.Content += $"{pizzaOrder.ActualPrice}";
+
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)

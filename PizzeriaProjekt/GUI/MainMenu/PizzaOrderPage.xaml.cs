@@ -29,9 +29,10 @@ namespace PizzeriaProjekt.GUI.MainMenu
     }
 
 
-        private void ToppingsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void PizzasList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            TestLabel.Content = ToppingsList.SelectedItem.ToString();
+            TestLabel.Content = PizzasList.SelectedItem.ToString();
+
         }
     }
 }

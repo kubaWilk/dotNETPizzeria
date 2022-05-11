@@ -33,7 +33,8 @@ namespace PizzeriaProjekt.GUI.MainMenu
 
         private void MainMenuLogoutBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            LoginWindow loginWindow = new LoginWindow();
+            NavigationService.Navigate(loginWindow);
         }
 
         private void OrderPizza_Click(object sender, RoutedEventArgs e)

@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PizzeriaProjekt.GUI.MainMenu
+namespace PizzeriaProjekt.GUI.MainMenu.OrderHistory
 {
     /// <summary>
     /// Logika interakcji dla klasy OrderHistoryPage.xaml

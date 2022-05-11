@@ -4,10 +4,9 @@ using PizzeriaServer.Model;
 namespace PizzeriaServer.Orders
 {
     /// <summary>
-    /// Simplified Pizza Order class. Basically it represent DTO object 
-    /// of newly created pizza order.
+    /// Pizza Order represents DTO response pizza order.
     /// </summary>
-    public class SavedPizzaOrder
+    public class PizzaOrder
     {
         public long OrderId { get; set; }
         public User User { get; set; }
@@ -26,7 +25,6 @@ namespace PizzeriaServer.Orders
             public PizzaCrust Crust { get; set; }
             public PizzaSize Size { get; set; }
             public List<Topping> ExtraToppings { get; set; }
-
             public decimal? ActualPrice { get; set; }
         }
     }

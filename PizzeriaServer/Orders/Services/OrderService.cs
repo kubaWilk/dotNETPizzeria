@@ -16,7 +16,7 @@ namespace PizzeriaServer.Orders.Services
             _orderMutationDao = orderMutationDao;
         }
 
-        public SavedPizzaOrder CreateOrder(CreatePizzaOrder newOrderRequest)
+        public PizzaOrder CreateOrder(CreatePizzaOrder newOrderRequest)
         {
             Order orderToSave = OrderMapper.mapToOrder(newOrderRequest);
 
@@ -27,7 +27,7 @@ namespace PizzeriaServer.Orders.Services
             return OrderMapper.mapToSavedPizzaOrder(savedOrder);
         }
 
-        public List<SavedPizzaOrder> GetOrders()
+        public List<PizzaOrder> GetOrders()
         {
             List<Order> orders = _orderQueryDao.GetOrders();
 
@@ -35,11 +35,19 @@ namespace PizzeriaServer.Orders.Services
                 .ToList();
         }
 
-        public SavedPizzaOrder GetOrderById(long orderId)
+        public PizzaOrder GetOrderById(long orderId)
         {
             Order order = _orderQueryDao.GetOrderById(orderId);
 
             return OrderMapper.mapToSavedPizzaOrder(order);
+        }
+
+        public List<PizzaOrder> GetOrdersByUserId(long userId)
+        {
+            List<Order> orders = _orderQueryDao.GetOrdersByUserId(userId);
+
+            return orders.Select(order => OrderMapper.mapToSavedPizzaOrder(order))
+                .ToList();
         }
     }
 }

@@ -25,10 +25,10 @@ namespace PizzeriaServer.Orders
         /// </summary>
         /// <param name="newOrderRequest"><see cref="CreatePizzaOrder"/> contains 
         /// all data necessary for creation of new pizza order.</param>
-        /// <returns><see cref="SavedPizzaOrder"/></returns>
-        public SavedPizzaOrder CreateOrder(CreatePizzaOrder newOrderRequest)
+        /// <returns><see cref="PizzaOrder"/></returns>
+        public PizzaOrder CreateOrder(CreatePizzaOrder newOrderRequest)
         {
-            SavedPizzaOrder order = _orderService.CreateOrder(newOrderRequest);
+            PizzaOrder order = _orderService.CreateOrder(newOrderRequest);
 
             _orderPriceCalculator.UpdateActualPrice(ref order);
 
@@ -38,10 +38,10 @@ namespace PizzeriaServer.Orders
         /// <summary>
         /// Get list of all persisted pizza orders.
         /// </summary>
-        /// <returns>List of <see cref="SavedPizzaOrder"/> or empty if no order exists.</returns>
-        public List<SavedPizzaOrder> GetOrders()
+        /// <returns>List of <see cref="PizzaOrder"/> or empty if no order exists.</returns>
+        public List<PizzaOrder> GetOrders()
         {
-            List<SavedPizzaOrder> orders = _orderService.GetOrders();
+            List<PizzaOrder> orders = _orderService.GetOrders();
 
             orders.ForEach(order => _orderPriceCalculator.UpdateActualPrice(ref order));
 
@@ -49,19 +49,34 @@ namespace PizzeriaServer.Orders
         }
 
         /// <summary>
-        /// Get <see cref="SavedPizzaOrder"/> by order id.
+        /// Get <see cref="PizzaOrder"/> by order id.
         /// </summary>
         /// <param name="orderId">Order's id.</param>
-        /// <returns><see cref="SavedPizzaOrder"/></returns>
+        /// <returns><see cref="PizzaOrder"/></returns>
         /// <exception cref="OrderNotFoundException">Thrown when order 
         /// with given id is not found.</exception>
-        public SavedPizzaOrder GetOrderById(long orderId)
+        public PizzaOrder GetOrderById(long orderId)
         {
-            SavedPizzaOrder order = _orderService.GetOrderById(orderId);
+            PizzaOrder order = _orderService.GetOrderById(orderId);
 
             _orderPriceCalculator.UpdateActualPrice(ref order);
 
             return order;
+        }
+
+        /// <summary>
+        /// Get all <see cref="PizzaOrder"/>s of the user.
+        /// </summary>
+        /// <param name="userId">User's id.</param>
+        /// <returns>List of <see cref="PizzaOrder"/> of the user or 
+        /// empty list, if given user hasn't ordered anything.</returns>
+        public List<PizzaOrder> GetUserOrderHistory(long userId)
+        {
+            List<PizzaOrder> userOrderHistory = _orderService.GetOrdersByUserId(userId);
+
+            userOrderHistory.ForEach(order => _orderPriceCalculator.UpdateActualPrice(ref order));
+
+            return userOrderHistory;
         }
     }
 }

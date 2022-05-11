@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using PizzeriaServer.Orders.Models;
 using PizzeriaServer.Orders.Exceptions;
+using PizzeriaServer.Meals.Models;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace PizzeriaServer.Orders.Dal
 {
@@ -17,18 +19,7 @@ namespace PizzeriaServer.Orders.Dal
 
         public List<Order> GetOrders()
         {
-            List<Order> orders = _dbContext.Orders
-                .Include(order => order.User)
-                .Include(order => order.OrderLines)
-                .ThenInclude(orderLine => orderLine.Pizza)
-                .ThenInclude(pizza => pizza.PizzaToppings)
-                .ThenInclude(pizzaToping => pizzaToping.Topping)
-                .Include(order => order.OrderLines)
-                .ThenInclude(orderLine => orderLine.Crust)
-                .Include(order => order.OrderLines)
-                .ThenInclude(orderLine => orderLine.Size)
-                .Include(order => order.OrderLines)
-                .ThenInclude(orderLine => orderLine.ExtraToppings)
+            List<Order> orders = EagerlyLoadOrder()
                 .ToList();
 
             return orders;
@@ -37,19 +28,8 @@ namespace PizzeriaServer.Orders.Dal
         public Order GetOrderById(long orderId)
         {
             {
-                Order? order = _dbContext.Orders
+                Order? order = EagerlyLoadOrder()
                     .Where(order => order.Id == orderId)
-                    .Include(order => order.User)
-                    .Include(order => order.OrderLines)
-                    .ThenInclude(orderLine => orderLine.Pizza)
-                    .ThenInclude(pizza => pizza.PizzaToppings)
-                    .ThenInclude(pizzaToping => pizzaToping.Topping)
-                    .Include(order => order.OrderLines)
-                    .ThenInclude(orderLine => orderLine.Crust)
-                    .Include(order => order.OrderLines)
-                    .ThenInclude(orderLine => orderLine.Size)
-                    .Include(order => order.OrderLines)
-                    .ThenInclude(orderLine => orderLine.ExtraToppings)
                     .FirstOrDefault();
 
                 if (order == null)
@@ -59,6 +39,31 @@ namespace PizzeriaServer.Orders.Dal
 
                 return order;
             }
+        }
+
+        public List<Order> GetOrdersByUserId(long userId)
+        {
+            List<Order> orders = EagerlyLoadOrder()
+                .Where(order => order.UserId == userId)
+                .ToList();
+
+            return orders;
+        }
+
+        private IIncludableQueryable<Order, ICollection<Topping>> EagerlyLoadOrder()
+        {
+            return _dbContext.Orders
+               .Include(order => order.User)
+               .Include(order => order.OrderLines)
+               .ThenInclude(orderLine => orderLine.Pizza)
+               .ThenInclude(pizza => pizza.PizzaToppings)
+               .ThenInclude(pizzaToping => pizzaToping.Topping)
+               .Include(order => order.OrderLines)
+               .ThenInclude(orderLine => orderLine.Crust)
+               .Include(order => order.OrderLines)
+               .ThenInclude(orderLine => orderLine.Size)
+               .Include(order => order.OrderLines)
+               .ThenInclude(orderLine => orderLine.ExtraToppings);
         }
     }
 }

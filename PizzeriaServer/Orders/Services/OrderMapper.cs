@@ -9,7 +9,7 @@ namespace PizzeriaServer.Orders.Services
         {
         }
 
-        public static Order mapToOrder(CreatePizzaOrder newOrderRequest)
+        internal static Order mapToOrder(CreatePizzaOrder newOrderRequest)
         {
             List<PizzaOrderLine> pizzaOrderLines = newOrderRequest.Items.Select(item =>
             {
@@ -44,10 +44,10 @@ namespace PizzeriaServer.Orders.Services
             return order;
         }
 
-        internal static SavedPizzaOrder mapToSavedPizzaOrder(Order savedOrder)
+        internal static PizzaOrder mapToSavedPizzaOrder(Order savedOrder)
         {
             long positionInOrder = 0;
-            List<SavedPizzaOrder.Item> items = savedOrder.OrderLines.Select(orderLine => new SavedPizzaOrder.Item
+            List<PizzaOrder.Item> items = savedOrder.OrderLines.Select(orderLine => new PizzaOrder.Item
             {
                 OrderLineId = orderLine.Id,
                 PositionInOrder = ++positionInOrder,
@@ -57,7 +57,7 @@ namespace PizzeriaServer.Orders.Services
                 ExtraToppings = orderLine.ExtraToppings.ToList()
             }).ToList();
 
-            return new SavedPizzaOrder
+            return new PizzaOrder
             {
                 OrderId = savedOrder.Id,
                 CreatedAt = savedOrder.CreatedAt,

@@ -16,9 +16,9 @@ namespace PizzeriaServer.Orders.Services
 
         /// <summary>
         /// Calculates actual price of <see cref="Order"/>.
-        /// updates <see cref="SavedPizzaOrder.ActualPrice"/> field.
+        /// updates <see cref="PizzaOrder.ActualPrice"/> field.
         /// </summary>
-        public void UpdateActualPrice(ref SavedPizzaOrder pizzaOrder)
+        public void UpdateActualPrice(ref PizzaOrder pizzaOrder)
         {
             IEnumerable<decimal> itemsPrice = pizzaOrder.Items.Select(item =>
             {

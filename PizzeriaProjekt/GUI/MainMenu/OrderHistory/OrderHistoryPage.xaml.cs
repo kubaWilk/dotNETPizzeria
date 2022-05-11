@@ -49,5 +49,26 @@ namespace PizzeriaProjekt.GUI.MainMenu.OrderHistory
         {
             NavigationService.GoBack();
         }
+
+        private void chooseButton_Click(object sender, RoutedEventArgs e)
+        {
+            string orderID = string.Empty;
+
+            if (ordersListBox.SelectedItem != null)
+            {
+                orderID = ordersListBox.SelectedItem.ToString();
+                string[] temp = orderID.Split(' ');
+
+                PizzaOrder pizzaOrderTemp = orderFacade.GetOrderById(long.Parse(temp[2]));
+
+                selectedOrderPage selectedOrderPage = new selectedOrderPage(pizzaOrderTemp);
+                NavigationService.Navigate(selectedOrderPage);
+            }
+            else
+            {
+                return;
+            }
+
+        }
     }
 }

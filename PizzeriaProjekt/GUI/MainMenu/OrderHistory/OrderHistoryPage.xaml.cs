@@ -57,9 +57,9 @@ namespace PizzeriaProjekt.GUI.MainMenu.OrderHistory
             if (ordersListBox.SelectedItem != null)
             {
                 orderID = ordersListBox.SelectedItem.ToString();
-                string[] temp = orderID.Split(' ');
+                string[] orderIDSplit = orderID.Split(' ');
 
-                PizzaOrder pizzaOrderTemp = orderFacade.GetOrderById(long.Parse(temp[2]));
+                PizzaOrder pizzaOrderTemp = orderFacade.GetOrderById(long.Parse(orderIDSplit[2]));
 
                 selectedOrderPage selectedOrderPage = new selectedOrderPage(pizzaOrderTemp);
                 NavigationService.Navigate(selectedOrderPage);

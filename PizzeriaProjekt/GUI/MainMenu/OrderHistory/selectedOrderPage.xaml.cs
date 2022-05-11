@@ -27,6 +27,12 @@ namespace PizzeriaProjekt.GUI.MainMenu.OrderHistory
             InitializeComponent();
             this.pizzaOrder = pizzaOrder;
             titleLabel.Content = $"ZAMÓWIENIE NR {pizzaOrder.OrderId}";
+            whoLabel.Content += $" {pizzaOrder.User.FirstName} {pizzaOrder.User.LastName}";
+            phoneLabel.Content += $" {pizzaOrder.User.PhoneNumber}";
+            streetLabel.Content = $"{pizzaOrder.User.Street}";
+            postCodeLabel.Content = $"{pizzaOrder.User.PostCode}";
+            cityLabel.Content = $"{pizzaOrder.User.City}";
+            dateLabel.Content += $" {pizzaOrder.CreatedAt}";
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)

@@ -29,6 +29,7 @@
                 <Setter Property = "Background" Value = "IndianRed" />
                 <Setter Property = "TextWrapping" Value = "Wrap" />
                 <Setter Property = "FontSize" Value = "20" />
+                <Setter Property="IsReadOnly" Value="True" />
             </Style>
           
           

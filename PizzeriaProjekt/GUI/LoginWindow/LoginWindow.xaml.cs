@@ -1,43 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using PizzeriaServer.Exceptions;
 using PizzeriaServer.Service;
+using PizzeriaServer.Users;
 
 namespace PizzeriaProjekt
 {
     public partial class loginWindow :MetroWindow
     {
-        UserService userService = new UserService();
+        UserFacade userFacade = new UserFacade();
         public loginWindow()
         {
             InitializeComponent();
-            TitleBarHeight = 23;
- 
+            TitleBarHeight = 20;
+
+
         }
      
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
+
             {
                 try
                 {
-                    if (userService.LogIn(loginBox.Text, passwordBox.ToString()))
+                    if (passwordVisibleBox.IsVisible) {
+                        passwordBox.Password = passwordVisibleBox.Text;
+                    }
+
+                    if (userFacade.LogIn(loginBox.Text, passwordBox.Password))
                     {
                         System.Windows.MessageBox.Show($"Zapraszamy! ");
                         Form MainMenu = new Form();
                         MainMenu.ShowDialog();
-                    
+                        this.Hide();
                     }
                     else
                     {
@@ -46,6 +41,11 @@ namespace PizzeriaProjekt
                     }
 
                 }
+                catch (System.NullReferenceException)
+                {
+                    System.Windows.MessageBox.Show("Niewprowadzono danych, wprowadź dane logowania");
+                }
+
                 catch (UserNotFoundException)
                 {
                     System.Windows.MessageBox.Show("Niepoprawny login");
@@ -54,21 +54,42 @@ namespace PizzeriaProjekt
                 {
                     System.Windows.MessageBox.Show("Błąd połączenia, spróbuj ponownie później");
                 }
-                catch (System.NullReferenceException)
+                catch (Exception ex)
                 {
-                    System.Windows.MessageBox.Show("Niewprowadzono danych, wprowadź dane logowania");
+                    System.Windows.MessageBox.Show("Wystąpił nieoczekiwany błąd");
                 }
 
             }
         }
+        private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch toggleSwitch = sender as ToggleSwitch;
 
+                if (toggleSwitch.IsOn == true)
+                {
+                    passwordVisibleBox.Text = passwordBox.Password;
+                    passwordBox.Visibility = Visibility.Collapsed;
+                    passwordVisibleBox.Visibility = Visibility.Visible;
+            
+                }
+                else
+                {
+                    passwordBox.Password = passwordVisibleBox.Text;
+                    passwordVisibleBox.Visibility = Visibility.Collapsed;
+                    passwordBox.Visibility = Visibility.Visible;
+                }
+            
+        }
         private void registerButton_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
             registerWindow register = new registerWindow();
             register.ShowDialog();
-            
-       
         }
+
+  
+       
+
+     
     }
 }

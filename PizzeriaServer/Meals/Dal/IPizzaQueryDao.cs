@@ -17,10 +17,17 @@ namespace PizzeriaServer.Meals.Dal
         /// Get <see cref="Topping"/> by id.
         /// </summary>
         /// <param name="toppingId">Topping's Id</param>
-        /// <returns></returns>
+        /// <returns><see cref="Topping"/></returns>
         /// <exception cref="ToppingNotFoundException">Thrown when topping 
         /// with given id is not found.</exception>
         public Topping GetToppingById(long toppingId);
+
+        /// <summary>
+        /// Get pizza by id.
+        /// </summary>
+        /// <param name="pizzaId">Pizza's Id</param>
+        /// <returns><see cref="Pizza"></see></returns>
+        public Pizza GetPizzaById(long pizzaId);
 
         /// <summary>
         /// Get all associated toppings with pizza.

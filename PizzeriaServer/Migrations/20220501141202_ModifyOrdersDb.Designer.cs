@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PizzeriaServer.Dbo;
 
@@ -10,9 +11,10 @@ using PizzeriaServer.Dbo;
 namespace PizzeriaServer.Migrations
 {
     [DbContext(typeof(MainDbContext))]
-    partial class MainDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220501141202_ModifyOrdersDb")]
+    partial class ModifyOrdersDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,7 +74,7 @@ namespace PizzeriaServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PizzaCrust", (string)null);
+                    b.ToTable("PizzaCrust");
 
                     b.HasData(
                         new
@@ -111,7 +113,7 @@ namespace PizzeriaServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PizzaSize", (string)null);
+                    b.ToTable("PizzaSize");
 
                     b.HasData(
                         new

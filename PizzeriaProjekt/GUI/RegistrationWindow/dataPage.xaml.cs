@@ -2,6 +2,7 @@
 using PizzeriaServer.Exceptions;
 using PizzeriaServer.Model;
 using PizzeriaServer.Service;
+using PizzeriaServer.Users;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,7 +16,7 @@ namespace PizzeriaProjekt
     /// </summary>
     public partial class dataPage : Page
     { 
-        UserService Userservice= new UserService();
+        UserFacade userFacade = new UserFacade();
         public dataPage()
         {
             InitializeComponent();
@@ -48,12 +49,12 @@ namespace PizzeriaProjekt
                     City = cityBox.Text,
                     PostCode = postCodeBox.Text,
                 };
-                Userservice.Register(user);
+                userFacade.Register(user);
                 var myWindow = Window.GetWindow(this);
                 myWindow.Close();
                 System.Windows.MessageBox.Show("Rejestracja przebiegła pomyślnie, możesz przejść do logowania Dziękujemy");
             }
-            catch (InvalidOperationException)
+            catch (InvalidOperationException ex)
             {
 
                 wrongBirthDate.IsOpen = true;
@@ -130,7 +131,7 @@ namespace PizzeriaProjekt
         {
             loginWindow loginWindow = new loginWindow();
             loginWindow.Show();
-            App.Current.MainWindow.Close();
+           
         }
 
         private void LoginBox_TextChanged(object sender, TextChangedEventArgs e)

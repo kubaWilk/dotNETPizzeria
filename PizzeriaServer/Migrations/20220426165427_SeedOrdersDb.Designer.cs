@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PizzeriaServer.Dbo;
 
@@ -10,9 +11,10 @@ using PizzeriaServer.Dbo;
 namespace PizzeriaServer.Migrations
 {
     [DbContext(typeof(MainDbContext))]
-    partial class MainDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220426165427_SeedOrdersDb")]
+    partial class SeedOrdersDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,7 +74,7 @@ namespace PizzeriaServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PizzaCrust", (string)null);
+                    b.ToTable("PizzaCrust");
 
                     b.HasData(
                         new
@@ -111,7 +113,7 @@ namespace PizzeriaServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PizzaSize", (string)null);
+                    b.ToTable("PizzaSize");
 
                     b.HasData(
                         new
@@ -339,16 +341,11 @@ namespace PizzeriaServer.Migrations
                         .HasDefaultValue(0ul)
                         .HasColumnName("IsDone");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.Property<string>("UserNotes")
                         .HasColumnType("longtext")
                         .HasColumnName("UserNotes");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Orders", (string)null);
 
@@ -357,15 +354,13 @@ namespace PizzeriaServer.Migrations
                         {
                             Id = 1L,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDone = 0ul,
-                            UserId = 1
+                            IsDone = 0ul
                         },
                         new
                         {
                             Id = 2L,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDone = 0ul,
-                            UserId = 1
+                            IsDone = 0ul
                         });
                 });
 
@@ -500,17 +495,6 @@ namespace PizzeriaServer.Migrations
                     b.HasOne("PizzeriaServer.Orders.Models.PizzaOrderLine", null)
                         .WithMany("ExtraToppings")
                         .HasForeignKey("PizzaOrderLineId");
-                });
-
-            modelBuilder.Entity("PizzeriaServer.Orders.Models.Order", b =>
-                {
-                    b.HasOne("PizzeriaServer.Model.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("PizzeriaServer.Orders.Models.PizzaOrderLine", b =>

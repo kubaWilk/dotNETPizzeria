@@ -1,4 +1,5 @@
 ﻿using PizzeriaServer.Meals;
+using PizzeriaServer.Meals.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,12 +27,31 @@ namespace PizzeriaProjekt.GUI.MainMenu
         {
             InitializeComponent();
             mealFacade = new MealFacade();
-    }
+            List<Pizza> pizzas = mealFacade.GetPizzas();
+            foreach (Pizza pizza in pizzas)
+            {
+                PizzasList.Items.Add($"{pizza.Name}");
+            }
+        }
 
 
         private void PizzasList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+
             TestLabel.Content = PizzasList.SelectedItem.ToString();
+            
+
+
+        }
+
+        private void goBackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void OrderUserDetailsBtn_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

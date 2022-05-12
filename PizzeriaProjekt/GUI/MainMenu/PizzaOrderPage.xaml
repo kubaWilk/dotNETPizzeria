@@ -17,5 +17,7 @@
         </Grid.Background>
         <ListBox x:Name="PizzasList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="28,64,383,176" SelectionChanged="PizzasList_SelectionChanged"/>
         <Label x:Name="TestLabel" Content="Label" HorizontalAlignment="Left" Margin="550,119,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="OrderUserDetailsBtn" Content="Dalej" HorizontalAlignment="Left" Margin="685,380,0,0" VerticalAlignment="Top" Height="34" Width="81" Click="OrderUserDetailsBtn_Click"/>
+        <Button x:Name="goBackBtn" Content="Wstecz" HorizontalAlignment="Left" Margin="28,380,0,0" VerticalAlignment="Top" Height="34" Width="81" Click="Button_Click"/>
     </Grid>
 </Page>

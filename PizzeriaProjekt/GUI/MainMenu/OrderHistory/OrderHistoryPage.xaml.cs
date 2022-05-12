@@ -36,18 +36,24 @@ namespace PizzeriaProjekt.GUI.MainMenu.OrderHistory
 
         private void loadOrdersIntoOrderList()
         {
-            List<PizzaOrder> pizzaOrders = orderFacade.GetUserOrderHistory(currentUser.Id);
-
-            if(pizzaOrders.Count <= 0)
+            try 
             {
-                return;
-            }
+                List<PizzaOrder> pizzaOrders = orderFacade.GetUserOrderHistory(currentUser.Id);
 
-            foreach(PizzaOrder pizzaOrder in pizzaOrders)
+                if (pizzaOrders.Count <= 0)
+                {
+                    return;
+                }
+
+                foreach (PizzaOrder pizzaOrder in pizzaOrders)
+                {
+                    ordersListBox.Items.Add($"Zamówienie nr {pizzaOrder.OrderId} z {pizzaOrder.CreatedAt}");
+                }
+            }
+            catch (MySqlConnector.MySqlException)
             {
-                ordersListBox.Items.Add($"Zamówienie nr {pizzaOrder.OrderId} z {pizzaOrder.CreatedAt}");
+                System.Windows.Forms.MessageBox.Show("Wystąpił błąd połączenia z bazą danych!");
             }
-
         }
 
     private void backButton_Click(object sender, RoutedEventArgs e)

@@ -1,33 +1,46 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <OutputType>WinExe</OutputType>
-        <TargetFramework>net6.0-windows</TargetFramework>
-        <Nullable>enable</Nullable>
-        <UseWindowsForms>true</UseWindowsForms>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <UseWPF>True</UseWPF>
-    </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>True</UseWPF>
+	</PropertyGroup>
 
-    <ItemGroup>
+	<ItemGroup>
+		<None Remove="GUI\RegistrationWindow\Rules.txt" />
+		<None Remove="Rules.txt" />
+	</ItemGroup>
 
-        <None Remove="GUI\RegistrationWindow\Rules.txt" />
-        <None Remove="Rules.txt" />
-    </ItemGroup>
+	<ItemGroup>
+		<Content Include="GUI\RegistrationWindow\Rules.txt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 
-    <ItemGroup>
-        <Content Include="GUI\RegistrationWindow\Rules.txt">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MahApps.Metro" Version="2.4.9" />
+		<PackageReference Include="MahApps.Metro.IconPacks.Modern" Version="4.11.0" />
+	</ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="MahApps.Metro" Version="2.4.9" />
-        <PackageReference Include="MahApps.Metro.IconPacks.Modern" Version="4.11.0" />
-    </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\PizzeriaServer\PizzeriaServer.csproj" />
+	</ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\PizzeriaServer\PizzeriaServer.csproj" />
-    </ItemGroup>
+	<!--<ItemGroup>
+		<ContentWithTargetPath Include="Resources\Meals\**">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>Meals</TargetPath>
+		</ContentWithTargetPath>
+		<None Include="Resources\Meals" />
+	</ItemGroup>-->
+	<ItemGroup>
+		<None Include="Resources\Meals\**" CopyToOutputDirectory="PreserveNewest" LinkBase="Resources\Meals\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Resources\Meals\" />
+	</ItemGroup>
 
 </Project>

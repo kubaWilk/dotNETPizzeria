@@ -57,7 +57,7 @@ namespace PizzeriaProjekt.GUI.MainMenu.OrderHistory
             }
         }
 
-        private void backButton_Click(object sender, RoutedEventArgs e)
+    private void backButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }

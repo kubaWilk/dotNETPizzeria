@@ -28,12 +28,15 @@ namespace PizzeriaServer.DB
 
         public void Save(User user)
         {
+            //TODO: no argument == null checking
             _userContext.Users.Add(user);
             _userContext.SaveChanges();
         }
 
         public void Update(User user)
         {
+            //TODO: no argument == null checking
+
             var DbUser = _userContext.Users
                 .First(x => x.Id == user.Id);
 
@@ -53,6 +56,8 @@ namespace PizzeriaServer.DB
 
         public void Delete(User user)
         {
+            //TODO: no argument == null checking
+
             var DbUser = _userContext.Users.First(x => x.Login == user.Login);
 
             if (DbUser == null) throw new UserNotFoundException();

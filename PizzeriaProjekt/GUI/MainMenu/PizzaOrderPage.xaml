@@ -1,9 +1,10 @@
-﻿<Page x:Class="PizzeriaProjekt.GUI.MainMenu.PizzaOrderPage"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PizzeriaProjekt.GUI.MainMenu"
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="PizzeriaProjekt.GUI.MainMenu.PizzaOrderPage"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PizzaOrderPage">
@@ -15,9 +16,24 @@
                 <GradientStop Color="#FF9CCEA4" Offset="0.994"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <ListBox x:Name="PizzasList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="28,64,383,176" SelectionChanged="PizzasList_SelectionChanged"/>
-        <Label x:Name="TestLabel" Content="Label" HorizontalAlignment="Left" Margin="550,119,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="OrderUserDetailsBtn" Content="Dalej" HorizontalAlignment="Left" Margin="685,380,0,0" VerticalAlignment="Top" Height="34" Width="81" Click="OrderUserDetailsBtn_Click"/>
-        <Button x:Name="goBackBtn" Content="Wstecz" HorizontalAlignment="Left" Margin="28,380,0,0" VerticalAlignment="Top" Height="34" Width="81" Click="Button_Click"/>
+        <ListBox x:Name="PizzasList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="28,37,463,203" SelectionChanged="PizzasList_SelectionChanged">
+            <!--<mah:HamburgerMenu/>-->
+        </ListBox>
+        <Label x:Name="label" Content="Skladniki wybranej pizzy:" HorizontalAlignment="Left" Margin="31,342,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="toppingsLabel" Content="Label" HorizontalAlignment="Left" Margin="164,342,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="cartListBox" Margin="466,64,23,176"/>
+        <Button x:Name="addButton" Content="Dodaj" HorizontalAlignment="Left" Margin="466,39,0,0" VerticalAlignment="Top" Click="addButton_Click"/>
+        <Button x:Name="deleteButton" Content="Usuń" HorizontalAlignment="Left" Margin="466,279,0,0" VerticalAlignment="Top" Click="deleteButton_Click"/>
+        <Button x:Name="orderButton" Content="Zamów" HorizontalAlignment="Left" Margin="669,321,0,0" VerticalAlignment="Top" Click="orderButton_Click"/>
+        <RadioButton x:Name="thinRadioButton" Content="Cienkie" HorizontalAlignment="Left" Margin="31,271,0,0" VerticalAlignment="Top" GroupName="Crust"/>
+        <RadioButton x:Name="thiccRadioButton" Content="Grube" HorizontalAlignment="Left" Margin="121,271,0,0" VerticalAlignment="Top" GroupName="Crust"/>
+        <RadioButton x:Name="smallRadioButton" Content="Mała" HorizontalAlignment="Left" Margin="38,317,0,0" VerticalAlignment="Top" GroupName="Size"/>
+        <RadioButton x:Name="mediumRadioButton" Content="Średnia" HorizontalAlignment="Left" Margin="92,317,0,0" VerticalAlignment="Top" GroupName="Size"/>
+        <RadioButton x:Name="bigRadioButton" Content="Duża" HorizontalAlignment="Left" Margin="156,317,0,0" VerticalAlignment="Top" GroupName="Size"/>
+        <Label x:Name="label1" Content="Rozmiar pizzy:" HorizontalAlignment="Left" Margin="31,291,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Grubość ciasta" HorizontalAlignment="Left" Margin="29,248,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="commentsTextBox" HorizontalAlignment="Left" Margin="272,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Height="102"/>
+        <Label x:Name="commentLabel" Content="Uwagi do zamówienia" HorizontalAlignment="Left" Margin="272,289,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="backButton" Content="Powrót" HorizontalAlignment="Left" Margin="61,419,0,0" VerticalAlignment="Top" Click="backButton_Click"/>
     </Grid>
 </Page>

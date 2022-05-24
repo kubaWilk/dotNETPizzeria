@@ -9,7 +9,67 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.CurrentUserContainer.html",
-          "hash": "MEu+PPjxBd2lMWiBS9wuT6HIq7JlOy4c1BOH0eHFOu0="
+          "hash": "ebHGAFXzsiSfcroDWt5Ok8DrjqtZjvDN88o1PKJLk9k="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.DB.IUserDal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.DB.IUserDal.html",
+          "hash": "LYocw6aoLzpIitWycv0AhgJJnlGOIQYd73ug7moH1eE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.DB.UserDal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.DB.UserDal.html",
+          "hash": "QLzrtZ9e/DMQyRusOEBFXv/ZjP0Er+gykIJcBmk9T7s="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.DB.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.DB.html",
+          "hash": "hp0A2CkvBNi83VdR/S81/EMwSk/AZlnLfxHqlGfCQKk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Dbo.MainDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Dbo.MainDbContext.html",
+          "hash": "bsqKz2SVLsAz0yCfh11HLLz/FJjrdYqHWJ9iUunab4M="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Dbo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Dbo.html",
+          "hash": "PkI01aCGvvbuEHtGoJqPNQNon6wMumDWqYH6SKtLZ0U="
         }
       },
       "is_incremental": true,
@@ -21,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Exceptions.UserAlreadyExistsException.html",
-          "hash": "vzrKivBY0kJX20vO1aeJq9nlThaaKAR/jvsvB12rOfo="
+          "hash": "L2YbWaYzRhcvq++rn9/G1tE+wMpkKOOyVXNlT84HU4M="
         }
       },
       "is_incremental": true,
@@ -33,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Exceptions.UserNotFoundException.html",
-          "hash": "0f0YhMuMe66wOcJtuvvb14fTRx0/mv8O2dMO+mbrbrY="
+          "hash": "UnisPfJHS3BMRVn1yhCNOS0q3ffX0T0eb34GR8ZinQg="
         }
       },
       "is_incremental": true,
@@ -53,11 +113,119 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Dal.IMealQueryDao.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Dal.IMealQueryDao.html",
+          "hash": "0ND0b1UswIl3Ib87dSeYTJYHrWcweYv83SKXUp9PzzM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Dal.IPizzaQueryDao.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Dal.IPizzaQueryDao.html",
+          "hash": "u4wxEo9jd497CWNTBghh/vTtmVjaN8kG8H86NDkDQaU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Dal.MealDbConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Dal.MealDbConfiguration.html",
+          "hash": "yfD5BOoZKC3ZryFzXghImM0QddP6mkwmrd3BGdMZaxA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Dal.MealDbInitializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Dal.MealDbInitializer.html",
+          "hash": "D/R9WfHlqM7k/6clp6zzunBnxrOEodwRvdvlO9zwlgQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Dal.MealQueryDao.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Dal.MealQueryDao.html",
+          "hash": "vMxyXKt8zhtneTFYdZiIejEMWtcrdwPYQNHutD/5GIM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Dal.PizzaQueryDao.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Dal.PizzaQueryDao.html",
+          "hash": "RnSbq/UMTZlW+M/oLEsiR1s6QHbqbYPtdvpcjc7/Prc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Dal.PizzaToppingDbConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Dal.PizzaToppingDbConfiguration.html",
+          "hash": "lrDkZiOZ/VmLB+wXQrAt+3qjvI85RZy3ACKl2aoFq+o="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Dal.ToppingDbConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Dal.ToppingDbConfiguration.html",
+          "hash": "WZiGRXlHBM4XNtlI3ao8O2oNka6Aa7fm2rc6TY7cSto="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Dal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Dal.html",
+          "hash": "lPZQPCkG+wqBNHBcCJvd89lfETj9QrHDIjdES5wAhXk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/PizzeriaServer.Meals.Exceptions.PizzaNotFoundException.yml",
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Meals.Exceptions.PizzaNotFoundException.html",
-          "hash": "WBqFsw8TRIR2GFnTuU08DZLnMZo1xAztDuIR7f/+pcQ="
+          "hash": "eGvEImA761PXELtDyv+mmqZpcVItRBEnhXI5fg40ZwM="
         }
       },
       "is_incremental": true,
@@ -69,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Meals.Exceptions.ToppingNotFoundException.html",
-          "hash": "1xFE3dUCG8UE2E15a/T07fsJ5vBZewVML5iG50GbDQ0="
+          "hash": "JU/vncrQ7sUbFzFG4C+fbeh1YT0/cHAmUfpw2h1Cs44="
         }
       },
       "is_incremental": true,
@@ -93,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Meals.MealFacade.html",
-          "hash": "J65UeDCtiTwDwlK0SsqHfEqsWdQkzeQTxfy3KlRqmr0="
+          "hash": "ksrFg/xycGP4NTkNFZaNK+/Tnmou08jvlDQJPUeXMew="
         }
       },
       "is_incremental": true,
@@ -105,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Meals.Models.Category.html",
-          "hash": "JmNp/IGWtHF/T+Ag48+gqkL+yb2KvrspB5A6jO+SEF0="
+          "hash": "i2g9s/k/2HPEc4auIXADXxciocyGPUhIZaWhDts8FlQ="
         }
       },
       "is_incremental": true,
@@ -117,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Meals.Models.Meal.html",
-          "hash": "oTVQE22SlKME++agFVDywQ2cFzwOEyuCs8B2W9p8RMM="
+          "hash": "eLXAl9lCQXy408YwwFmuhwW8zQyTEtyWBfOwsWxMEgY="
         }
       },
       "is_incremental": true,
@@ -129,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Meals.Models.Pizza.html",
-          "hash": "V6ass8KT32dMjsSV66dJBOMzhLqsFUGUTwbeLLUpS08="
+          "hash": "7+fDl+QdBuwimFPx3EJJX7ljfdQhG9uwNhDB3o2z8Sg="
         }
       },
       "is_incremental": true,
@@ -141,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Meals.Models.PizzaCrust.html",
-          "hash": "qKRacjoPPPuo5YMwSkh7vss5YgkjoeRyEHS840ZIWmk="
+          "hash": "jnibzQTHR2wVPzHAUCrxZ3dpwzQ/dvuYdNkyN/MepTM="
         }
       },
       "is_incremental": true,
@@ -153,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Meals.Models.PizzaSize.html",
-          "hash": "F0FPsQxubCB6tWT+xhgCvJGziYvSn0p/22GSXuBBj/4="
+          "hash": "rwQGPm50OsVIm5iaYFcxckjUS28S82ppoXq7rrUkrfs="
         }
       },
       "is_incremental": true,
@@ -165,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Meals.Models.PizzaTopping.html",
-          "hash": "ATyFPw90MS4IRGsKtON4bJfYUgoRCfpAiQVnJfHVyBg="
+          "hash": "xbf/6Dh0gUXhGtkRw7ZR7yyxR4TCsiNiXHXYI3u9JjQ="
         }
       },
       "is_incremental": true,
@@ -177,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Meals.Models.Topping.html",
-          "hash": "nQivnJ8BiEhEKECRwtax1yV4apyNpzoXxLSMkFH1t0w="
+          "hash": "sDDs7Tao28HfSfoeikW8TVcUOSIXsThV2LCdUQQlBuU="
         }
       },
       "is_incremental": true,
@@ -190,6 +358,102 @@
         ".html": {
           "relative_path": "api/PizzeriaServer.Meals.Models.html",
           "hash": "9HraqBlxU71JAmxdYfpkjn57Xq0wwgIHVwaBZHf+qMA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Services.IMealPriceCalculator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Services.IMealPriceCalculator.html",
+          "hash": "nb6ntA05VP+Lj1aeXlDOYumTm4Ldy7wKgdeBex82ebA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Services.IMealService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Services.IMealService.html",
+          "hash": "t0dssv9KhDNucH5/EbYUYMBLAsUrtB3Il2thNCBOe9E="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Services.IPizzaService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Services.IPizzaService.html",
+          "hash": "Ac05lmG3EECVpdsg2EZ+8bZudeP/9dGYBiuekVVf5bw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Services.MealPriceService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Services.MealPriceService.html",
+          "hash": "jvD54AzdV3l/Mtqv/SZvdd5/oOVtO+q7nnQwM2DTyfg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Services.MealService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Services.MealService.html",
+          "hash": "JNbapgVF5xw5PyF9PFK1mWRkTEC5pkurv3jywYijDbc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Services.PizzaPriceCalculator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Services.PizzaPriceCalculator.html",
+          "hash": "YM0urcwagsK45Jh3KPup8ybx8ao+XgGX5aUpMcpiwXI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Services.PizzaService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Services.PizzaService.html",
+          "hash": "kGitwxbCf0y1w0utMmkxrQq5AE1xvhWNgYhjf4XbhUw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Services.html",
+          "hash": "M2jtrXM2uxlZ+Oyb/ec6T0P/E+VAo9wAUIA3xMpeijQ="
         }
       },
       "is_incremental": true,
@@ -213,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Migrations.CreateMealsDb.html",
-          "hash": "P3aw4SYP4j11eiEmdO9SWvgHONNAC+wWDU6ZmivV1wY="
+          "hash": "+TWRRB1G0HcoZKBjtaXC+OxBA5WKbKnavOD7fezgZBA="
         }
       },
       "is_incremental": true,
@@ -225,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Migrations.CreateOrdersDb.html",
-          "hash": "CGW3aqMJ1tIOQHX5XXSw85EU3mQiKcwS4U0ECrscrRo="
+          "hash": "nRdN5urrjhzlKj91+Po3nzY0H8rY7WqR249bVt1dY/8="
         }
       },
       "is_incremental": true,
@@ -237,7 +501,19 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Migrations.CreatePizzaDb.html",
-          "hash": "V4ThT5t6C1JL7L5kMctZlDpetLbVdORnemOS6+lswDs="
+          "hash": "yj/EB9f4/NZ48aAmm3VcmRCIhHFqXlzQG/nR7V50/sY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Migrations.MainDbContextModelSnapshot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Migrations.MainDbContextModelSnapshot.html",
+          "hash": "NzXLY7zOJR5qGTZYdxnjPXeOm2ivKAqnIf6/q8veYzo="
         }
       },
       "is_incremental": true,
@@ -249,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Migrations.ModifyOrdersDb.html",
-          "hash": "VLZTC3y2jCsWJhj1TezIcPEoYkPcDupNcFWY3JCW8+w="
+          "hash": "4cenVjVugBTtLnzfmfCBOdYqV4tkdaRWCKQqeM6vqcM="
         }
       },
       "is_incremental": true,
@@ -261,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Migrations.SeedOrdersDb.html",
-          "hash": "gTrRN9uw1F0yQQhjqAk/eBT0bpbMB6RONulTXho6MdI="
+          "hash": "NHJYfIx0ca4IAAInEXGZrzJzxbd7lXl0RLFotR/+wKw="
         }
       },
       "is_incremental": true,
@@ -273,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Migrations.UserRefactored.html",
-          "hash": "upHXQ5pagdsAaRrMU3lildPeUMjlYtUP6+JQaeTgkM4="
+          "hash": "cetdpAAWa+6TovRQpKSUo8TiDcR3P4zaGBaBGaAqbpo="
         }
       },
       "is_incremental": true,
@@ -285,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Migrations.UsersAndMealsMerge.html",
-          "hash": "LX1LBivke9GTWFSwQ+pT3+ucxlYiU98fHPFh54LBoss="
+          "hash": "L2JSxm77pMC/phY28kRL/3kEUcDy8LSVpeK8m45n1vw="
         }
       },
       "is_incremental": true,
@@ -297,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Migrations.html",
-          "hash": "lKC5FFtGK0P2+me7V73XM7jB0lkvYoaq8E+UvTh1dD8="
+          "hash": "8uZtEsLumIhcMLN8icA9/+Fae3FZ7ftqpckBT2oDtyM="
         }
       },
       "is_incremental": true,
@@ -309,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Model.User.html",
-          "hash": "qXpL5xi/O36NSBML+qrGF/J7ROY8Lpq6EW2r39kQ7GI="
+          "hash": "1oM19T3f2Siv8tifJpULSwSe9djOZLqujY5x16A3Ltc="
         }
       },
       "is_incremental": true,
@@ -333,10 +609,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Orders.CreatePizzaOrder.Item.html",
-          "hash": "tTrUGY0iAvqMN3eZNSZPiDKNiinRIB6TOzTa/Wap7So="
+          "hash": "h0/uIuWmjH/WsaymXDDOZXT9yQ3gEFQS5RNX5OkTp/Q="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -345,7 +621,103 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Orders.CreatePizzaOrder.html",
-          "hash": "ztVDJiCZFl8+oq59oF2BJq1/Mfia4OTams9TXCZVCaI="
+          "hash": "7owUD4oQdDxoLCZ+nfKVuKHdK2oHpt43HzHltqjVb/U="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Dal.IOrderMutationDao.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Dal.IOrderMutationDao.html",
+          "hash": "/WrfZfl3pTLKQZGjckX8zAeX6IMaM7BeJUrD46bYs3c="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Dal.IOrderQueryDao.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Dal.IOrderQueryDao.html",
+          "hash": "vN2+jE/FmegoM9aqB016a5u4e0P3qLOKfZGPpk5spHo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Dal.OrderDbConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Dal.OrderDbConfiguration.html",
+          "hash": "mdQACX994+UGc2bVxaKpahhV6ctUZDD0+ag7jd6Hd7s="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Dal.OrderDbInitializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Dal.OrderDbInitializer.html",
+          "hash": "2PRohRU8MWRUIiVyLTIh2g8C9lGxjkshrLbg1pNEUGc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Dal.OrderMutationDao.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Dal.OrderMutationDao.html",
+          "hash": "n2xZrlKdtgpygnzzcUet85Te/AHtn7mgaMvb0PQbsEo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Dal.OrderQueryDao.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Dal.OrderQueryDao.html",
+          "hash": "6dUb9rmriLqcuU8JS9Je9aacFUX9fACUYAFI0TQyFF4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Dal.PizzaOrderLineDbConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Dal.PizzaOrderLineDbConfiguration.html",
+          "hash": "itT7vEeKV16RVlvy6RqqZ7b8OT7FpRuh8Eapr+c7XyQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Dal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Dal.html",
+          "hash": "VZYfnnQoNdjjlhTTmVGmS14bty5+a+nZzGDa2uncneg="
         }
       },
       "is_incremental": true,
@@ -357,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Orders.Exceptions.OrderNotFoundException.html",
-          "hash": "GvItoxp5+wo+8/snOTUdQsKaS+AiEtZ64Y7qGUp6MhA="
+          "hash": "IvrkItJnSJqUdz8xot6VXlAsDca2oOHvEbDzgXiVo8k="
         }
       },
       "is_incremental": true,
@@ -377,11 +749,47 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Models.Order.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Models.Order.html",
+          "hash": "ZVmLzZULFT9vZOZCgfu47+jqVzQWurSxhVcKOoatKU4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Models.PizzaOrderLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Models.PizzaOrderLine.html",
+          "hash": "U+kMtDvL6wUGFV9mHvuimAOmn+E/XqE49upetD4/sN8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Models.html",
+          "hash": "rN6PixZpRBNuynUSkW2aIjlJkpzPZadobd7Ib79gUc0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/PizzeriaServer.Orders.OrderFacade.yml",
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Orders.OrderFacade.html",
-          "hash": "EQupdtivr/fjD8FEFFrdS07cqVMp/b92BeSR1dZnNFo="
+          "hash": "c8cKAfll83hXJfhaYbAUuL8Fm+AVllUeumt/vih1e2Q="
         }
       },
       "is_incremental": true,
@@ -393,10 +801,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Orders.PizzaOrder.Item.html",
-          "hash": "bunHMcITIWc9Vaqv0e9MgXWX+nLP82KM/yJWQau5I1w="
+          "hash": "da91Hg7vOcBNk+Jo/oyI432S+DJKq5fjmdVKP+/gr40="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -405,7 +813,67 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Orders.PizzaOrder.html",
-          "hash": "RzmmleTjjsIDi3zREIq4fNizcUYkqGm8uthgZOfZiHc="
+          "hash": "8vXJTcsdtyRItOrHzLjh2fImbNxfE4zLQtvJJ8ifpTg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Services.IOrderService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Services.IOrderService.html",
+          "hash": "M67ONvyEfbch13Wnx7KRQTQgOryqjKCDzsH4cDDbhKU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Services.OrderMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Services.OrderMapper.html",
+          "hash": "No+UMjsUauiE7mr+4KQgEX1/oprgad1NmJAO+SLhPiY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Services.OrderPriceService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Services.OrderPriceService.html",
+          "hash": "NU0zuidYBUO0/uiVbR+qyS3PKTeus4ZOHFKYfrbBRpk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Services.OrderService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Services.OrderService.html",
+          "hash": "JW8fClWuCgjZBUUHrdH5F4g+LzWkIcF2xWRbOTdgIq4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Services.html",
+          "hash": "AZw8hSE1+eZRMgtcvMm0jgYnOfv/pjIlNmzJz4Ix9no="
         }
       },
       "is_incremental": true,
@@ -417,7 +885,79 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Orders.html",
-          "hash": "GH450mQ2NUR33iOiw4OnE1vOE2poYhvFX7cbDa+AmaY="
+          "hash": "eGhGlFZa0zziluzGVMS7YULfP3vkFm5JossZoZcIYFc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Service.IUserService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Service.IUserService.html",
+          "hash": "/msFRZ3zJSdviIUuKHGeea6Uw8RqoKubTnWxKUYlkFM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Service.UserService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Service.UserService.html",
+          "hash": "619hLxIzmctexbAfXI+eML/VYNcPwe0O0l8uTx+rxX4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Service.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Service.html",
+          "hash": "XQmI05qakbNkPBztJL9jz4G+o3tnqxPIKrHXj3TsgD0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Users.Dal.UserDbConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Users.Dal.UserDbConfiguration.html",
+          "hash": "wN8DKCA18ly28LZ58X9Yh845dVLAR5QA37JJqIKJp/I="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Users.Dal.UserDbInitializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Users.Dal.UserDbInitializer.html",
+          "hash": "B3slpPVC+XstFlbAUSzBaQ0fwe+cYKkeZ4OGfsSORiI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Users.Dal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Users.Dal.html",
+          "hash": "uFKBN64kIYhYRKfG0e5Oior8IzTxB8hJHwphp+EyKx8="
         }
       },
       "is_incremental": true,
@@ -429,7 +969,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Users.Exceptions.UserNotLoggedInException.html",
-          "hash": "EUBZG0tWZc+itOWeQFn7zvR59vgu7V2BtHf/4NOVunY="
+          "hash": "G/2YbzeQN9HppYazNMB3FsNJPfl9cZpZQAc1pAQUFx8="
         }
       },
       "is_incremental": true,
@@ -453,7 +993,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PizzeriaServer.Users.UserFacade.html",
-          "hash": "Ra2IHriOKK0p5CajFQ4Io17XXCzpGyMLIhV5kSGq+10="
+          "hash": "GxGKIONhJa2IHcJcTH65m3b8Lz9pAwW1QIgDnEGRp6o="
         }
       },
       "is_incremental": true,
@@ -501,7 +1041,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "3sY56nuC9Iy+Z4bLZ5cb18S07XHOMXJXcoLTlOAHgvA="
+          "hash": "QoQvSxg3k6aYKlvhDxj1vUQXNKG0rUcKhKslEclnb6I="
         }
       },
       "is_incremental": false,
@@ -574,8 +1114,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 40,
-          "skipped_file_count": 40
+          "total_file_count": 85,
+          "skipped_file_count": 83
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

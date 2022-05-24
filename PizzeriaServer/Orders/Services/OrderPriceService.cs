@@ -1,14 +1,18 @@
 ﻿using PizzeriaServer.Meals.Models;
 using PizzeriaServer.Meals.Services;
+using PizzeriaServer.Orders.Models;
 
 namespace PizzeriaServer.Orders.Services
 {
-    internal class OrderPriceCalculator
+    internal class OrderPriceService
     {
 
         private readonly MealPriceService _mealPriceService;
 
-        public OrderPriceCalculator()
+        /// <summary>
+        /// No args constructor.
+        /// </summary>
+        public OrderPriceService()
         {
             _mealPriceService = new MealPriceService();
             _mealPriceService.RegisterPriceCalculator(new PizzaPriceCalculator(), typeof(Pizza));

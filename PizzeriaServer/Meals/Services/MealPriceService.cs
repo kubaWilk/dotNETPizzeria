@@ -12,7 +12,7 @@ namespace PizzeriaServer.Meals.Services
         }
 
         /// <summary>
-        /// Calculates actual price of <see cref="Meal"/>.
+        /// Calculates actual price of the <see cref="Meal"/>.
         /// Mutates state of <see cref="Meal"/> object: 
         /// updates <see cref="Meal.ActualPrice"/> field.
         /// </summary>

@@ -3,12 +3,18 @@ using PizzeriaServer.Orders.Models;
 
 namespace PizzeriaServer.Orders.Services
 {
-    internal class OrderMapper
+    /// <summary>
+    /// Maps order related model objects and DTO's,
+    /// such as <see cref="Order"/> to <see cref="CreatePizzaOrder"/>
+    /// and <see cref="PizzaOrder"/> to <see cref="Order"/>.
+    /// </summary>
+    internal static class OrderMapper
     {
-        private OrderMapper()
-        {
-        }
-
+        /// <summary>
+        /// Maps <see cref="Order"/> to <see cref="CreatePizzaOrder"/>.
+        /// </summary>
+        /// <param name="newOrderRequest"> Object to map from.</param>
+        /// <returns>Mapped object</returns>
         internal static Order mapToOrder(CreatePizzaOrder newOrderRequest)
         {
             List<PizzaOrderLine> pizzaOrderLines = newOrderRequest.Items.Select(item =>
@@ -44,6 +50,11 @@ namespace PizzeriaServer.Orders.Services
             return order;
         }
 
+        /// <summary>
+        /// Maps <see cref="CreatePizzaOrder"/> to <see cref="Order"/>.
+        /// </summary>
+        /// <param name="savedOrder"> Object to map from.</param>
+        /// <returns>Mapped object</returns>
         internal static PizzaOrder mapToSavedPizzaOrder(Order savedOrder)
         {
             long positionInOrder = 0;

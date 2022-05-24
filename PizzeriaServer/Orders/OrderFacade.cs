@@ -12,12 +12,15 @@ namespace PizzeriaServer.Orders
     {
 
         private readonly IOrderService _orderService;
-        private readonly OrderPriceCalculator _orderPriceCalculator;
+        private readonly OrderPriceService _pizzaOrderPriceService;
 
+        /// <summary>
+        /// No args constructor.
+        /// </summary>
         public OrderFacade()
         {
             _orderService = new OrderService(new OrderQueryDao(), new OrderMutationDao());
-            _orderPriceCalculator = new OrderPriceCalculator();
+            _pizzaOrderPriceService = new OrderPriceService();
         }
 
         /// <summary>
@@ -30,7 +33,7 @@ namespace PizzeriaServer.Orders
         {
             PizzaOrder order = _orderService.CreateOrder(newOrderRequest);
 
-            _orderPriceCalculator.UpdateActualPrice(ref order);
+            _pizzaOrderPriceService.UpdateActualPrice(ref order);
 
             return order;
         }
@@ -43,7 +46,7 @@ namespace PizzeriaServer.Orders
         {
             List<PizzaOrder> orders = _orderService.GetOrders();
 
-            orders.ForEach(order => _orderPriceCalculator.UpdateActualPrice(ref order));
+            orders.ForEach(order => _pizzaOrderPriceService.UpdateActualPrice(ref order));
 
             return orders;
         }
@@ -59,7 +62,7 @@ namespace PizzeriaServer.Orders
         {
             PizzaOrder order = _orderService.GetOrderById(orderId);
 
-            _orderPriceCalculator.UpdateActualPrice(ref order);
+            _pizzaOrderPriceService.UpdateActualPrice(ref order);
 
             return order;
         }
@@ -74,7 +77,7 @@ namespace PizzeriaServer.Orders
         {
             List<PizzaOrder> userOrderHistory = _orderService.GetOrdersByUserId(userId);
 
-            userOrderHistory.ForEach(order => _orderPriceCalculator.UpdateActualPrice(ref order));
+            userOrderHistory.ForEach(order => _pizzaOrderPriceService.UpdateActualPrice(ref order));
 
             return userOrderHistory;
         }

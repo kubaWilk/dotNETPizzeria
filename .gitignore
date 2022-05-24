@@ -364,3 +364,6 @@ FodyWeavers.xsd
 
 # LaunchSettings
 launchSettings.json
+
+# Idea products
+**/.idea/

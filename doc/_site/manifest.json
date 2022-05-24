@@ -1,0 +1,606 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/monaboiste/dev/semester-5/dotnet/dotNETPizzeria/doc",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.CurrentUserContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.CurrentUserContainer.html",
+          "hash": "MEu+PPjxBd2lMWiBS9wuT6HIq7JlOy4c1BOH0eHFOu0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Exceptions.UserAlreadyExistsException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Exceptions.UserAlreadyExistsException.html",
+          "hash": "vzrKivBY0kJX20vO1aeJq9nlThaaKAR/jvsvB12rOfo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Exceptions.UserNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Exceptions.UserNotFoundException.html",
+          "hash": "0f0YhMuMe66wOcJtuvvb14fTRx0/mv8O2dMO+mbrbrY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Exceptions.html",
+          "hash": "Hq9fTObKzeeicbGp+aXPtWIDRC+YpTAU5Fy+sTGqYao="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Exceptions.PizzaNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Exceptions.PizzaNotFoundException.html",
+          "hash": "WBqFsw8TRIR2GFnTuU08DZLnMZo1xAztDuIR7f/+pcQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Exceptions.ToppingNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Exceptions.ToppingNotFoundException.html",
+          "hash": "1xFE3dUCG8UE2E15a/T07fsJ5vBZewVML5iG50GbDQ0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Exceptions.html",
+          "hash": "wiPdWEolw4syDXL9aJ5oetw3F3oeoSijYzMmgCOtWN8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.MealFacade.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.MealFacade.html",
+          "hash": "J65UeDCtiTwDwlK0SsqHfEqsWdQkzeQTxfy3KlRqmr0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Models.Category.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Models.Category.html",
+          "hash": "JmNp/IGWtHF/T+Ag48+gqkL+yb2KvrspB5A6jO+SEF0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Models.Meal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Models.Meal.html",
+          "hash": "oTVQE22SlKME++agFVDywQ2cFzwOEyuCs8B2W9p8RMM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Models.Pizza.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Models.Pizza.html",
+          "hash": "V6ass8KT32dMjsSV66dJBOMzhLqsFUGUTwbeLLUpS08="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Models.PizzaCrust.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Models.PizzaCrust.html",
+          "hash": "qKRacjoPPPuo5YMwSkh7vss5YgkjoeRyEHS840ZIWmk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Models.PizzaSize.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Models.PizzaSize.html",
+          "hash": "F0FPsQxubCB6tWT+xhgCvJGziYvSn0p/22GSXuBBj/4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Models.PizzaTopping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Models.PizzaTopping.html",
+          "hash": "ATyFPw90MS4IRGsKtON4bJfYUgoRCfpAiQVnJfHVyBg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Models.Topping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Models.Topping.html",
+          "hash": "nQivnJ8BiEhEKECRwtax1yV4apyNpzoXxLSMkFH1t0w="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.Models.html",
+          "hash": "9HraqBlxU71JAmxdYfpkjn57Xq0wwgIHVwaBZHf+qMA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Meals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Meals.html",
+          "hash": "S0Fn3K0lNkEm+H6CMVSbeHuqjt4TsotMwxP9ZJNRyes="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Migrations.CreateMealsDb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Migrations.CreateMealsDb.html",
+          "hash": "P3aw4SYP4j11eiEmdO9SWvgHONNAC+wWDU6ZmivV1wY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Migrations.CreateOrdersDb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Migrations.CreateOrdersDb.html",
+          "hash": "CGW3aqMJ1tIOQHX5XXSw85EU3mQiKcwS4U0ECrscrRo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Migrations.CreatePizzaDb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Migrations.CreatePizzaDb.html",
+          "hash": "V4ThT5t6C1JL7L5kMctZlDpetLbVdORnemOS6+lswDs="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Migrations.ModifyOrdersDb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Migrations.ModifyOrdersDb.html",
+          "hash": "VLZTC3y2jCsWJhj1TezIcPEoYkPcDupNcFWY3JCW8+w="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Migrations.SeedOrdersDb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Migrations.SeedOrdersDb.html",
+          "hash": "gTrRN9uw1F0yQQhjqAk/eBT0bpbMB6RONulTXho6MdI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Migrations.UserRefactored.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Migrations.UserRefactored.html",
+          "hash": "upHXQ5pagdsAaRrMU3lildPeUMjlYtUP6+JQaeTgkM4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Migrations.UsersAndMealsMerge.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Migrations.UsersAndMealsMerge.html",
+          "hash": "LX1LBivke9GTWFSwQ+pT3+ucxlYiU98fHPFh54LBoss="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Migrations.html",
+          "hash": "lKC5FFtGK0P2+me7V73XM7jB0lkvYoaq8E+UvTh1dD8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Model.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Model.User.html",
+          "hash": "qXpL5xi/O36NSBML+qrGF/J7ROY8Lpq6EW2r39kQ7GI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Model.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Model.html",
+          "hash": "28uB3gIA761hODIsN8oKtjcZfyK5LyMA5reG1pBE4vo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.CreatePizzaOrder.Item.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.CreatePizzaOrder.Item.html",
+          "hash": "tTrUGY0iAvqMN3eZNSZPiDKNiinRIB6TOzTa/Wap7So="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.CreatePizzaOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.CreatePizzaOrder.html",
+          "hash": "ztVDJiCZFl8+oq59oF2BJq1/Mfia4OTams9TXCZVCaI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Exceptions.OrderNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Exceptions.OrderNotFoundException.html",
+          "hash": "GvItoxp5+wo+8/snOTUdQsKaS+AiEtZ64Y7qGUp6MhA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.Exceptions.html",
+          "hash": "/HO1LSXjPkFHlp5m58+Y38obVxHZBqb6kmS0BhVIIUI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.OrderFacade.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.OrderFacade.html",
+          "hash": "EQupdtivr/fjD8FEFFrdS07cqVMp/b92BeSR1dZnNFo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.PizzaOrder.Item.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.PizzaOrder.Item.html",
+          "hash": "bunHMcITIWc9Vaqv0e9MgXWX+nLP82KM/yJWQau5I1w="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.PizzaOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.PizzaOrder.html",
+          "hash": "RzmmleTjjsIDi3zREIq4fNizcUYkqGm8uthgZOfZiHc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Orders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Orders.html",
+          "hash": "GH450mQ2NUR33iOiw4OnE1vOE2poYhvFX7cbDa+AmaY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Users.Exceptions.UserNotLoggedInException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Users.Exceptions.UserNotLoggedInException.html",
+          "hash": "EUBZG0tWZc+itOWeQFn7zvR59vgu7V2BtHf/4NOVunY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Users.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Users.Exceptions.html",
+          "hash": "W3VKLzUSaqcmuLOHemtmYCSmLgnbpOYa+je7w5XhSg8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Users.UserFacade.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Users.UserFacade.html",
+          "hash": "Ra2IHriOKK0p5CajFQ4Io17XXCzpGyMLIhV5kSGq+10="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.Users.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.Users.html",
+          "hash": "IhnOIVb1FdygIKA5wPPvQZYMVBE/0Xw37wxkVPBjE1M="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PizzeriaServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PizzeriaServer.html",
+          "hash": "HW2YOHp7/W4qH75kIw5e3pRH59non9IDGXjPOwapNGI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "33GVPoCaK7ycnKvjmLQLOhe/gQkjuOk00ITKAGRUykc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "3sY56nuC9Iy+Z4bLZ5cb18S07XHOMXJXcoLTlOAHgvA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "7r3xyabjo+E/j8HRZStGY7aR+pEK0MuURS4N28FfImc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "7KOBqbQ90eD7cMT6CVM1cGSmih8jgIRbFyjWC9vkowA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "WSuRrYiGwKKMbtdG9z8W9fXmLoCyTnGg9AxbPKLXm2Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 40,
+          "skipped_file_count": 40
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzeriaServerTests.TestUser
+namespace PizzeriaServerTests.UserTesting
 {
     internal class UserDalMock : IUserDal
     {
@@ -58,10 +58,7 @@ namespace PizzeriaServerTests.TestUser
 
         public User? GetUserByLogin(string login)
         {
-            User result = users.Find(x => x.Login == login);
-            if (result == null) throw new UserNotFoundException();
-
-            return result;
+            return users.Find(x => x.Login == login);
         }
 
         public void Save(User user)

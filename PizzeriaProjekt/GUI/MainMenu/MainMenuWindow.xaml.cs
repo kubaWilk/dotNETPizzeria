@@ -43,7 +43,7 @@ namespace PizzeriaProjekt.GUI.MainMenu
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            MainMenuFrame.Content = new MainMenuPage();
+            MainMenuFrame.Content = new MainMenuPage(this);
         }
     }
 }

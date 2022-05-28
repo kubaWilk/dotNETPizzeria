@@ -27,5 +27,10 @@ namespace PizzeriaServer.Users
         {
             _userService.UpdateCurrentUser();
         }
+
+        public void LogOut()
+        {
+            _userService.LogOut();
+        }
     }
 }

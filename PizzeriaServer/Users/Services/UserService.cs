@@ -96,5 +96,10 @@ namespace PizzeriaServer.Service
                 throw new UserNotLoggedInException();
             }
         }
+
+        public void LogOut()
+        {
+            CurrentUserContainer.s_currentUser = null;
+        }
     }
 }

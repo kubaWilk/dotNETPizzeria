@@ -1,24 +1,11 @@
 ﻿using PizzeriaServer;
-using PizzeriaServer.Orders;
-using PizzeriaServer.Meals.Models;
 using PizzeriaServer.Meals;
+using PizzeriaServer.Meals.Models;
+using PizzeriaServer.Orders;
 using PizzeriaServer.Users;
-using PizzeriaServer.Model;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PizzeriaProjekt.GUI.MainMenu
 {
@@ -119,6 +106,7 @@ namespace PizzeriaProjekt.GUI.MainMenu
         {
             orderFacade.CreateOrder(pizzaOrder);
             System.Windows.Forms.MessageBox.Show("Zamówienie złożono pomyślnie.");
+            NavigationService.Navigate(new MainMenuPage());
         }
     }
 }

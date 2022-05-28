@@ -11,11 +11,9 @@ namespace PizzeriaProjekt.GUI.MainMenu
     /// </summary>
     public partial class MainMenuPage : Page
     {
-        private Window _parentWindow;
-        public MainMenuPage(Window parent)
+        public MainMenuPage()
         {
             InitializeComponent();
-            _parentWindow = parent;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -30,7 +28,7 @@ namespace PizzeriaProjekt.GUI.MainMenu
             userFacade.LogOut();
 
             loginWindow loginWindow = new loginWindow();
-            _parentWindow.Hide();
+            Window.GetWindow(this).Hide();
             loginWindow.Show();
         }
 

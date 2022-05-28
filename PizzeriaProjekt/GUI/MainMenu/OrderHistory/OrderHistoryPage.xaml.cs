@@ -13,8 +13,9 @@ namespace PizzeriaProjekt.GUI.MainMenu.OrderHistory
     /// </summary>
     public partial class OrderHistoryPage : Page
     {
-        OrderFacade orderFacade;
-        User currentUser;
+        private OrderFacade orderFacade;
+        private User currentUser;
+
         public OrderHistoryPage()
         {
             InitializeComponent();

@@ -1,9 +1,8 @@
-using System.Windows;
 using MahApps.Metro.Controls;
 using PizzeriaProjekt.GUI.MainMenu;
 using PizzeriaServer.Exceptions;
-using PizzeriaServer.Service;
 using PizzeriaServer.Users;
+using System.Windows;
 
 namespace PizzeriaProjekt
 {

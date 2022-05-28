@@ -20,5 +20,10 @@ namespace PizzeriaServer.Service
         /// Updates data of current user (from CurrentUserContainer) that have been changed during the session
         /// </summary>
         void UpdateCurrentUser();
+
+        /// <summary>
+        /// Logs Out current user
+        /// </summary>
+        void LogOut();
     }
 }

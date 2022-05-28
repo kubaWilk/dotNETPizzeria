@@ -7,7 +7,7 @@ using PizzeriaServer.Users;
 
 namespace PizzeriaProjekt
 {
-    public partial class loginWindow :MetroWindow
+    public partial class loginWindow : MetroWindow
     {
         UserFacade userFacade = new UserFacade();
         public loginWindow()
@@ -88,10 +88,11 @@ namespace PizzeriaProjekt
             registerWindow register = new registerWindow();
             register.ShowDialog();
         }
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
 
-  
-       
-
-     
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }

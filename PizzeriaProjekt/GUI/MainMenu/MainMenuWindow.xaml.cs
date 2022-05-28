@@ -24,6 +24,13 @@ namespace PizzeriaProjekt.GUI.MainMenu
             InitializeComponent();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            System.Windows.Application.Current.Shutdown();
+        }
+
         private void Frame_Loaded(object sender, RoutedEventArgs e)
         {
 

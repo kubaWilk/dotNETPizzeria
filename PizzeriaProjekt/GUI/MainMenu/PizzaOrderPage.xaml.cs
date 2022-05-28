@@ -117,8 +117,9 @@ namespace PizzeriaProjekt.GUI.MainMenu
         private void orderButton_Click(object sender, RoutedEventArgs e)
         {
             order.UserNotes = commentsTextBox.Text;
-            orderFacade.CreateOrder(order);
-            System.Windows.Forms.MessageBox.Show("Zamówienie złożono pomyślnie.");
+            OrderSummaryPage orderSummaryPage= new OrderSummaryPage(order);
+            NavigationService.Navigate(orderSummaryPage);
+
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)

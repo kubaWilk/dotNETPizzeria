@@ -16,24 +16,26 @@
                 <GradientStop Color="#FF9CCEA4" Offset="0.994"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <ListBox x:Name="PizzasList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="28,37,463,203" SelectionChanged="PizzasList_SelectionChanged">
+        <ListBox x:Name="PizzasList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,37,481,203" SelectionChanged="PizzasList_SelectionChanged" Width="311">
             <!--<mah:HamburgerMenu/>-->
         </ListBox>
-        <Label x:Name="label" Content="Skladniki wybranej pizzy:" HorizontalAlignment="Left" Margin="31,342,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="toppingsLabel" Content="Label" HorizontalAlignment="Left" Margin="164,342,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="cartListBox" Margin="466,64,23,176"/>
-        <Button x:Name="addButton" Content="Dodaj" HorizontalAlignment="Left" Margin="466,39,0,0" VerticalAlignment="Top" Click="addButton_Click"/>
-        <Button x:Name="deleteButton" Content="Usuń" HorizontalAlignment="Left" Margin="466,279,0,0" VerticalAlignment="Top" Click="deleteButton_Click"/>
-        <Button x:Name="orderButton" Content="Zamów" HorizontalAlignment="Left" Margin="669,321,0,0" VerticalAlignment="Top" Click="orderButton_Click"/>
-        <RadioButton x:Name="thinRadioButton" Content="Cienkie" HorizontalAlignment="Left" Margin="31,271,0,0" VerticalAlignment="Top" GroupName="Crust"/>
-        <RadioButton x:Name="thiccRadioButton" Content="Grube" HorizontalAlignment="Left" Margin="121,271,0,0" VerticalAlignment="Top" GroupName="Crust"/>
-        <RadioButton x:Name="smallRadioButton" Content="Mała" HorizontalAlignment="Left" Margin="38,317,0,0" VerticalAlignment="Top" GroupName="Size"/>
-        <RadioButton x:Name="mediumRadioButton" Content="Średnia" HorizontalAlignment="Left" Margin="92,317,0,0" VerticalAlignment="Top" GroupName="Size"/>
-        <RadioButton x:Name="bigRadioButton" Content="Duża" HorizontalAlignment="Left" Margin="156,317,0,0" VerticalAlignment="Top" GroupName="Size"/>
-        <Label x:Name="label1" Content="Rozmiar pizzy:" HorizontalAlignment="Left" Margin="31,291,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="Grubość ciasta" HorizontalAlignment="Left" Margin="29,248,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="commentsTextBox" HorizontalAlignment="Left" Margin="272,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Height="102"/>
-        <Label x:Name="commentLabel" Content="Uwagi do zamówienia" HorizontalAlignment="Left" Margin="272,289,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="backButton" Content="Powrót" HorizontalAlignment="Left" Margin="61,419,0,0" VerticalAlignment="Top" Click="backButton_Click"/>
+        <Label x:Name="label" Content="Skladniki wybranej pizzy:" HorizontalAlignment="Left" Margin="9,251,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="toppingsLabel" Content="Label" HorizontalAlignment="Left" Margin="145,252,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="cartListBox" Margin="480,37,9,203"/>
+        <Button x:Name="addButton" Content="Dodaj" HorizontalAlignment="Center" Margin="0,45,0,0" VerticalAlignment="Top" Click="addButton_Click" Width="92" Height="26"/>
+        <Button x:Name="deleteButton" Content="Usuń" HorizontalAlignment="Left" Margin="699,258,0,0" VerticalAlignment="Top" Click="deleteButton_Click" Width="92" Height="26"/>
+        <Button x:Name="orderButton" Content="Podsumowanie" HorizontalAlignment="Left" Margin="698,409,0,0" VerticalAlignment="Top" Click="orderButton_Click" Height="26" Width="92"/>
+        <RadioButton x:Name="thinRadioButton" Content="Cienkie" HorizontalAlignment="Left" Margin="17,304,0,0" VerticalAlignment="Top" GroupName="Crust"/>
+        <RadioButton x:Name="thiccRadioButton" Content="Grube" HorizontalAlignment="Left" Margin="80,304,0,0" VerticalAlignment="Top" GroupName="Crust"/>
+        <RadioButton x:Name="smallRadioButton" Content="Mała" HorizontalAlignment="Left" Margin="19,345,0,0" VerticalAlignment="Top" GroupName="Size"/>
+        <RadioButton x:Name="mediumRadioButton" Content="Średnia" HorizontalAlignment="Left" Margin="73,345,0,0" VerticalAlignment="Top" GroupName="Size"/>
+        <RadioButton x:Name="bigRadioButton" Content="Duża" HorizontalAlignment="Left" Margin="137,345,0,0" VerticalAlignment="Top" GroupName="Size"/>
+        <Label x:Name="label1" Content="Rozmiar pizzy:" HorizontalAlignment="Left" Margin="12,317,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Grubość ciasta" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="commentsTextBox" HorizontalAlignment="Left" Margin="400,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Height="102"/>
+        <Label x:Name="commentLabel" Content="Uwagi do zamówienia" HorizontalAlignment="Left" Margin="400,304,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="backButton" Content="Powrót" HorizontalAlignment="Left" Margin="10,409,0,0" VerticalAlignment="Top" Click="backButton_Click" Height="30" Width="60"/>
+        <Label Content="Menu" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Twój koszyk" HorizontalAlignment="Left" Margin="480,10,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzeriaProjekt.GUI.MainMenu.OrderHistory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,7 +46,8 @@ namespace PizzeriaProjekt.GUI.MainMenu
 
         private void OrderArchive_Click(object sender, RoutedEventArgs e)
         {
-
+            OrderHistoryPage orderHistoryPage = new OrderHistoryPage();
+            NavigationService.Navigate(orderHistoryPage);
         }
     }
 }

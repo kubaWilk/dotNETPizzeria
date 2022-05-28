@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PizzeriaProjekt.GUI.MainMenu"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800" Loaded="Window_Loaded">
+        WindowStartupLocation="CenterScreen"
+        Title="Pizzeria" Height="490" Width="810" ResizeMode="CanMinimize" Loaded="Window_Loaded" SizeToContent="Manual">
     <Grid>
-        <Frame x:Name="MainMenuFrame" Content="" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="MainMenuFrame" Content="" Margin="0,0,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

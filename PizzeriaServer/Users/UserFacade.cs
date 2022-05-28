@@ -1,12 +1,6 @@
 ﻿using PizzeriaServer.DB;
-using PizzeriaServer.Dbo;
 using PizzeriaServer.Model;
 using PizzeriaServer.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PizzeriaServer.Users
 {
@@ -32,6 +26,11 @@ namespace PizzeriaServer.Users
         public void UpdateCurrentUser()
         {
             _userService.UpdateCurrentUser();
+        }
+
+        public void LogOut()
+        {
+            _userService.LogOut();
         }
     }
 }

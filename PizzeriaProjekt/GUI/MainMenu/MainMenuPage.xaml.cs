@@ -1,18 +1,8 @@
 ﻿using PizzeriaProjekt.GUI.MainMenu.OrderHistory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PizzeriaServer.Users;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PizzeriaProjekt.GUI.MainMenu
 {
@@ -21,9 +11,11 @@ namespace PizzeriaProjekt.GUI.MainMenu
     /// </summary>
     public partial class MainMenuPage : Page
     {
-        public MainMenuPage()
+        private Window _parentWindow;
+        public MainMenuPage(Window parent)
         {
             InitializeComponent();
+            _parentWindow = parent;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -34,8 +26,12 @@ namespace PizzeriaProjekt.GUI.MainMenu
 
         private void MainMenuLogoutBtn_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow loginWindow = new LoginWindow();
-            NavigationService.Navigate(loginWindow);
+            UserFacade userFacade = new UserFacade();
+            userFacade.LogOut();
+
+            loginWindow loginWindow = new loginWindow();
+            _parentWindow.Hide();
+            loginWindow.Show();
         }
 
         private void OrderPizza_Click(object sender, RoutedEventArgs e)

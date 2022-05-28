@@ -16,14 +16,7 @@ namespace PizzeriaServer.DB
 
         public User? GetUserByLogin(string login)
         {
-            try
-            {
-                return _userContext.Users.FirstOrDefault(x => x.Login == login);
-            }
-            catch (NullReferenceException)
-            {
-                throw new UserNotFoundException();
-            }
+            return _userContext.Users.FirstOrDefault(x => x.Login == login);
         }
 
         public void Save(User user)
